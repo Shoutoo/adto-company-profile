@@ -493,27 +493,30 @@ export default function HomePage() {
         }}
         padding="lg"
       >
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-12 md:gap-20">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 md:gap-8">
           {[
-            'Pertamina',
-            'PLN',
-            'Telkom',
-            'Astra',
-            'Semen Indonesia',
-            'Wijaya Karya',
-            'Hutama Karya',
-            'PP Properti',
-          ].map((name) => (
+            { name: 'Pertamina', src: '/images/logos/pertamina.svg' },
+            { name: 'PLN', src: '/images/logos/pln.svg' },
+            { name: 'Telkom', src: '/images/logos/telkom.svg' },
+            { name: 'Astra', src: '/images/logos/astra.svg' },
+            { name: 'Semen Indonesia', src: '/images/logos/semen-indonesia.svg' },
+            { name: 'Wijaya Karya', src: '/images/logos/wika.svg' },
+            { name: 'Hutama Karya', src: '/images/logos/hutama-karya.svg' },
+            { name: 'PP Properti', src: '/images/logos/pp.png' },
+          ].map((logo) => (
             <div
-              key={name}
-              className="group flex h-12 items-center justify-center opacity-40 grayscale transition-all duration-500 hover:opacity-80 hover:grayscale-0"
+              key={logo.name}
+              className="group relative flex h-24 w-36 items-center justify-center rounded-2xl border border-border/50 bg-white p-5 shadow-[0_4px_20px_rgba(15,23,42,0.04)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_12px_30px_rgba(15,23,42,0.08)] sm:w-44 md:w-52"
             >
-              <span
-                className="font-heading text-xl font-bold uppercase tracking-widest transition-colors duration-300"
-                style={{ color: '#35557A' }}
-              >
-                {name}
-              </span>
+              <div className="relative h-full w-full opacity-50 grayscale transition-all duration-300 ease-out group-hover:scale-[1.03] group-hover:opacity-100 group-hover:grayscale-0">
+                <Image
+                  src={logo.src}
+                  alt={`${logo.name} logo`}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 640px) 144px, (max-width: 768px) 176px, 208px"
+                />
+              </div>
             </div>
           ))}
         </div>
