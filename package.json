@@ -1,0 +1,18 @@
+{
+  "name": "adto-company-profile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Root package.json to trick Vercel into detecting Next.js for zero-config deployment.",
+  "dependencies": {
+    "next": "^15.5.21",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "scripts": {
+    "install": "cd frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "dev": "cd frontend && npm run dev",
+    "start": "cd frontend && npm start",
+    "lint": "cd frontend && npm run lint"
+  }
+}
