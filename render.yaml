@@ -1,0 +1,48 @@
+services:
+  # ── FRONTEND (Next.js) ─────────────────────────────
+  - type: web
+    name: adto-frontend
+    env: docker
+    dockerfilePath: docker/node/Dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        value: "https://adto-backend.onrender.com/api"
+      - key: NODE_ENV
+        value: production
+
+  # ── BACKEND (Laravel) ──────────────────────────────
+  - type: web
+    name: adto-backend
+    env: docker
+    dockerfilePath: docker/render/Dockerfile.backend
+    dockerContext: .
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_URL
+        value: "https://adto-backend.onrender.com"
+      - key: FRONTEND_URL
+        value: "https://adto-frontend.onrender.com"
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        value: "3306"
+      - key: DB_DATABASE
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: APP_KEY
+        sync: false
+      - key: JWT_SECRET
+        sync: false
