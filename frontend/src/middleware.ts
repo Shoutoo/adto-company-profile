@@ -31,8 +31,8 @@ export function middleware(request: NextRequest): NextResponse {
     `object-src 'none'`,
     `base-uri 'self'`,
     `form-action 'self'`,
-    `upgrade-insecure-requests`,
-  ].join('; ');
+    process.env.VERCEL === '1' ? `upgrade-insecure-requests` : '',
+  ].filter(Boolean).join('; ');
 
   // Security Headers
   response.headers.set('Content-Security-Policy', csp);
