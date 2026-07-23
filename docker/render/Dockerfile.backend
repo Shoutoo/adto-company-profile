@@ -107,11 +107,11 @@ RUN chown -R nobody:nobody /var/www/html/storage /var/www/html/bootstrap/cache \
 
 # Setup build script for initialization (e.g. migrate)
 RUN echo '#!/bin/sh' > /usr/local/bin/entrypoint.sh \
+    && echo 'PORT=${PORT:-8000}' >> /usr/local/bin/entrypoint.sh \
+    && echo 'sed -i "s/listen 80;/listen ${PORT};/g" /etc/nginx/http.d/default.conf' >> /usr/local/bin/entrypoint.sh \
     && echo 'php artisan optimize' >> /usr/local/bin/entrypoint.sh \
     && echo 'php artisan migrate --force' >> /usr/local/bin/entrypoint.sh \
     && echo 'exec /usr/bin/supervisord -c /etc/supervisord.conf' >> /usr/local/bin/entrypoint.sh \
     && chmod +x /usr/local/bin/entrypoint.sh
-
-EXPOSE 80
 
 CMD ["/usr/local/bin/entrypoint.sh"]
