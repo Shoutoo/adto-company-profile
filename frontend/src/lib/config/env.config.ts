@@ -9,16 +9,16 @@ import { z } from 'zod';
 /** Schema for public environment variables (available in browser) */
 const publicEnvSchema = z.object({
   NEXT_PUBLIC_APP_NAME: z.string().min(1).default('PT Adto Cipta Usaha Mandiri'),
-  NEXT_PUBLIC_APP_URL: z.string().url().default('http://localhost:3000'),
-  NEXT_PUBLIC_API_URL: z.string().url().default('http://localhost:8000/api/v1'),
+  NEXT_PUBLIC_APP_URL: z.string().default('https://adtociptausahamandiri.co.id'),
+  NEXT_PUBLIC_API_URL: z.string().default(''),
   NEXT_PUBLIC_GA_MEASUREMENT_ID: z.string().optional(),
   NEXT_PUBLIC_RECAPTCHA_SITE_KEY: z.string().optional(),
 });
 
 /** Schema for server-only environment variables */
 const serverEnvSchema = z.object({
-  BACKEND_URL: z.string().url().default('http://localhost:8000'),
-  REVALIDATION_SECRET: z.string().min(16).optional(),
+  BACKEND_URL: z.string().default(''),
+  REVALIDATION_SECRET: z.string().optional(),
   NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
 });
 
