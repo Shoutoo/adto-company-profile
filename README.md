@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div align="center">
 
 # PT Adto Cipta Usaha Mandiri
