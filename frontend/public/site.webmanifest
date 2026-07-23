@@ -1,0 +1,44 @@
+{
+  "name": "PT Adto Cipta Usaha Mandiri",
+  "short_name": "Adto Mandiri",
+  "description": "Trusted Enterprise Solutions Provider — Construction, Engineering, Procurement & Consulting",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "id-ID",
+  "categories": ["business", "construction", "engineering"],
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    { "name": "Our Services", "url": "/services", "description": "View all our services" },
+    { "name": "Contact Us", "url": "/contact", "description": "Get in touch with us" },
+    {
+      "name": "Request Quotation",
+      "url": "/request-quotation",
+      "description": "Request a project quote"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}

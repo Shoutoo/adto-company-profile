@@ -1,0 +1,551 @@
+/* ═══════════════════════════════════════════════════════════
+   globals.css — PT Adto Cipta Usaha Mandiri
+   Design Foundation & CSS Custom Properties
+   ═══════════════════════════════════════════════════════════ */
+
+@import "tailwindcss";
+@import "../styles/typography.css";
+@import "../styles/animations.css";
+@import "../styles/components.css";
+
+@config "../../tailwind.config.ts";
+
+/* ─── Tailwind v4 Theme Extension ─────────────────────────
+   Static design tokens registered via @theme.
+   These generate Tailwind utility classes automatically.
+   ───────────────────────────────────────────────────────── */
+
+@theme inline {
+  /* ── Brand Colors ────────────────────────────────────── */
+  --color-brand-50: #F0F4F8;
+  --color-brand-100: #D9E2EC;
+  --color-brand-200: #BCCCDC;
+  --color-brand-300: #9FB3C8;
+  --color-brand-400: #829AB1;
+  --color-brand-500: #627D98;
+  --color-brand-600: #486581;
+  --color-brand-700: #334E68;
+  --color-brand-800: #243B53;
+  --color-brand-900: #1A365D;
+  --color-brand-950: #102A43;
+
+  /* ── Accent Colors ──────────────────────────────────── */
+  --color-accent-50: #FFFBEB;
+  --color-accent-100: #FEF3C7;
+  --color-accent-200: #FDE68A;
+  --color-accent-300: #FCD34D;
+  --color-accent-400: #FBBF24;
+  --color-accent-500: #F59E0B;
+  --color-accent-600: #D97706;
+  --color-accent-700: #B45309;
+  --color-accent-800: #92400E;
+  --color-accent-900: #78350F;
+  --color-accent-950: #451A03;
+
+  /* ── Typography ─────────────────────────────────────── */
+  --font-sans: var(--font-open-sans), "Open Sans", "system-ui", "-apple-system", "Segoe UI", "sans-serif";
+  --font-heading: var(--font-montserrat), "Montserrat", "system-ui", "-apple-system", "sans-serif";
+  --font-mono: var(--font-jetbrains), "JetBrains Mono", "Fira Code", "monospace";
+
+  /* ── Spacing Scale Extension ────────────────────────── */
+  --spacing-4_5: 1.125rem;
+  --spacing-5_5: 1.375rem;
+  --spacing-13: 3.25rem;
+  --spacing-15: 3.75rem;
+  --spacing-17: 4.25rem;
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-26: 6.5rem;
+  --spacing-30: 7.5rem;
+  --spacing-34: 8.5rem;
+  --spacing-38: 9.5rem;
+
+  /* ── Container / Max-Width ──────────────────────────── */
+  --container-8xl: 88rem;
+  --container-9xl: 96rem;
+
+  /* ── Breakpoints ────────────────────────────────────── */
+  --breakpoint-xs: 30rem;
+  --breakpoint-3xl: 120rem;
+
+  /* ── Border Radius ──────────────────────────────────── */
+  --radius-4xl: 1rem;
+  --radius-5xl: 1.5rem;
+
+  /* ── Shadows ────────────────────────────────────────────── */
+  --shadow-soft-xs: 0 1px 3px 0 oklch(0 0 0 / 0.06), 0 1px 2px -1px oklch(0 0 0 / 0.04);
+  --shadow-soft: 0 2px 8px -2px oklch(0 0 0 / 0.08), 0 1px 3px -1px oklch(0 0 0 / 0.05);
+  --shadow-soft-md: 0 6px 16px -4px oklch(0 0 0 / 0.09), 0 3px 6px -3px oklch(0 0 0 / 0.05);
+  --shadow-soft-lg: 0 12px 28px -6px oklch(0 0 0 / 0.10), 0 6px 10px -5px oklch(0 0 0 / 0.06);
+  --shadow-soft-xl: 0 24px 40px -8px oklch(0 0 0 / 0.12), 0 10px 16px -6px oklch(0 0 0 / 0.07);
+  --shadow-card: 0 1px 3px oklch(0 0 0 / 0.04), 0 4px 12px oklch(0 0 0 / 0.06), 0 0 0 1px oklch(0 0 0 / 0.04);
+  --shadow-card-hover: 0 4px 8px oklch(0 0 0 / 0.05), 0 12px 32px oklch(0 0 0 / 0.10), 0 0 0 1px oklch(0 0 0 / 0.06);
+  --shadow-premium: 0 2px 6px oklch(0 0 0 / 0.04), 0 8px 24px oklch(0 0 0 / 0.08), 0 0 0 1px oklch(0.93 0 0 / 1);
+  --shadow-glow: 0 0 0 1px oklch(0.45 0.12 250 / 0.15), 0 0 20px oklch(0.45 0.12 250 / 0.08);
+  --shadow-glow-lg: 0 0 0 2px oklch(0.45 0.12 250 / 0.2), 0 0 30px oklch(0.45 0.12 250 / 0.12);
+  --shadow-brand-glow: 0 0 0 1px oklch(0.38 0.10 250 / 0.2), 0 4px 20px oklch(0.38 0.10 250 / 0.12);
+
+  /* ── Z-Index Scale ──────────────────────────────────── */
+  --z-60: 60;
+  --z-70: 70;
+  --z-80: 80;
+  --z-90: 90;
+  --z-100: 100;
+
+  /* ── Transition Timing ──────────────────────────────── */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ── Animations ─────────────────────────────────────── */
+  --animate-fade-in: fade-in 0.6s var(--ease-smooth) forwards;
+  --animate-fade-in-up: fade-in-up 0.8s var(--ease-smooth) forwards;
+  --animate-fade-in-down: fade-in-down 0.8s var(--ease-smooth) forwards;
+  --animate-slide-in-left: slide-in-left 0.8s var(--ease-smooth) forwards;
+  --animate-slide-in-right: slide-in-right 0.8s var(--ease-smooth) forwards;
+  --animate-scale-in: scale-in 0.6s var(--ease-smooth) forwards;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LIGHT THEME — CSS Custom Properties
+   Shadcn UI + Brand Design System
+   ═══════════════════════════════════════════════════════════ */
+
+:root, .dark {
+  /* ── Color Scheme (Forced Light) ───────────────────── */
+  color-scheme: light;
+
+  /* ── Shadcn Semantic Tokens ───────────────────────── */
+  --background: #FFFFFF;
+  --foreground: #111827;
+
+  --card: #FFFFFF;
+  --card-foreground: #111827;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #111827;
+
+  --primary: #35557A;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #F58220;
+  --secondary-foreground: #FFFFFF;
+
+  --muted: #F8FAFC;
+  --muted-foreground: #6B7280;
+
+  --accent: #EAF1F8;
+  --accent-foreground: #35557A;
+
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+
+  --success: #10B981;
+  --success-foreground: #FFFFFF;
+
+  --warning: #F59E0B;
+  --warning-foreground: #FFFFFF;
+
+  --info: #3B82F6;
+  --info-foreground: #FFFFFF;
+
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #35557A;
+
+  /* ── Chart Colors ───────────────────────────────────── */
+  --chart-1: #35557A;
+  --chart-2: #F58220;
+  --chart-3: #111827;
+  --chart-4: #6B7280;
+  --chart-5: #EAF1F8;
+
+  /* ── Radius ─────────────────────────────────────────────── */
+  --radius: 0.625rem;
+  --radius-card: 1.25rem;
+  --radius-container: 1.5rem;
+  --radius-button: 0.75rem;
+  --radius-input: 0.75rem;
+  --radius-image: 1.25rem;
+
+  /* ── Sidebar (Admin) ────────────────────────────────── */
+  --sidebar: #F8FAFC;
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #35557A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #EAF1F8;
+  --sidebar-accent-foreground: #35557A;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #35557A;
+
+  /* ── Surface Layers ─────────────────────────────────── */
+  --surface: #FFFFFF;
+  --surface-secondary: #F8FAFC;
+  --surface-tertiary: #EAF1F8;
+  --surface-elevated: #FFFFFF;
+  --surface-overlay: rgba(17, 24, 39, 0.5);
+
+  /* ── Brand Mapped ───────────────────────────────────── */
+  --brand: #35557A;
+  --brand-hover: #2C496A;
+  --brand-active: #1C2C40;
+  --brand-subtle: #EAF1F8;
+
+  /* ── Text Hierarchy ─────────────────────────────────── */
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-tertiary: #6B7280;
+  --text-disabled: #9CA3AF;
+  --text-inverse: #FFFFFF;
+  --text-link: #35557A;
+  --text-link-hover: #2C496A;
+
+  /* ── Border Hierarchy ───────────────────────────────── */
+  --border-default: #E5E7EB;
+  --border-subtle: #F3F4F6;
+  --border-strong: #D1D5DB;
+  --border-focus: #35557A;
+
+  /* ── Section Spacing ────────────────────────────────── */
+  --section-py: clamp(3rem, 6vw, 7rem);
+  --section-py-sm: clamp(2rem, 4vw, 4rem);
+  --section-py-lg: clamp(4rem, 8vw, 10rem);
+
+  /* ── Container ──────────────────────────────────────── */
+  --container-padding: clamp(1rem, 3vw, 2rem);
+  --container-max: 80rem;
+
+  /* ── Header ─────────────────────────────────────────── */
+  --header-height: 5.5rem;
+  --header-height-scrolled: 4.5rem;
+
+  /* ── Gradients ──────────────────────────────────────────── */
+  --gradient-brand: linear-gradient(135deg, #35557A 0%, #2C496A 100%);
+  --gradient-brand-accent: linear-gradient(135deg, #35557A 0%, #F58220 100%);
+  --gradient-hero: linear-gradient(180deg, #FFFFFF 0%, #F6F9FC 100%);
+  --gradient-section: linear-gradient(180deg, #F6F9FC 0%, #FFFFFF 100%);
+  --gradient-card: linear-gradient(160deg, #FFFFFF 0%, #F8FAFC 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.80));
+  --gradient-subtle-brand: linear-gradient(135deg, rgba(53, 85, 122, 0.04) 0%, rgba(53, 85, 122, 0.01) 100%);
+  --gradient-section-alt: linear-gradient(180deg, #F4F7FA 0%, #F8FAFC 100%);
+  --gradient-navy-subtle: linear-gradient(135deg, rgba(10, 47, 92, 0.03) 0%, rgba(10, 47, 92, 0.01) 100%);
+  --gradient-orange-subtle: linear-gradient(135deg, rgba(255, 90, 0, 0.04) 0%, transparent 100%);
+  --gradient-section-feature: linear-gradient(180deg, #FAFBFD 0%, #F2F6FA 100%);
+
+  /* ── Glass / Frosted ────────────────────────────────── */
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(229, 231, 235, 0.5);
+  --glass-blur: 12px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BASE LAYER — Global Element Styles
+   ═══════════════════════════════════════════════════════════ */
+
+@layer base {
+  /* ── Root ────────────────────────────────────────────── */
+  *,
+  *::before,
+  *::after {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+    min-height: 100dvh;
+  }
+
+  /* ── Focus Visible ──────────────────────────────────── */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 0;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* ── Selection ──────────────────────────────────────── */
+  ::selection {
+    background-color: oklch(0.55 0.17 240 / 0.2);
+    color: var(--foreground);
+  }
+
+  .dark ::selection {
+    background-color: oklch(0.64 0.13 240 / 0.3);
+  }
+
+  /* ── Scrollbar ──────────────────────────────────────── */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.75 0 0 / 0.3);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.6 0 0 / 0.5);
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: oklch(0.4 0 0 / 0.4);
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.5 0 0 / 0.5);
+  }
+
+  /* ── Media ──────────────────────────────────────────── */
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ── Reduced Motion ─────────────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   UTILITY LAYER — Custom Utility Classes
+   ═══════════════════════════════════════════════════════════ */
+
+@utility container-page {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+@utility container-narrow {
+  width: 100%;
+  max-width: 64rem;
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+@utility container-wide {
+  width: 100%;
+  max-width: 96rem;
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+@utility container-full {
+  width: 100%;
+  padding-inline: var(--container-padding);
+}
+
+@utility section-padding {
+  padding-block: var(--section-py);
+}
+
+@utility section-padding-sm {
+  padding-block: var(--section-py-sm);
+}
+
+@utility section-padding-lg {
+  padding-block: var(--section-py-lg);
+}
+
+@utility text-gradient-brand {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility bg-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+}
+
+@utility bg-gradient-hero {
+  background: var(--gradient-hero);
+}
+
+@utility bg-gradient-section {
+  background: var(--gradient-section);
+}
+
+@utility bg-gradient-card {
+  background: var(--gradient-card);
+}
+
+@utility shadow-brand-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+@utility shadow-brand-glow-lg {
+  box-shadow: var(--shadow-glow-lg);
+}
+
+@utility ring-brand {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+@utility transition-base {
+  transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+  transition-duration: 200ms;
+  transition-timing-function: var(--ease-smooth);
+}
+
+@utility transition-transform {
+  transition-property: transform;
+  transition-duration: 200ms;
+  transition-timing-function: var(--ease-smooth);
+}
+
+@utility transition-colors {
+  transition-property: color, background-color, border-color;
+  transition-duration: 200ms;
+  transition-timing-function: var(--ease-smooth);
+}
+
+@utility transition-spring {
+  transition-property: transform;
+  transition-duration: 300ms;
+  transition-timing-function: var(--ease-spring);
+}
+
+@utility hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility text-pretty {
+  text-wrap: pretty;
+}
+
+/* ─── Premium Enterprise Utilities ───────────────────── */
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+@utility shadow-card-hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+@utility shadow-premium {
+  box-shadow: var(--shadow-premium);
+}
+
+/* Enterprise subtle background patterns */
+@utility bg-dots-brand {
+  background-image: radial-gradient(circle, rgba(53, 85, 122, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+@utility bg-grid-brand {
+  background-image:
+    linear-gradient(to right, rgba(53, 85, 122, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(53, 85, 122, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@utility bg-subtle-radial {
+  background-image:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(53, 85, 122, 0.05) 0%, transparent 100%);
+}
+
+@utility bg-enterprise-mesh {
+  background-image:
+    radial-gradient(at 15% 20%, rgba(53, 85, 122, 0.07) 0%, transparent 50%),
+    radial-gradient(at 85% 80%, rgba(53, 85, 122, 0.05) 0%, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(245, 130, 32, 0.03) 0%, transparent 60%);
+}
+
+/* Premium card hover state */
+@utility card-premium {
+  background: var(--gradient-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition:
+    box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  &:hover {
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(53, 85, 122, 0.15);
+    transform: translateY(-3px);
+  }
+}
+
+/* Elegant icon container */
+@utility icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.875rem;
+  border: 1px solid var(--border-subtle);
+  background: var(--gradient-card);
+  box-shadow: var(--shadow-soft-xs);
+  transition:
+    background 250ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 250ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 250ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Section divider accent line */
+@utility accent-line-brand {
+  height: 3px;
+  width: 2.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #35557A, #F58220);
+}
+
+/* Overline pill badge */
+@utility overline-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.875rem 0.25rem 0.625rem;
+  border-radius: 9999px;
+  background-color: rgba(53, 85, 122, 0.08);
+  border: 1px solid rgba(53, 85, 122, 0.12);
+}

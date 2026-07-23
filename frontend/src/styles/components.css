@@ -1,0 +1,418 @@
+/* ═══════════════════════════════════════════════════════════
+   components.css — PT Adto Cipta Usaha Mandiri
+   Base CSS Patterns (Layout, Surfaces, Decorative)
+   No UI Components — only reusable CSS patterns
+   ═══════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════
+   LAYOUT PATTERNS
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Responsive Grid System ───────────────────────────── */
+
+@utility grid-auto-fill-xs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 1rem;
+}
+
+@utility grid-auto-fill-sm {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
+
+@utility grid-auto-fill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 1.5rem;
+}
+
+@utility grid-auto-fill-lg {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+  gap: 2rem;
+}
+
+@utility grid-auto-fit-sm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
+
+@utility grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1.5rem;
+}
+
+@utility grid-auto-fit-lg {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  gap: 2rem;
+}
+
+/* ── Stack (Vertical Spacing) ─────────────────────────── */
+
+@utility stack-xs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+@utility stack-sm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@utility stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@utility stack-md {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@utility stack-lg {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@utility stack-xl {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* ── Cluster (Horizontal Wrapping) ────────────────────── */
+
+@utility cluster-sm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+@utility cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+@utility cluster-lg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* ── Center (Flex Center) ─────────────────────────────── */
+
+@utility flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@utility flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@utility flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@utility flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* ── Aspect Ratios ────────────────────────────────────── */
+
+@utility aspect-hero {
+  aspect-ratio: 16 / 7;
+}
+
+@utility aspect-card {
+  aspect-ratio: 4 / 3;
+}
+
+@utility aspect-portrait {
+  aspect-ratio: 3 / 4;
+}
+
+@utility aspect-cinema {
+  aspect-ratio: 21 / 9;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SURFACE PATTERNS
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Elevated Surface ─────────────────────────────────── */
+
+@utility surface-base {
+  background-color: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+}
+
+@utility surface-elevated {
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+@utility surface-card {
+  background: var(--gradient-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition:
+    box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility surface-card-hover {
+  background: var(--gradient-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition:
+    box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  &:hover {
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(53, 85, 122, 0.15);
+    transform: translateY(-3px);
+  }
+}
+
+@utility surface-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: calc(var(--radius) * 1.5);
+}
+
+@utility surface-interactive {
+  background-color: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  transition:
+    background-color 200ms var(--ease-smooth),
+    border-color 200ms var(--ease-smooth);
+  cursor: pointer;
+  &:hover {
+    background-color: var(--accent);
+    border-color: var(--border-default);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION PATTERNS
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Section Header ───────────────────────────────────── */
+
+@utility section-header {
+  text-align: center;
+  max-width: 48rem;
+  margin-inline: auto;
+  margin-bottom: clamp(2rem, 4vw, 4rem);
+}
+
+/* ── Alternating Section Background ──────────────────── */
+
+@utility section-alt {
+  background: var(--gradient-section-alt);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DECORATIVE PATTERNS
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Dot Grid Background ─────────────────────────────── */
+
+@utility bg-dots {
+  background-image: radial-gradient(circle, var(--border-subtle) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ── Grid Line Background ─────────────────────────────── */
+
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ── Gradient Mesh Background ─────────────────────────── */
+
+@utility bg-mesh {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(at 20% 25%, oklch(0.55 0.17 240 / 0.06) 0%, transparent 50%),
+    radial-gradient(at 80% 75%, oklch(0.56 0.18 160 / 0.06) 0%, transparent 50%),
+    radial-gradient(at 50% 50%, oklch(0.62 0.15 310 / 0.04) 0%, transparent 60%);
+}
+
+.dark .bg-mesh {
+  background-image:
+    radial-gradient(at 20% 25%, oklch(0.55 0.17 240 / 0.1) 0%, transparent 50%),
+    radial-gradient(at 80% 75%, oklch(0.56 0.18 160 / 0.08) 0%, transparent 50%),
+    radial-gradient(at 50% 50%, oklch(0.62 0.15 310 / 0.06) 0%, transparent 60%);
+}
+
+/* ── Decorative Divider ───────────────────────────────── */
+
+@utility divider-gradient {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(53, 85, 122, 0.15) 20%,
+    rgba(53, 85, 122, 0.35) 50%,
+    rgba(53, 85, 122, 0.15) 80%,
+    transparent 100%
+  );
+  border: none;
+}
+
+/* ── Enterprise Section Accents ─────────────────────── */
+
+@utility section-accent-top {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(53, 85, 122, 0.2) 30%,
+      rgba(245, 130, 32, 0.3) 50%,
+      rgba(53, 85, 122, 0.2) 70%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+}
+
+/* ── Decorative Blob ──────────────────────────────────── */
+
+@utility blob {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+/* ── Decorative Noise Texture ─────────────────────────── */
+
+@utility bg-noise {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FORM PATTERNS
+   ═══════════════════════════════════════════════════════════ */
+
+@utility input-base {
+  display: flex;
+  height: 2.75rem;
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--input);
+  background-color: var(--background);
+  padding: 0.5rem 0.875rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--foreground);
+  transition:
+    border-color 200ms var(--ease-smooth),
+    box-shadow 200ms var(--ease-smooth);
+  &::placeholder {
+    color: var(--muted-foreground);
+  }
+  &:focus {
+    border-color: var(--ring);
+    box-shadow: 0 0 0 3px oklch(0.55 0.17 240 / 0.12);
+    outline: none;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE VISIBILITY
+   ═══════════════════════════════════════════════════════════ */
+
+@utility desktop-only {
+  @media (max-width: 1023px) {
+    display: none !important;
+  }
+}
+
+@utility mobile-only {
+  @media (min-width: 1024px) {
+    display: none !important;
+  }
+}
+
+@utility tablet-up {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PRINT
+   ═══════════════════════════════════════════════════════════ */
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  nav,
+  footer,
+  aside,
+  .no-print {
+    display: none !important;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+}

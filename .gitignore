@@ -1,0 +1,205 @@
+# ──────────────────────────────────────────────────────────
+# .gitignore — adto-company-profile
+# PT Adto Cipta Usaha Mandiri
+# ──────────────────────────────────────────────────────────
+
+# ══════════════════════════════════════════════════════════
+# GENERAL
+# ══════════════════════════════════════════════════════════
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+*.sublime-project
+*.sublime-workspace
+
+# ══════════════════════════════════════════════════════════
+# ENVIRONMENT
+# ══════════════════════════════════════════════════════════
+.env
+.env.local
+.env.development
+.env.staging
+.env.production
+.env.*.local
+!.env.example
+
+# ══════════════════════════════════════════════════════════
+# FRONTEND — Next.js / Node.js
+# ══════════════════════════════════════════════════════════
+
+# Dependencies
+frontend/node_modules/
+frontend/.pnp
+frontend/.pnp.js
+frontend/.pnp.cjs
+
+# Build
+frontend/.next/
+frontend/out/
+frontend/dist/
+frontend/build/
+frontend/.turbo/
+
+# Cache
+frontend/.eslintcache
+frontend/.cache/
+frontend/tsconfig.tsbuildinfo
+frontend/next-env.d.ts
+
+# Testing
+frontend/coverage/
+frontend/playwright-report/
+frontend/test-results/
+frontend/blob-report/
+
+# Debug
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# Bundle Analysis
+frontend/analyze/
+frontend/.next/analyze/
+
+# Sentry
+frontend/.sentryclirc
+
+# Storybook
+frontend/storybook-static/
+
+# Vercel
+frontend/.vercel
+
+# ══════════════════════════════════════════════════════════
+# BACKEND — Laravel / PHP
+# ══════════════════════════════════════════════════════════
+
+# Vendor
+backend/vendor/
+
+# Environment
+backend/.env
+backend/.env.backup
+backend/.env.production
+!backend/.env.example
+
+# Storage
+backend/storage/*.key
+backend/storage/app/public/services/*
+!backend/storage/app/public/services/.gitkeep
+backend/storage/app/public/projects/*
+!backend/storage/app/public/projects/.gitkeep
+backend/storage/app/public/blogs/*
+!backend/storage/app/public/blogs/.gitkeep
+backend/storage/app/public/team/*
+!backend/storage/app/public/team/.gitkeep
+backend/storage/app/public/clients/*
+!backend/storage/app/public/clients/.gitkeep
+backend/storage/app/public/testimonials/*
+!backend/storage/app/public/testimonials/.gitkeep
+backend/storage/app/public/gallery/*
+!backend/storage/app/public/gallery/.gitkeep
+backend/storage/app/public/media/*
+!backend/storage/app/public/media/.gitkeep
+backend/storage/app/backups/*
+!backend/storage/app/backups/.gitkeep
+backend/storage/app/temp/*
+!backend/storage/app/temp/.gitkeep
+
+# Cache
+backend/bootstrap/cache/*
+!backend/bootstrap/cache/.gitkeep
+backend/storage/framework/cache/data/*
+backend/storage/framework/sessions/*
+!backend/storage/framework/sessions/.gitkeep
+backend/storage/framework/testing/*
+!backend/storage/framework/testing/.gitkeep
+backend/storage/framework/views/*
+!backend/storage/framework/views/.gitkeep
+
+# Logs
+backend/storage/logs/*
+!backend/storage/logs/.gitkeep
+
+# PHPUnit
+backend/.phpunit.result.cache
+backend/.phpunit.cache/
+backend/coverage/
+
+# IDE
+backend/.phpstorm.meta.php
+backend/_ide_helper.php
+backend/_ide_helper_models.php
+
+# ══════════════════════════════════════════════════════════
+# DOCKER
+# ══════════════════════════════════════════════════════════
+docker/nginx/ssl/*.pem
+docker/nginx/ssl/*.key
+docker/nginx/ssl/*.crt
+docker/certbot/conf/
+docker/certbot/www/
+
+# ══════════════════════════════════════════════════════════
+# DATABASE
+# ══════════════════════════════════════════════════════════
+database/backups/*.sql
+database/backups/*.sql.gz
+database/backups/*.dump
+*.sqlite
+*.sqlite-journal
+
+# ══════════════════════════════════════════════════════════
+# LOGS
+# ══════════════════════════════════════════════════════════
+logs/frontend/*
+!logs/frontend/.gitkeep
+logs/backend/*
+!logs/backend/.gitkeep
+logs/nginx/*
+!logs/nginx/.gitkeep
+logs/mysql/*
+!logs/mysql/.gitkeep
+logs/redis/*
+!logs/redis/.gitkeep
+
+# ══════════════════════════════════════════════════════════
+# DEPLOYMENT
+# ══════════════════════════════════════════════════════════
+deployment/environments/development/.env.frontend
+deployment/environments/development/.env.backend
+deployment/environments/staging/.env.frontend
+deployment/environments/staging/.env.backend
+deployment/environments/production/.env.frontend
+deployment/environments/production/.env.backend
+deployment/ssl/*.pem
+deployment/ssl/*.key
+deployment/ssl/*.crt
+
+# ══════════════════════════════════════════════════════════
+# ASSETS (Large Files)
+# ══════════════════════════════════════════════════════════
+assets/videos/*.mp4
+assets/videos/*.webm
+assets/videos/*.mov
+*.psd
+*.ai
+
+# ══════════════════════════════════════════════════════════
+# MISC
+# ══════════════════════════════════════════════════════════
+*.log
+*.pid
+*.seed
+*.pid.lock
+.terraform/
+*.tfstate*

@@ -1,0 +1,201 @@
+import Link from 'next/link';
+
+import { Calendar, ChevronRight, Newspaper } from 'lucide-react';
+import { type Metadata } from 'next';
+
+import { HeroSection } from '@/components/molecules/hero-section-main';
+import { PageHeader } from '@/components/molecules/page-header';
+import { SectionWrapper } from '@/components/molecules/section-wrapper';
+import { Button } from '@/components/ui/button';
+import { generateMetadata } from '@/lib/utils/seo';
+
+import { NewsletterForm } from './newsletter-form';
+
+export const metadata: Metadata = generateMetadata({
+  title: 'News & Updates',
+  description:
+    'Stay updated with the latest company news, industry announcements, and achievements from PT Adto Cipta Usaha Mandiri.',
+});
+
+/**
+ * News/Press page
+ */
+export default function NewsPage() {
+  const featuredNews = {
+    title: 'Adto Cipta Awarded Major Infrastructure Contract in New Capital City (IKN)',
+    category: 'Featured',
+    date: 'October 15, 2024',
+    excerpt:
+      "PT Adto Cipta Usaha Mandiri has been selected as one of the key contractors for the development of essential utilities and infrastructure in Indonesia's new capital city, Nusantara.",
+    color: 'from-blue-600 to-indigo-700',
+  };
+
+  const newsItems = [
+    {
+      id: 1,
+      title: 'Company Expands Operations to Eastern Indonesia',
+      category: 'Company',
+      date: 'September 28, 2024',
+      excerpt:
+        'Opening of our new branch office in Makassar to better serve our growing client base in the eastern regions of Indonesia.',
+      color: 'from-slate-700 to-slate-900',
+    },
+    {
+      id: 2,
+      title: 'Recognized for Outstanding Safety Record in 2023',
+      category: 'Award',
+      date: 'August 12, 2024',
+      excerpt:
+        'Adto Cipta received the National Safety Excellence Award for achieving 5 million man-hours without Lost Time Injury (LTI).',
+      color: 'from-amber-500 to-yellow-600',
+    },
+    {
+      id: 3,
+      title: 'Adoption of New BIM Technologies for Future Projects',
+      category: 'Industry',
+      date: 'July 05, 2024',
+      excerpt:
+        'Implementing advanced Building Information Modeling (BIM) across all new major projects to enhance efficiency and collaboration.',
+      color: 'from-emerald-600 to-teal-700',
+    },
+    {
+      id: 4,
+      title: 'Partnership Announced with Global Energy Firm',
+      category: 'Company',
+      date: 'June 18, 2024',
+      excerpt:
+        'Strategic partnership formed to develop renewable energy infrastructure projects across Southeast Asia over the next five years.',
+      color: 'from-slate-700 to-slate-900',
+    },
+    {
+      id: 5,
+      title: 'Completion of Landmark Commercial Complex in Jakarta',
+      category: 'Company',
+      date: 'May 22, 2024',
+      excerpt:
+        "Successful handover of the central business district's newest mixed-use development, completed two months ahead of schedule.",
+      color: 'from-slate-700 to-slate-900',
+    },
+    {
+      id: 6,
+      title: 'CEO Speaks at National Construction Summit',
+      category: 'Industry',
+      date: 'April 10, 2024',
+      excerpt:
+        'Our leadership team shared insights on sustainable construction practices and digital transformation at the annual summit.',
+      color: 'from-emerald-600 to-teal-700',
+    },
+  ];
+
+  return (
+    <>
+      <PageHeader
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'News', href: '/news', active: true },
+        ]}
+        description="Stay updated with our latest corporate announcements."
+        title="News & Insights"
+      />
+
+      <HeroSection
+        align="left"
+        backgroundVariant="dark"
+        description="Stay up to date with our recent projects, corporate announcements, and industry insights."
+        overline="News & Press"
+        title="Corporate Updates."
+      />
+
+      <SectionWrapper background="alt">
+        {/* Featured News */}
+        <div className="border-border bg-background mb-16 flex flex-col border md:flex-row">
+          <div className="flex aspect-video w-full items-center justify-center bg-surface-secondary p-8 md:w-1/2">
+            <Newspaper className="text-muted-foreground/30 h-24 w-24" strokeWidth={1} />
+          </div>
+          <div className="flex w-full flex-col justify-center p-8 md:w-1/2 md:p-12">
+            <span className="mb-4 inline-block w-fit bg-brand-600 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white">
+              {featuredNews.category}
+            </span>
+            <div className="text-muted-foreground mb-4 flex items-center text-xs font-bold uppercase tracking-widest">
+              <Calendar className="mr-2 h-3.5 w-3.5" />
+              {featuredNews.date}
+            </div>
+            <h2 className="mb-4 font-heading text-2xl font-bold tracking-tight md:text-3xl">
+              {featuredNews.title}
+            </h2>
+            <p className="text-muted-foreground mb-8 text-sm leading-relaxed">
+              {featuredNews.excerpt}
+            </p>
+            <Button
+              asChild
+              className="w-fit rounded-none px-6 py-6 text-xs font-bold uppercase tracking-wider"
+              size="lg"
+            >
+              <Link href="#">
+                Read Full Story <ChevronRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+
+        {/* News Grid */}
+        <div className="border-border mb-8 flex items-center justify-between border-b pb-4">
+          <h2 className="font-heading mb-6 text-3xl font-bold text-foreground lg:text-4xl">Recent News</h2>
+        </div>
+
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {newsItems.map((item) => (
+            <div
+              key={item.id}
+              className="border-border bg-background group flex flex-col border transition-colors hover:border-brand-600"
+            >
+              <div className="flex aspect-video w-full items-center justify-center bg-surface-secondary p-8">
+                <Newspaper
+                  className="text-muted-foreground/30 h-12 w-12 transition-colors group-hover:text-brand-600"
+                  strokeWidth={1.5}
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-8">
+                <div className="mb-4 flex items-center justify-between">
+                  <span className="text-xs font-bold uppercase tracking-widest text-brand-600">
+                    {item.category}
+                  </span>
+                  <span className="text-muted-foreground flex items-center text-xs font-bold uppercase tracking-widest">
+                    <Calendar className="mr-1 h-3.5 w-3.5" />
+                    {item.date}
+                  </span>
+                </div>
+                <h3 className="mb-3 font-heading text-lg font-bold leading-tight">{item.title}</h3>
+                <p className="text-muted-foreground mb-6 flex-1 text-sm leading-relaxed">
+                  {item.excerpt}
+                </p>
+                <div className="border-border mt-auto border-t pt-4">
+                  <Link
+                    className="text-foreground inline-flex items-center text-xs font-bold uppercase tracking-widest transition-colors group-hover:text-brand-600"
+                    href="#"
+                  >
+                    Read More <ChevronRight className="ml-1 h-3.5 w-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </SectionWrapper>
+
+      {/* Newsletter Signup */}
+      <SectionWrapper className="border-border border-t bg-brand-50">
+        <div className="mx-auto max-w-2xl py-8 text-center">
+          <h2 className="mb-4 font-heading text-3xl font-bold uppercase tracking-wider">
+            Stay Informed
+          </h2>
+          <p className="text-muted-foreground mb-10 text-lg">
+            Subscribe to our newsletter to receive the latest news, project updates, and industry
+            insights directly in your inbox.
+          </p>
+          <NewsletterForm />
+        </div>
+      </SectionWrapper>
+    </>
+  );
+}

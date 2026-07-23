@@ -1,0 +1,732 @@
+
+
+CORPORATE HANDBOOK
+
+
+
+PT ADTO CIPTA USAHA MANDIRI
+
+Corporate Master Manual & Business Blueprint
+
+Dokumen No: MGT-MANUAL-001-2026
+
+Tanggal Efektif: Juli 2026
+
+Sifat Dokumen: Rahasia / Internal Terkendali
+
+Disahkan di Surakarta — Juli 2026
+
+Dewan Direksi PT Adto Cipta Usaha Mandiri
+
+
+
+HALAMAN PENGESAHAN
+
+Dokumen Corporate Master Manual & Business Blueprint ini secara resmi menjadi pedoman operasional, strategis, dan tata kelola tertinggi bagi PT Adto Cipta Usaha Mandiri. Seluruh kebijakan, standar prosedur, arsitektur sistem, dan peta jalan yang tercantum di dalamnya mengikat dan wajib diimplementasikan oleh seluruh jajaran manajemen serta karyawan.
+
+Penyimpangan atau modifikasi atas ketentuan di dalam pedoman ini memerlukan persetujuan tertulis dari Dewan Direksi.
+
+Disahkan di:  Surakarta
+
+Pada Tanggal:  Juli 2026
+
+Dewan Direksi PT Adto Cipta Usaha Mandiri
+
+( Tanda Tangan & Stempel Resmi )
+
+DAFTAR ISI
+
+HALAMAN PENGESAHAN	i
+
+DAFTAR ISI	ii
+
+DAFTAR GAMBAR	iii
+
+DAFTAR TABEL	iv
+
+
+
+BAB I — CORPORATE FOUNDATION & BRAND STRATEGY	1
+
+1.1  Pendahuluan	1
+
+1.2  Visi, Misi, dan Nilai Inti Perusahaan	1
+
+1.3  Brand Guideline & Sistem Identitas Visual	2
+
+1.4  Struktur Organisasi & RACI Matrix Dasar	2
+
+1.5  Standar Sistem Korespondensi B2B	4
+
+BAB II — SALES, PROCUREMENT & SUPPLY CHAIN SYSTEM	5
+
+2.1  Sistem Penjualan B2B (Sales System)	5
+
+2.2  Sistem Pengadaan dan Manajemen Vendor (Procurement System)	7
+
+2.3  Sistem Operasional dan Rantai Pasok (Supply Chain System)	8
+
+2.4  Peta Proses Bisnis Terpadu (Business Process Map)	9
+
+BAB III — INTERNAL OPERATIONS, FINANCE & HR SYSTEM	10
+
+3.1  Sistem Operasi Internal dan Manajemen Proyek	10
+
+3.2  Sistem Manajemen Keuangan (Finance System)	10
+
+3.3  Sistem Manajemen Sumber Daya Manusia (HR System)	11
+
+3.4  Sistem Tata Kelola Korporasi (Corporate Governance)	11
+
+BAB IV — DIGITAL, MARKETING & COMMUNICATION	14
+
+4.1  Company Profile Blueprint	14
+
+4.2  Arsitektur Situs Web dan Keamanan IT	14
+
+4.3  Strategi Pemasaran B2B (Account-Based Marketing)	14
+
+4.4  Protokol Komunikasi Korporat (Corporate Communication)	15
+
+BAB V — MASTER PLAN & DOCUMENT CONTROL	16
+
+5.1  Sistem Direktori Master SOP	16
+
+5.2  Sistem Manajemen Dokumen Digital	16
+
+5.3  Dashboard Manajemen dan Evaluasi Kinerja (KPI)	17
+
+5.4  Peta Jalan Bisnis Korporat (Corporate Business Roadmap)	18
+
+5.5  Ringkasan Eksekutif & Deklarasi	19
+
+LAMPIRAN	20
+
+A.  Format Baku Registrasi Pemasok (Vendor Registration)	20
+
+B.  Daftar Kode Formulir Mutu Operasional	20
+
+DAFTAR GAMBAR
+
+Gambar 1.1 — Struktur Organisasi Korporat	Bab I
+
+Gambar 2.1 — Struktur Corong Penjualan B2B (Sales Funnel)	Bab II
+
+Gambar 2.2 — Arsitektur Database CRM	Bab II
+
+Gambar 2.3 — Procurement Flow: Alur Pengadaan & Manajemen Vendor	Bab II
+
+Gambar 2.4 — Arsitektur Rantai Pasok & Pengendalian Persediaan	Bab II
+
+Gambar 2.5 — Alur 2.1: Peta Proses Bisnis Order-to-Cash	Bab II
+
+Gambar 3.1 — Alur 3.1: Siklus Manajemen Proyek Eksternal	Bab III
+
+Gambar 3.2 — Alur 3.2: Siklus Rekrutmen Berbasis Kompetensi	Bab III
+
+Gambar 3.3 — Kerangka Tata Kelola Korporasi (Governance Framework)	Bab III
+
+Gambar 3.4 — Matriks Risiko Korporat (Risk Matrix)	Bab III
+
+Gambar 4.1 — Alur 4.1: Kualifikasi Prospek Pemasaran B2B	Bab IV
+
+Gambar 5.1 — Alur 5.1: Pengesahan Dokumen SOP Baru	Bab V
+
+Gambar 5.2 — Arsitektur Manajemen Dokumen Digital	Bab V
+
+Gambar 5.3 — Dashboard Manajemen & Evaluasi Kinerja (KPI)	Bab V
+
+Gambar 5.4 — Peta Jalan Bisnis Korporat (Roadmap 36 Bulan)	Bab V
+
+DAFTAR TABEL
+
+Tabel 1.1 — Nilai Inti Perusahaan (Core Values A.D.T.O)	Bab I
+
+Tabel 1.2 — Matriks Wewenang Kepemimpinan Dasar (RACI)	Bab I
+
+Tabel 2.1 — Struktur Corong Penjualan B2B (Sales Funnel)	Bab II
+
+Tabel 2.2 — Matriks Skoring Evaluasi Vendor	Bab II
+
+Tabel 3.1 — Matriks Otorisasi Keuangan (Authority Matrix)	Bab III
+
+Tabel 5.1 — Klasifikasi Akses Dokumen (Tiering)	Bab V
+
+
+
+BAB I  CORPORATE FOUNDATION & BRAND STRATEGY
+
+1.1  Pendahuluan
+
+Bab ini menetapkan fondasi strategis, identitas korporat, dan struktur dasar PT Adto Cipta Usaha Mandiri. Seluruh elemen yang tercantum merupakan landasan filosofis dan operasional yang tidak dapat diubah tanpa persetujuan tertulis dari Direksi dan Pemegang Saham. Ketentuan dalam bab ini wajib dipahami, diinternalisasi, dan diimplementasikan oleh seluruh tingkatan manajemen dan karyawan tanpa terkecuali.
+
+1.2  Visi, Misi, dan Nilai Inti Perusahaan
+
+Sebagai entitas bisnis B2B yang bergerak di sektor pasokan industri, layanan pengadaan (procurement service), dan logistik berskala nasional, arah gerak perusahaan dipandu secara ketat oleh visi dan misi berikut.
+
+Visi Perusahaan
+
+“Menjadi mitra strategis terdepan berskala nasional dalam penyediaan kebutuhan industri dan manajemen rantai pasok, yang mengedepankan presisi, efisiensi, dan keandalan operasional.”
+
+
+
+Misi Perusahaan
+
+Keunggulan Produk: Menyediakan pasokan bahan kimia industri (chemical), suku cadang mekanikal/elektrikal (sparepart), serta material operasional dengan jaminan standar kualitas, keaslian (genuine), dan sertifikasi spesifikasi yang valid.
+
+Layanan Pengadaan Terintegrasi: Memberikan layanan manajemen pengadaan kepada klien melalui proses transparan, terukur, dan kompetitif untuk mendukung efisiensi biaya serta memangkas waktu tunggu (lead time).
+
+Ketahanan Logistik: Membangun infrastruktur logistik yang responsif guna memastikan ketepatan waktu pengiriman secara aman (zero defect), termasuk menjangkau medan operasional industri berat dan area tambang terpencil.
+
+Tata Kelola & Keselamatan: Menjalankan tata kelola bisnis berlandaskan kemitraan jangka panjang dan menjunjung tinggi standar Keselamatan, Kesehatan Kerja, dan Lindung Lingkungan (HSE/K3LL).
+
+
+
+Tabel 1.1 — Nilai Inti Perusahaan (Core Values A.D.T.O)
+
+Nilai Inti
+
+Definisi Profesional
+
+Indikator Perilaku Wajib (Do's)
+
+A — Adaptif
+
+Fleksibel dan tanggap dalam merespons dinamika, krisis, dan perubahan kebutuhan rantai pasok di sektor industri berat.
+
+Proaktif mencari alternatif principal saat krisis pasokan; terbuka menggunakan teknologi/sistem baru perusahaan.
+
+D — Dedikasi
+
+Berkomitmen penuh terhadap standar kualitas, akurasi spesifikasi teknis, dan pemenuhan Service Level Agreement (SLA).
+
+Memeriksa spesifikasi barang secara detail (100% akurasi); mengutamakan prosedur K3/HSE; konsisten mengatasi kendala logistik.
+
+T — Transparan
+
+Mengedepankan integritas mutlak, kejelasan, dan kejujuran dalam registrasi vendor, penentuan harga, dan korespondensi.
+
+Menolak tegas segala bentuk gratifikasi/suap; melaporkan potensi konflik kepentingan; menyajikan laporan aktual.
+
+O — Optimal
+
+Memberikan solusi operasional berorientasi efisiensi tertinggi bagi profitabilitas internal dan nilai tambah klien.
+
+Mencapai target penghematan biaya pengadaan (cost saving); menjaga kualitas zero defect saat serah terima material.
+
+1.3  Brand Guideline & Sistem Identitas Visual
+
+Identitas visual perusahaan berfungsi sebagai aset strategis untuk membangun brand trust di hadapan korporasi besar (Manufaktur, EPC, Oil & Gas).
+
+Arsitektur Logo: Logo wajib menggunakan kombinasi Logomark (simbol visual) dan Logotype (teks “Adto Cipta Usaha Mandiri” atau “ADTO”). Visualisasi geometris merepresentasikan kekuatan struktural dan kelancaran arus rantai pasok. Logo dilarang ditimpa elemen grafis lain dan wajib memiliki area kosong minimum (clear space).
+
+Warna Utama 1 — Industrial Navy (Hex #1A365D): Mewakili kepercayaan, profesionalisme, dan fondasi kokoh. Digunakan sebagai warna dominan pada logo dan latar belakang dokumen korporat.
+
+Warna Utama 2 — Safety/Amber Gold (Hex #D97706): Mewakili sektor energi, dinamika, dan keselamatan. Digunakan sebagai warna aksen, penyorot data, tombol situs web, dan marka operasional.
+
+Sistem Tipografi: Mengutamakan keterbacaan tinggi (high legibility). Judul utama (heading) menggunakan Montserrat atau Inter untuk kesan tegas dan modern; isi dokumen (body text) menggunakan Open Sans atau Roboto untuk mencegah kelelahan mata saat membaca rincian spesifikasi teknis.
+
+1.4  Struktur Organisasi & RACI Matrix Dasar
+
+Arsitektur sumber daya manusia perusahaan dibangun dengan model operasional yang ramping (lean) untuk memastikan agilitas dalam pengambilan keputusan B2B.
+
+
+
+Gambar 1.1 — Struktur Organisasi Korporat
+
+Direktur Utama (CEO): Mengendalikan arah strategis perusahaan, memimpin pembinaan hubungan tingkat tinggi (C-Level Executive) dengan klien utama, dan bertanggung jawab penuh atas keberlanjutan bisnis.
+
+Direktur Operasional & Keuangan: Mengontrol stabilitas modal kerja (working capital), memastikan kepatuhan tata kelola, dan mengambil keputusan final terkait persetujuan margin proyek serta manajemen risiko logistik.
+
+Sales & B2B Relation Manager: Memimpin departemen penjualan B2B, berfokus pada akuisisi klien, pengelolaan tender EPC, menjaga retensi Key Account, dan memaksimalkan Win Rate penawaran.
+
+Procurement & Sourcing Manager: Memimpin rantai pasok hulu, berfokus pada kurasi vendor, negosiasi Harga Pokok Pembelian (HPP), validasi keaslian produk, dan pencapaian target Cost Saving.
+
+Operations & Logistics Manager: Memimpin rantai pasok hilir, mengendalikan akurasi manajemen gudang, inspeksi kualitas (QC), hingga pengiriman barang yang memenuhi Service Level Agreement (SLA).
+
+
+
+Tabel 1.2 — Matriks Wewenang Kepemimpinan Dasar (RACI)
+
+Proses Bisnis Pokok
+
+CEO
+
+Dir. Operasional
+
+Sales Mgr
+
+Proc. Mgr
+
+Log. Mgr
+
+Persetujuan Target Penjualan Tahunan
+
+A
+
+C
+
+R
+
+I
+
+I
+
+Penetapan Harga Final & Margin Tender
+
+C
+
+A
+
+R
+
+I
+
+I
+
+Persetujuan Kontrak Prinsipal Inti
+
+A
+
+C
+
+I
+
+R
+
+I
+
+Persetujuan Ekspedisi Eksternal (3PL)
+
+I
+
+A
+
+I
+
+I
+
+R
+
+Penerbitan Laporan Keuangan
+
+A
+
+R
+
+I
+
+I
+
+I
+
+R = Responsible (Pelaksana)  •  A = Accountable (Penentu Final)  •  C = Consulted (Dimintai Pendapat)  •  I = Informed (Diberi Laporan)
+
+1.5  Standar Sistem Korespondensi B2B
+
+Korespondensi yang terstandarisasi mencerminkan manajemen risiko yang kuat. Seluruh komunikasi eksternal harus dicetak pada kertas A4 dengan margin atas/bawah/kiri 3 cm, kanan 2,5 cm, dan spasi baris 1,15.
+
+Standar Kop Surat: Logo resmi berwarna diletakkan di kiri atas. Tanggal dan nomor surat diletakkan di kanan atas dengan format baku: [No. Urut]/[KODE DEPT]-ADTO/[Bulan Romawi]/[Tahun]. Footer dibatasi garis Industrial Navy dan wajib memuat alamat lengkap, telepon, email, situs web, serta NPWP perusahaan.
+
+Standar Dokumen Penawaran (Quotation): Surat penawaran harga mutlak memuat lima elemen: (1) spesifikasi dan merek produk yang presisi, (2) waktu pengiriman (lead time), (3) syarat pembayaran (term of payment), (4) masa berlaku harga (validity), dan (5) tanda tangan berstempel dari pejabat berwenang.
+
+BAB II  SALES, PROCUREMENT & SUPPLY CHAIN SYSTEM
+
+2.1  Sistem Penjualan B2B (Sales System)
+
+Sistem penjualan difokuskan pada manajemen High-Ticket B2B Sales untuk membangun retensi jangka panjang, memastikan SLA terpenuhi, dan mengelola profil risiko keuangan klien korporat.
+
+Alur Kerja Penjualan: Dimulai dari identifikasi prospek (pabrik/EPC/tambang), dilanjutkan kualifikasi kebutuhan. Setelah meeting dan registrasi vendor, klien mengirimkan permintaan penawaran (Request for Quotation/RFQ). Tim menerbitkan dokumen quotation berbasis HPP. Negosiasi menyepakati harga, durasi pengiriman, dan Term of Payment (TOP) hingga Purchase Order (PO) diterbitkan klien. Proses diakhiri dengan pengiriman (Bukti Serah Terima/BAST), penagihan (invoice), dan penerimaan kas.
+
+Klasifikasi Pelanggan B2B: Klien dikelompokkan menjadi A-Class (transaksi strategis > Rp1 miliar/tahun, pembayaran lancar, pemesanan rutin), B-Class (transaksi Rp100 juta – Rp1 miliar/tahun dengan potensi bertumbuh), dan C-Class (transaksi spot/insidental < Rp100 juta/tahun, wajib DP tinggi).
+
+Key Account Management (KAM): Pengelolaan klien strategis meliputi fase Onboarding (penyelarasan K3/HSE dan regulasi), Retention (kunjungan bulanan dan prioritas alokasi barang), Development (skema penawaran lintas kategori/cross-selling), serta Quarterly Business Review (QBR) bersama tim pengadaan klien.
+
+
+
+Tabel 2.1 — Struktur Corong Penjualan B2B (Sales Funnel)
+
+Lapisan Funnel
+
+Objektif Strategis
+
+Penanggung Jawab (PIC)
+
+Target KPI
+
+Top (Awareness/Lead)
+
+Lolos kualifikasi ke Vendor List klien.
+
+Sales Executive
+
+20 prospek bisnis terkualifikasi per bulan.
+
+Mid (RFQ to Quotation)
+
+Mengonversi spesifikasi teknis menjadi harga.
+
+Estimator / Sales Executive
+
+80% permintaan RFQ direspons maksimal 24 jam.
+
+Bottom (PO & Closing)
+
+Mengamankan negosiasi menjadi kontrak.
+
+Account Manager
+
+30% Win Rate dari total dokumen penawaran.
+
+
+
+
+
+Gambar 2.1 — Struktur Corong Penjualan B2B (Sales Funnel)
+
+Arsitektur Database CRM: Pencatatan prospek wajib menggunakan sistem sentral (Customer Relationship Management) dengan parameter: ID Klien, Nama Perusahaan, Industri, PIC/Kontak, Klasifikasi Klien, Histori Penawaran/PO, Total Pendapatan (Revenue), Status Pipeline Penjualan, dan Tanggal Tindak Lanjut Selanjutnya.
+
+
+
+Gambar 2.2 — Arsitektur Database CRM
+
+2.2  Sistem Pengadaan dan Manajemen Vendor (Procurement System)
+
+Fungsi pengadaan bertujuan melindungi perusahaan dari risiko masuknya barang palsu, lonjakan beban biaya pokok, dan keterlambatan pengiriman prinsipal.
+
+Alur Kerja Pengadaan: Setelah menerima spesifikasi klien dari divisi penjualan, divisi Procurement melakukan komparasi ke minimal 3 vendor terdaftar. Proses dilanjutkan dengan Cost Benefit Analysis (CBA) untuk mengukur harga, waktu, dan garansi. Setelah limit otorisasi manajemen disetujui, dokumen PO internal diterbitkan untuk vendor, dilanjutkan pemantauan jadwal kedatangan, inspeksi mutu di gudang, dan pemberian skor kinerja vendor.
+
+Kualifikasi Vendor Resmi: Pemasok wajib melalui tahap registrasi yang mensyaratkan Nomor Induk Berusaha (NIB), NPWP, Akta Pendirian, Surat Dukungan Keagenan (Distributor Resmi), dan Sertifikasi Mutu/Produk terkait.
+
+Klasifikasi Tingkat Vendor: Diklasifikasikan menjadi Strategic Vendor (pabrikan utama untuk kontrak jangka panjang), Preferred Vendor (distributor tepercaya dengan ketepatan waktu >90%), Approved Vendor (pemasok umum/broker sah), dan Blacklist Vendor (entitas yang terbukti memanipulasi spesifikasi barang atau gagal kirim fatal).
+
+
+
+Gambar 2.3 — Procurement Flow: Alur Pengadaan & Manajemen Vendor
+
+
+
+Tabel 2.2 — Matriks Skoring Evaluasi Vendor (Per Semester)
+
+Parameter Penilaian
+
+Bobot
+
+Deskripsi
+
+Standar Skor (100)
+
+Kompetisi Harga
+
+30%
+
+HPP dibandingkan terhadap harga wajar di pasar.
+
+85–100 (Sangat Kompetitif)
+
+Kualitas Mutu
+
+30%
+
+Kesesuaian spesifikasi, rasio barang rusak (reject) < 1%.
+
+70–84 (Sesuai Standar)
+
+Ketepatan Waktu
+
+20%
+
+Kesesuaian jadwal kirim aktual versus janji di PO vendor.
+
+< 70 (Dihentikan/Hold)
+
+Responsivitas
+
+10%
+
+Kecepatan vendor dalam menindaklanjuti keluhan retur.
+
+Sesuai aktual pelayanan.
+
+Legal & HSE
+
+10%
+
+Validitas dokumen perizinan dan standar keamanan pengemasan.
+
+Sesuai ketepatan regulasi.
+
+Target KPI Procurement Manager: persentase Cost Saving bulanan & persentase On-Time In Full (OTIF) penerimaan dari vendor.
+
+2.3  Sistem Operasional dan Rantai Pasok (Supply Chain System)
+
+Fungsi logistik menjamin zero defect pada material operasional dan tidak ada penalti keterlambatan kontrak.
+
+Manajemen Logistik & Ekspedisi: Proses mencakup perencanaan rute optimal (darat/laut), penggunaan asuransi pengiriman terintegrasi, dan pemantauan armada. Bukti penerimaan (Proof of Delivery/POD) atau Surat Jalan mutlak harus berstempel resmi perusahaan klien, ditandatangani dengan nama terang, dan bertanggal.
+
+Pengendalian Persediaan (Inventory Control): Barang habis pakai (fast moving) dikendalikan via batasan minimum-maksimum. Suku cadang khusus (slow moving) diproses dengan sistem Just-In-Time berdasarkan pemesanan. Suku cadang kritis (critical item) dijaga dengan safety stock ketat berdasarkan histori konsumsi mesin klien. Material proyek dihabiskan langsung secara terukur tanpa menyisakan dead stock di gudang.
+
+Pengendalian Mutu Lintas Sektor (QC): Penerimaan material masuk (Incoming QC) wajib mencocokkan dokumen fisik dengan Certificate of Analysis/Origin. Penyimpanan di gudang (Storage QC) wajib mengawasi suhu ruangan untuk zat kimia berbahaya dan inspeksi korosi pada produk besi/baja. Pengiriman keluar (Delivery QC) memeriksa keamanan material pengikat (lashing) dan palet sebelum dimuat ke armada angkut. Keluhan klien ditindaklanjuti dengan solusi retur maksimal 2x24 jam kerja.
+
+
+
+Gambar 2.4 — Arsitektur Rantai Pasok & Pengendalian Persediaan
+
+2.4  Peta Proses Bisnis Terpadu (Business Process Map)
+
+Peta proses bisnis Order-to-Cash berikut mengintegrasikan seluruh fungsi Sales, Procurement, Finance, Gudang, dan Logistik dalam satu alur kendali end-to-end, dari penerimaan permintaan penawaran klien hingga penerimaan kas.
+
+
+
+Gambar 2.5 — Alur 2.1: Peta Proses Bisnis Order-to-Cash
+
+BAB III  INTERNAL OPERATIONS, FINANCE & HR SYSTEM
+
+3.1  Sistem Operasi Internal dan Manajemen Proyek
+
+Sistem ini mengatur tata kelola pengerjaan proyek pasokan terintegrasi demi memastikan pemenuhan komitmen (SLA) tanpa mengorbankan standar K3LL.
+
+Laporan Operasional Berjenjang: Pelaporan diwajibkan secara harian via aplikasi (status Delivery Order harian), mingguan (akurasi perputaran inventaris), bulanan (evaluasi tingkat kecelakaan/Zero Accident Ratio dan beban biaya logistik), serta tahunan (audit fisik inventaris total).
+
+Manajemen Risiko Operasional: Risiko penurunan kualitas produk termitigasi oleh asuransi pihak ketiga. Risiko pembengkakan lingkup kerja klien (scope creep) ditangani melalui klausul penolakan pengerjaan tanpa adanya Change Order yang diotorisasi secara finansial.
+
+KPI Operasional: Target evaluasi utama Direktur Operasional adalah On-Time In Full (OTIF) tingkat perusahaan dan nihil insiden fatal lapangan. Level manajer dan supervisor diukur melalui akurasi data stok di atas 99% dan 0% kesalahan pemilahan barang kiriman (picking error).
+
+
+
+Gambar 3.1 — Alur 3.1: Siklus Manajemen Proyek Eksternal
+
+3.2  Sistem Manajemen Keuangan (Finance System)
+
+Stabilitas finansial diamankan dengan mempercepat Siklus Konversi Kas (Cash Conversion Cycle) dan memutus risiko piutang gagal bayar (bad debt).
+
+Manajemen Piutang Klien (Accounts Receivable/AR): Penagihan (invoice/faktur pajak) wajib dikirimkan dalam 1x24 jam setelah POD sah diterima Finance. Piutang diawasi melalui daftar umur piutang (aging schedule). Peringatan penagihan dikirim pada H-7, H-1, dan H+1 tanggal jatuh tempo. Fasilitas kredit korporasi dan pengiriman dihentikan mutlak (Hold Order Policy) bagi klien dengan tunggakan lebih dari 60 hari.
+
+Manajemen Hutang Pemasok (Accounts Payable/AP): Tidak ada pembayaran kepada vendor tanpa validasi prinsip 3-Way Matching (kesesuaian PO pembelian, tanda terima gudang, dan tagihan vendor). Pencairan tagihan rutin dilakukan tersentralisasi secara massal hanya pada dua siklus (tanggal 15 dan 30) untuk memudahkan kontrol ketersediaan kas.
+
+KPI Departemen Keuangan: Pemampatan waktu Siklus Konversi Kas, akurasi laporan laba/rugi, penutupan buku akuntansi maksimal H+5 di bulan berikutnya, dan bebas denda keterlambatan perpajakan (0%).
+
+3.3  Sistem Manajemen Sumber Daya Manusia (HR System)
+
+Rekrutmen dirancang untuk menyaring talenta kompeten dan melatih kepatuhan teknis lapangan melalui penerapan budaya perusahaan A.D.T.O.
+
+Sistem Manajemen Kinerja: Evaluasi kinerja dilaksanakan per semester (setiap 6 bulan). Bobot KPI terbagi menjadi 70% berbasis pencapaian metrik bisnis (contoh: volume penjualan, ketepatan stok) dan 30% berdasarkan Core Values (contoh: kepatuhan memakai APD lapangan dan tingkat absensi absah). Karyawan peraih nilai “Sangat Baik” di 2 periode berurutan menjadi prioritas promosi/insentif.
+
+Matriks Pelatihan Pekerja: HR mewajibkan induksi standardisasi keselamatan (Bahan B3 & K3 Umum) bagi seluruh operator lapangan, serta pelatihan teknis penunjang B2B (strategi negosiasi korporasi & pengenalan komponen manufaktur).
+
+
+
+Gambar 3.2 — Alur 3.2: Siklus Rekrutmen Berbasis Kompetensi
+
+3.4  Sistem Tata Kelola Korporasi (Corporate Governance)
+
+Guna menjaga perusahaan dari risiko konflik kepentingan, fraud, dan ketidakpatuhan hukum, sistem beroperasi menggunakan batas wewenang yang dikunci.
+
+Sistem Pengendalian Internal: Terdapat pemisahan tugas (Segregation of Duties). Fungsi yang membuat permintaan bayar tidak dapat memegang otorisasi pencairan password rekening perusahaan. Operasional pengadaan wajib berbasis komparasi penawaran 3 vendor pemasok.
+
+Kepatuhan dan Audit Mutu: HR dan Legal secara ketat mengawasi kelayakan perizinan nasional (NIB, Penyalur Kimia Resmi, dan Perpajakan). Audit internal komprehensif dieksekusi minimal satu kali per tahun kalender. Temuan minor wajib memiliki Corrective Action Plan (langkah perbaikan) yang tuntas maksimal dalam 14 hari kerja.
+
+
+
+Gambar 3.3 — Kerangka Tata Kelola Korporasi (Governance Framework)
+
+
+
+Tabel 3.1 — Matriks Otorisasi Keuangan (Authority Matrix)
+
+Kategori Pengeluaran/Kontrak
+
+Limit Batasan Nilai
+
+Otorisasi Persetujuan
+
+Operasional & PO Vendor Kecil
+
+< Rp 50.000.000
+
+Manajer Peminta & Finance Manager
+
+Pengadaan Menengah
+
+Rp 50.000.001 – Rp 500.000.000
+
+Direktur Operasional & Keuangan
+
+Pengadaan Utama & Aset Modal
+
+> Rp 500.000.000
+
+Direktur Utama (CEO)
+
+MoU & Kontrak Korporasi
+
+Seluruh Skala Kontrak Hukum
+
+Direktur Utama (CEO) di atas meterai
+
+
+
+Sebagai pelengkap kerangka tata kelola, seluruh risiko operasional, finansial, dan kepatuhan dipetakan secara berkala menggunakan matriks probabilitas dan dampak berikut, guna menentukan prioritas mitigasi.
+
+
+
+Gambar 3.4 — Matriks Risiko Korporat (Risk Matrix)
+
+BAB IV  DIGITAL, MARKETING & COMMUNICATION
+
+4.1  Company Profile Blueprint
+
+Dokumen fisik dan digital (PDF) berskala premium merupakan gerbang lolosnya kualifikasi vendor pada industri berat (due diligence). Profil perusahaan dikonfigurasi melalui standar struktur dan mutu berikut.
+
+Struktur Publikasi: Dokumen dibuka dengan Executive Summary Direktur Utama, dilanjutkan penegasan legalitas NIB/NPWP dan kebijakan HSE (mutlak bagi EPC/tambang). Mengupas tuntas empat layanan inti pasokan (chemical, sparepart, layanan pengadaan, dukungan logistik), serta memperlihatkan infografis ekosistem seleksi jaminan keaslian (genuine) produk pemasok.
+
+SOP Manajemen Kualitas: Tata letak dikerjakan menggunakan perangkat lunak kolaboratif (seperti Figma). Hasil cetak fisik wajib berformat CMYK di atas 300 DPI, dan dokumen diulas ulang seluruh isinya (portofolio dan sertifikasi) pada setiap bulan Januari.
+
+4.2  Arsitektur Situs Web dan Keamanan IT
+
+Situs korporat (www.adto.co.id) adalah ekosistem digital 24/7 yang menyajikan portofolio sekaligus menyediakan portal administrasi bagi para calon mitra bisnis.
+
+Peta Situs B2B: Menu mencakup halaman Beranda dengan grafik kinerja penyerahan, halaman nilai korporat dan K3LL, rincian produk, dan portal khusus formulir registrasi serta penyerahan pakta integritas (Anti-Bribery Policy) untuk pendaftaran vendor supplier.
+
+Protokol Keamanan Infrastruktur: Sistem frontend diakomodasi oleh Content Management System, sementara portal backend terhubung via PHP/Flask. Pengamanan meliputi sertifikasi koneksi terenkripsi (SSL Grade-A), perlindungan halaman pintu masuk sistem dengan integritas pemindaian berkas otomatis (checksum verification), pemblokiran serangan retasan (brute-force), serta pencadangan basis data otonom berbasis komputasi awan.
+
+4.3  Strategi Pemasaran B2B (Account-Based Marketing)
+
+Alih-alih menyebar pemasaran luas untuk eceran, strategi difokuskan spesifik secara terarah (ABM) untuk memperoleh qualified leads yang berpotensi menjadi klien bervolume makro.
+
+Kanal Pemasaran Terarah: Publikasi studi kasus kelancaran pengiriman logistik pada halaman bisnis LinkedIn, optimalisasi indeks pencarian (SEO) mesin telusur, dan pengiriman paket korporat cetak eksklusif (direct mail) kepada Manajer Pengadaan dari prospek EPC dan entitas tambang besar.
+
+SOP Kepatuhan Bukti Teknis: Segala klaim pemasaran teknis atas produk dan kapasitas perusahaan di depan umum wajib dikalibrasi validitasnya melalui otorisasi Procurement Manager agar tidak terjadi pembengkakan janji penjualan (over-promising).
+
+
+
+Gambar 4.1 — Alur 4.1: Kualifikasi Prospek Pemasaran B2B
+
+4.4  Protokol Komunikasi Korporat (Corporate Communication)
+
+Tata kelola representasi menjaga nilai integritas korporasi dan mitigasi ketika perusahaan menghadapi krisis makro (force majeure logistik, insiden lapangan, atau guncangan reputasi pemasok).
+
+Standar Representasi Digital: Aset publikasi hanya memakai dokumentasi operasional dengan tingkat fotografi tinggi bersudut dramatis (cinematic depth of field & golden hour) guna menonjolkan profesionalisme industri struktural. Tanda tangan pos-el (email signature) karyawan dibakukan tanpa penambahan teks di luar format nama, jabatan, narahubung korporat, dan grafis protokol penolakan penyuapan korporat.
+
+Protokol Krisis Informasi (NDA): Spesifikasi tata letak klien, nilai HPP material, dan rincian kelemahan proyek bersifat sangat rahasia. Saat terjadi masalah massal di tingkat operasi yang melibatkan publisitas, penyampaian fakta eksternal hanya dikeluarkan oleh otoritas tunggal Direktur Utama (CEO) atau Direktur Operasional. Karyawan operator dilarang merespons secara reaktif dan lisan di media sosial.
+
+BAB V  MASTER PLAN & DOCUMENT CONTROL
+
+5.1  Sistem Direktori Master SOP (Standard Operating Procedure)
+
+Seluruh instruksi, tata letak, alur, dan formulir kerja diseragamkan dengan kodifikasi ISO agar memudahkan ketertelusuran historis audit mutu dan transisi rekrutmen SDM baru.
+
+Arsitektur Penomoran Dokumen: [KODE JENIS]-[KODE DEPARTEMEN]-[NOMOR URUT]-[TAHUN]. Kode Jenis meliputi: SOP (Prosedur Utama), WI (Instruksi Teknis Lapangan), FRM (Templat Formulir), POL (Kebijakan Direksi). Kode Departemen meliputi: MGT, SLS, PRC, OPR, FIN, HRD, ITD.
+
+Hierarki SOP: Dikelompokkan mulai Seri 100 untuk Manajerial/Legal, Seri 200 untuk Komersial & Pengadaan, Seri 300 untuk Rantai Pasok Pergudangan, hingga Seri 400 untuk Dukungan Internal Bisnis (HR/Keuangan).
+
+Pengendalian Distribusi Fisik: SOP yang didistribusikan ke area pergudangan/armada transportasi wajib menggunakan cetakan mutakhir yang dibubuhi cap tinta “CONTROLLED COPY”. Versi fotokopi tanpa cap resmi tidak diakui sebagai standar kerja.
+
+
+
+Gambar 5.1 — Alur 5.1: Pengesahan Dokumen SOP Baru
+
+5.2  Sistem Manajemen Dokumen Digital (Document Management System)
+
+Manajemen pengarsipan B2B yang tangguh berfungsi melindungi catatan sejarah PO, Berita Acara, dan kelayakan verifikasi pajak melalui komputasi server cloud dengan pengelompokan klasifikasi akses bertingkat (Role-Based Access Control).
+
+
+
+Tabel 5.1 — Klasifikasi Akses Dokumen (Tiering)
+
+Tingkat Akses
+
+Cakupan Dokumen
+
+Hak Akses
+
+Tier 1 — Sangat Rahasia
+
+Akta korporat, arus rekening giro/koran bank, audit finansial.
+
+Akses eksklusif BOD / Finansial.
+
+Tier 2 — Rahasia Terbatas
+
+Kontrak klien utama, histori Margin HPP, dokumen data karyawan.
+
+Format Read-Only terlindungi (Akses Manajer Terkait).
+
+Tier 3 — Materi Terbuka Internal
+
+Templat korespondensi B2B, SOP, presentasi.
+
+Akses staf pemilik domain e-mail perusahaan.
+
+
+
+Retensi Administratif: Dokumen bernilai tagihan harus dipindai (scanning resolusi tinggi) di hari yang sama dengan format YYYY-MM-DD_JenisDok_NamaEntitas. Berkas fisik asli masuk ke dalam lemari brankas dan disimpan untuk siklus retensi wajib minimal 5 tahun.
+
+
+
+Gambar 5.2 — Arsitektur Manajemen Dokumen Digital
+
+5.3  Dashboard Manajemen dan Evaluasi Kinerja (KPI)
+
+Pengambilan keputusan eksekutif meninggalkan asumsi laporan teks (spreadsheet) manual dan berpindah menuju pemusatan data analitik di balik portal antarmuka berbasis web (Traffic Light System).
+
+Layar Indikator (Dashboard Modules): Mencakup Modul Eksekutif (memantau arus kas riil, target serapan proyek aktif), Modul Operasi & Pengadaan (memantau skor riwayat ketepatan pasokan vendor dan utilitas OTIF angkut material), serta Modul Sales (memantau konversi target penawaran dan evaluasi pipeline RFQ).
+
+Rapat Ritme Bisnis (Management Cadence): Ditetapkan secara spesifik. Monthly Business Review (MBR) dijalankan pada minggu pertama untuk pembedahan laba/rugi, sementara Quarterly Business Review (QBR) menakar perubahan peta strategi korporat yang responsif terhadap situasi geopolitik suplai industri.
+
+
+
+Gambar 5.3 — Dashboard Manajemen & Evaluasi Kinerja (KPI)
+
+5.4  Peta Jalan Bisnis Korporat (Corporate Business Roadmap)
+
+Panduan laju eskalasi arah perusahaan 36 bulan ke depan dibagi secara disiplin dalam skema triwulanan dan pendanaan terfokus.
+
+Tahun 1 — Penetrasi Pasar & Pemantapan Siklus Kas: Mencetak rekam jejak B2B, meloloskan legalitas ke dalam lebih dari 20 daftar registrasi pasokan vendor korporat besar. Menstabilkan Siklus Konversi Kas tanpa kehabisan modal kerja.
+
+Tahun 2 — Keunggulan Otomasi Logistik Lapangan: Optimalisasi biaya melalui pemasangan sensor berbasis Internet of Things (IoT). Eksekusi absensi karyawan kurir dan pelacakan unit pasokan harian termonitor real-time dari pos web pusat dengan memadukan titik identifikasi lapangan/RFID dan mikrokontroler.
+
+Tahun 3 — Dominasi Skala & Konsolidasi Rantai Suplai: Merintis akuisisi fasilitas gudang independen permanen. Mengikat manufaktur principal mancanegara dalam ikatan pakta sole-distributor eksklusif guna menekan titik bawah HPP pengadaan, bergeser dari sekadar trader menuju Tier-1 Supplier di ekosistem industri berat nasional.
+
+
+
+Gambar 5.4 — Peta Jalan Bisnis Korporat (Roadmap 36 Bulan)
+
+5.5  Ringkasan Eksekutif & Deklarasi
+
+Corporate Master Manual & Business Blueprint ini menandai transisi fundamental PT Adto Cipta Usaha Mandiri dari model usaha inisiasi tradisional menuju arsitektur korporasi bersistem manajemen mutu setara ISO. Nilai purnajual korporat dideklarasikan bukan sebagai pemain penjaja eceran, melainkan jembatan rantai pasok industri terintegrasi bereputasi premium dengan integritas nihil cacat, legalitas absolut, dan determinasi logistik yang terukur.
+
+Dokumen paripurna ini harus menjadi acuan kerja seluruh insan PT Adto Cipta Usaha Mandiri. Mengeksekusi manual ini adalah mengeksekusi cetak biru kepastian ekspansi dominasi sektor infrastruktur di Nusantara.
+
+LAMPIRAN
+
+A.  Format Baku Registrasi Pemasok (Vendor Registration Minimum Requirement)
+
+Persyaratan mutlak pengunggahan dokumen dari calon mitra pemasok:
+
+Profil Legal Perusahaan (NIB, SIUP Aktif).
+
+Tanda Bukti NPWP & Laporan Validitas Domisili Kantor / Pabrikasi Fisik.
+
+Surat Keterangan Authorized Distributor/Agent dari Prinsipal Manufaktur Pusat (bila pemasok adalah rantai perantara).
+
+Persetujuan Formulir Anti-Bribery Policy bertanda tangan basah di atas meterai, ditujukan kepada PT Adto Cipta Usaha Mandiri.
+
+B.  Daftar Kode Formulir Mutu Operasional
+
+FRM-PRC-01: Form Permintaan Penawaran Harga (Request For Quotation / Sourcing Form).
+
+FRM-SLS-02: Form Pembukaan Data Rekening Pelanggan B2B (Client Account Opening).
+
+FRM-OPR-03: Berita Acara Penerimaan/Penolakan Material Gudang (Goods Receipt/Reject Report).
+
+FRM-FIN-04: Surat Persetujuan Pencairan Dana Anggaran Operasional Vendor (Payment Voucher Form).
+
+
+
+Dokumen ini adalah milik PT Adto Cipta Usaha Mandiri dan bersifat Rahasia / Internal Terkendali.
+
+Dilarang menggandakan, mendistribusikan, atau mengutip sebagian maupun keseluruhan isi dokumen ini tanpa izin tertulis dari Dewan Direksi.
+
+— Akhir Dokumen —
+

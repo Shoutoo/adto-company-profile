@@ -1,0 +1,470 @@
+/* ═══════════════════════════════════════════════════════════
+   animations.css — PT Adto Cipta Usaha Mandiri
+   Animation Keyframes & Motion Utilities
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Keyframe Definitions ────────────────────────────── */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-in-center {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes bounce-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes rotate-in {
+  from {
+    opacity: 0;
+    transform: rotate(-12deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes blur-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes slide-up-fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progress-bar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes skeleton-pulse {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes dialog-overlay-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dialog-content-show {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ANIMATION UTILITIES
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Stagger Delay System ─────────────────────────────── */
+
+@utility stagger-1 {
+  animation-delay: 50ms;
+}
+@utility stagger-2 {
+  animation-delay: 100ms;
+}
+@utility stagger-3 {
+  animation-delay: 150ms;
+}
+@utility stagger-4 {
+  animation-delay: 200ms;
+}
+@utility stagger-5 {
+  animation-delay: 250ms;
+}
+@utility stagger-6 {
+  animation-delay: 300ms;
+}
+@utility stagger-7 {
+  animation-delay: 350ms;
+}
+@utility stagger-8 {
+  animation-delay: 400ms;
+}
+@utility stagger-9 {
+  animation-delay: 450ms;
+}
+@utility stagger-10 {
+  animation-delay: 500ms;
+}
+@utility stagger-11 {
+  animation-delay: 550ms;
+}
+@utility stagger-12 {
+  animation-delay: 600ms;
+}
+
+/* ── Entrance Animations ──────────────────────────────── */
+
+@utility animate-blur-in {
+  animation: blur-in 0.6s var(--ease-smooth) forwards;
+}
+
+@utility animate-rotate-in {
+  animation: rotate-in 0.5s var(--ease-spring) forwards;
+}
+
+@utility animate-slide-up-fade {
+  animation: slide-up-fade 0.3s var(--ease-smooth) forwards;
+}
+
+@utility animate-slide-down-fade {
+  animation: slide-down-fade 0.3s var(--ease-smooth) forwards;
+}
+
+@utility animate-count-up {
+  animation: count-up 0.8s var(--ease-smooth) forwards;
+}
+
+@utility animate-marquee-right {
+  animation: marquee-right 40s linear infinite;
+}
+
+/* ── Skeleton / Loading ───────────────────────────────── */
+
+@utility animate-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--muted) 0%,
+    oklch(0.9 0 0 / 0.5) 40%,
+    oklch(0.9 0 0 / 0.5) 60%,
+    var(--muted) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-pulse 2s ease-in-out infinite;
+}
+
+.dark .animate-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--muted) 0%,
+    oklch(0.3 0 0 / 0.5) 40%,
+    oklch(0.3 0 0 / 0.5) 60%,
+    var(--muted) 100%
+  );
+  background-size: 200% 100%;
+}
+
+/* ── Radix Component Animations ───────────────────────── */
+
+@utility animate-accordion-down {
+  animation: accordion-down 0.2s var(--ease-smooth);
+}
+
+@utility animate-accordion-up {
+  animation: accordion-up 0.2s var(--ease-smooth);
+}
+
+@utility animate-dialog-overlay {
+  animation: dialog-overlay-show 0.2s var(--ease-smooth);
+}
+
+@utility animate-dialog-content {
+  animation: dialog-content-show 0.2s var(--ease-smooth);
+}
+
+/* ── Hover Lift ───────────────────────────────────────── */
+
+@utility hover-lift {
+  transition:
+    transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 280ms cubic-bezier(0.22, 1, 0.36, 1);
+  &:hover {
+    transform: translateY(-4px) scale(1.005);
+    box-shadow: var(--shadow-card-hover);
+  }
+}
+
+@utility hover-lift-sm {
+  transition:
+    transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 250ms cubic-bezier(0.22, 1, 0.36, 1);
+  &:hover {
+    transform: translateY(-2px) scale(1.002);
+    box-shadow: var(--shadow-soft-md);
+  }
+}
+
+/* ── Hover Scale ──────────────────────────────────────── */
+
+@utility hover-scale {
+  transition: transform 300ms var(--ease-spring);
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+@utility hover-scale-sm {
+  transition: transform 200ms var(--ease-spring);
+  &:hover {
+    transform: scale(1.015);
+  }
+}
+
+/* ── Hover Glow ───────────────────────────────────────── */
+
+@utility hover-glow {
+  transition: box-shadow 300ms var(--ease-smooth);
+  &:hover {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+/* ── Active Press ─────────────────────────────────────── */
+
+@utility active-press {
+  transition: transform 100ms var(--ease-smooth);
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+/* ── Image Hover Zoom ─────────────────────────────────── */
+
+@utility img-hover-zoom {
+  overflow: hidden;
+  border-radius: var(--radius-image);
+  & img {
+    transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+/* ── Underline Hover ──────────────────────────────────── */
+
+@utility link-underline {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--brand);
+    transition: width 300ms var(--ease-smooth);
+  }
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+/* ── Pre-animation State ──────────────────────────────── */
+
+@utility will-animate {
+  opacity: 0;
+}

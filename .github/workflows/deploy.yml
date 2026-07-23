@@ -1,0 +1,55 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and push Docker images
+        env:
+          DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          echo ${{ secrets.DOCKER_PASSWORD }} | docker login $DOCKER_REGISTRY -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+          docker build -t $DOCKER_REGISTRY/adto-backend:$IMAGE_TAG -f docker/php/Dockerfile ./backend
+          docker build -t $DOCKER_REGISTRY/adto-frontend:$IMAGE_TAG -f docker/node/Dockerfile ./frontend
+          docker push $DOCKER_REGISTRY/adto-backend:$IMAGE_TAG
+          docker push $DOCKER_REGISTRY/adto-frontend:$IMAGE_TAG
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            cd /srv/adto-company-profile
+            git pull origin main
+            export IMAGE_TAG=${{ github.sha }}
+            docker compose pull
+            docker compose up -d --remove-orphans
+            docker compose exec backend php artisan migrate --force
+            docker compose exec backend php artisan config:cache
+            docker compose exec backend php artisan route:cache
+            docker compose exec backend php artisan view:cache
+            docker compose exec backend php artisan storage:link
+            docker image prune -f
+            echo "Deployment complete: $IMAGE_TAG"
+
+      - name: Health check
+        run: |
+          sleep 15
+          curl -f ${{ secrets.APP_URL }}/api/v1/health || exit 1

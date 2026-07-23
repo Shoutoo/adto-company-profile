@@ -1,0 +1,85 @@
+# ──────────────────────────────────────────────────────────
+# EditorConfig — PT Adto Cipta Usaha Mandiri
+# https://editorconfig.org
+# ──────────────────────────────────────────────────────────
+
+root = true
+
+# ── All Files ────────────────────────────────────────────
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# ── TypeScript / JavaScript ──────────────────────────────
+[*.{ts,tsx,js,jsx,mjs,cjs}]
+indent_size = 2
+max_line_length = 100
+
+# ── JSON ─────────────────────────────────────────────────
+[*.{json,jsonc}]
+indent_size = 2
+
+# ── YAML ─────────────────────────────────────────────────
+[*.{yml,yaml}]
+indent_size = 2
+
+# ── CSS / SCSS ───────────────────────────────────────────
+[*.{css,scss,sass}]
+indent_size = 2
+
+# ── HTML ─────────────────────────────────────────────────
+[*.{html,htm}]
+indent_size = 2
+
+# ── PHP ──────────────────────────────────────────────────
+[*.php]
+indent_size = 4
+
+# ── Python ───────────────────────────────────────────────
+[*.py]
+indent_size = 4
+
+# ── Shell Scripts ────────────────────────────────────────
+[*.{sh,bash,zsh}]
+indent_size = 2
+
+# ── Docker ───────────────────────────────────────────────
+[Dockerfile*]
+indent_size = 2
+
+[docker-compose*.{yml,yaml}]
+indent_size = 2
+
+# ── Markdown ─────────────────────────────────────────────
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = 80
+
+# ── Makefile ─────────────────────────────────────────────
+[Makefile]
+indent_style = tab
+indent_size = 4
+
+# ── SQL ──────────────────────────────────────────────────
+[*.sql]
+indent_size = 2
+
+# ── Config ───────────────────────────────────────────────
+[*.{conf,cnf,ini,cfg}]
+indent_size = 2
+
+# ── Blade Templates ─────────────────────────────────────
+[*.blade.php]
+indent_size = 4
+
+# ── XML / SVG ────────────────────────────────────────────
+[*.{xml,svg}]
+indent_size = 2
+
+# ── Env Files ────────────────────────────────────────────
+[.env*]
+insert_final_newline = true
