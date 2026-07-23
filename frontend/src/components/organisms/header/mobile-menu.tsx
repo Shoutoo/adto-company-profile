@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect } from 'react';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -32,16 +34,25 @@ export function MobileMenu() {
     return pathname.startsWith(href);
   };
 
+  useEffect(() => {
+    // Prevent scrolling when menu is open
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
+
   return (
     <motion.div
       animate={{ opacity: 1, y: 0 }}
-      className="bg-background fixed inset-x-0 top-16 z-40 border-b shadow-none lg:hidden"
+      className="fixed inset-x-0 bottom-0 top-20 z-[100] overflow-y-auto lg:hidden"
+      style={{ backgroundColor: '#ffffff', boxShadow: '0 20px 60px rgba(0,0,0,.08)' }}
       exit={{ opacity: 0, y: -10 }}
       initial={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.2 }}
     >
-      <nav aria-label="Mobile navigation" className="container-page py-6">
-        <ul className="space-y-1">
+      <nav aria-label="Mobile navigation" className="container-page flex min-h-full flex-col py-6 pb-24 bg-white">
+        <ul className="space-y-1 flex-1">
           {PUBLIC_NAV_ITEMS.map((item, index) => (
             <motion.li
               key={item.href}

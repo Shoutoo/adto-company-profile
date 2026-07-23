@@ -22,19 +22,16 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-4">
-            <Link className="mb-6 inline-flex items-center gap-3" href={ROUTES.HOME}>
-              <div className="relative h-10 w-auto min-w-[40px] brightness-0 invert">
+            <Link className="mb-6 inline-flex items-center" href={ROUTES.HOME}>
+              <div className="relative h-14 w-auto min-w-[56px] brightness-0 invert">
                 <Image 
                   src={siteConfig.url.logo} 
                   alt={`${siteConfig.company.name} Logo`} 
-                  width={40} 
-                  height={40}
-                  className="object-contain"
+                  width={56} 
+                  height={56}
+                  className="h-full w-auto object-contain"
                 />
               </div>
-              <span className="font-heading text-2xl font-bold uppercase tracking-wider text-white">
-                {siteConfig.company.shortName}
-              </span>
             </Link>
             <p className="mb-6 max-w-xs text-sm leading-relaxed text-gray-400">
               {siteConfig.company.description}
