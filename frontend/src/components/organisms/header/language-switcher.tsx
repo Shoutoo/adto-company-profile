@@ -29,7 +29,7 @@ export function LanguageSwitcher() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="group flex items-center gap-1.5 rounded-full border border-border bg-white px-3 py-1.5 text-sm font-semibold shadow-sm transition-all hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-brand-500/20 data-[state=open]:bg-slate-50">
+      <DropdownMenuTrigger className="group flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm font-semibold shadow-sm transition-all hover:bg-slate-50 hover:shadow focus:outline-none focus:ring-2 focus:ring-brand-500/20 data-[state=open]:bg-slate-50">
         <Globe className="h-4 w-4 text-slate-500 transition-colors group-hover:text-brand-600" />
         <span className="flex items-center gap-1.5 text-slate-700">
           <span className="text-base leading-none">{currentLocaleObj.flag}</span>

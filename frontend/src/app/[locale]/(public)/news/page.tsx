@@ -1,26 +1,34 @@
 import { Link } from '@/i18n/routing';
 
 import { Calendar, ChevronRight, Newspaper } from 'lucide-react';
-import { type Metadata } from 'next';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { HeroSection } from '@/components/molecules/hero-section-main';
 import { PageHeader } from '@/components/molecules/page-header';
 import { SectionWrapper } from '@/components/molecules/section-wrapper';
 import { Button } from '@/components/ui/button';
-import { generateMetadata } from '@/lib/utils/seo';
 
 import { NewsletterForm } from './newsletter-form';
 
-export const metadata: Metadata = generateMetadata({
-  title: 'News & Updates',
-  description:
-    'Stay updated with the latest company news, industry announcements, and achievements from PT Adto Cipta Usaha Mandiri.',
-});
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'SEO' });
+  return {
+    title: t('news_title'),
+    description: t('news_desc'),
+  };
+}
 
 /**
  * News/Press page
  */
-export default function NewsPage() {
+export default async function NewsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const tBlog = await getTranslations('Blog');
+  const tNav = await getTranslations('Navbar');
+
   const featuredNews = {
     title: 'Adto Cipta Awarded Major Infrastructure Contract in New Capital City (IKN)',
     category: 'Featured',
@@ -91,18 +99,18 @@ export default function NewsPage() {
     <>
       <PageHeader
         breadcrumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'News', href: '/news', active: true },
+          { label: tNav('home'), href: '/' },
+          { label: tNav('news'), href: '/news', active: true },
         ]}
-        description="Stay updated with our latest corporate announcements."
-        title="News & Insights"
+        description={tBlog('hero_desc')}
+        title={tBlog('hero_title')}
       />
 
       <HeroSection
         align="left"
         backgroundVariant="dark"
-        description="Stay up to date with our recent projects, corporate announcements, and industry insights."
-        overline="News & Press"
+        description={tBlog('hero_desc')}
+        overline={tBlog('title')}
         title="Corporate Updates."
       />
 

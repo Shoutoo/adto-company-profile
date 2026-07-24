@@ -1,41 +1,20 @@
 import { TrendingUp, Heart, GraduationCap, Users, MapPin, Briefcase } from 'lucide-react';
-import { type Metadata } from 'next';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { CtaSection } from '@/components/molecules/cta-section';
 import { HeroSection } from '@/components/molecules/hero-section-main';
 import { PageHeader } from '@/components/molecules/page-header';
 import { SectionWrapper } from '@/components/molecules/section-wrapper';
 import { Button } from '@/components/ui/button';
-import { PAGE_SEO } from '@/lib/constants/seo.constants';
-import { generateMetadata } from '@/lib/utils/seo';
 
-export const metadata: Metadata = generateMetadata({
-  title: 'Career Opportunities',
-  description: PAGE_SEO?.CAREER?.description || 'Join our growing team of professionals.',
-});
-
-const BENEFITS = [
-  {
-    title: 'Career Growth',
-    description: 'Clear progression paths and opportunities for advancement.',
-    icon: TrendingUp,
-  },
-  {
-    title: 'Health Benefits',
-    description: 'Comprehensive health and insurance coverage for you and your family.',
-    icon: Heart,
-  },
-  {
-    title: 'Training Programs',
-    description: 'Continuous learning through internal and external training.',
-    icon: GraduationCap,
-  },
-  {
-    title: 'Team Culture',
-    description: 'Collaborative environment with regular team-building activities.',
-    icon: Users,
-  },
-];
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'SEO' });
+  return {
+    title: t('career_title'),
+    description: t('career_desc'),
+  };
+}
 
 const OPEN_POSITIONS = [
   {
@@ -74,23 +53,52 @@ const OPEN_POSITIONS = [
  * Career Page
  * Server Component
  */
-export default function CareerPage() {
+export default async function CareerPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const tCareer = await getTranslations('Career');
+  const tNav = await getTranslations('Navbar');
+
+  const BENEFITS = [
+    {
+      title: 'Career Growth',
+      description: 'Clear progression paths and opportunities for advancement.',
+      icon: TrendingUp,
+    },
+    {
+      title: 'Health Benefits',
+      description: 'Comprehensive health and insurance coverage for you and your family.',
+      icon: Heart,
+    },
+    {
+      title: 'Training Programs',
+      description: 'Continuous learning through internal and external training.',
+      icon: GraduationCap,
+    },
+    {
+      title: 'Team Culture',
+      description: 'Collaborative environment with regular team-building activities.',
+      icon: Users,
+    },
+  ];
+
   return (
     <>
       <PageHeader
         breadcrumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'Careers', href: '/career', active: true },
+          { label: tNav('home'), href: '/' },
+          { label: tNav('career'), href: '/career', active: true },
         ]}
-        description="Join our growing team of professionals."
-        title="Career Opportunities"
+        description={tCareer('hero_desc')}
+        title={tCareer('hero_title')}
       />
 
       <HeroSection
         align="left"
         backgroundVariant="dark"
-        description="Build your career with an industry leader. We are always looking for passionate professionals to join our diverse team."
-        overline="Join Our Team"
+        description={tCareer('hero_desc')}
+        overline={tCareer('title')}
         title="Build the Future With Us."
         imageUrl="/images/career_collaboration_1784816770977.png"
       />

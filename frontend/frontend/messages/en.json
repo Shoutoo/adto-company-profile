@@ -1,0 +1,157 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "products": "Products",
+    "industries": "Industries",
+    "projects": "Projects",
+    "case_studies": "Case Studies",
+    "blog": "Blog",
+    "news": "News & Media",
+    "knowledge_center": "Knowledge Center",
+    "media_gallery": "Media Gallery",
+    "career": "Career",
+    "contact": "Contact",
+    "get_quote": "Get a Quote",
+    "vendor_registration": "Vendor Registration"
+  },
+  "Hero": {
+    "overline": "PT Andalan Daya Tata Olah",
+    "title": "Empowering Industries with Reliable Solutions",
+    "description": "Leading provider of comprehensive industrial solutions, delivering excellence through innovation, quality, and commitment.",
+    "cta_primary": "Discover Our Services",
+    "cta_secondary": "Contact Us"
+  },
+  "About": {
+    "title": "About Us",
+    "hero_title": "Driving Industrial Excellence",
+    "hero_desc": "We are committed to delivering top-tier industrial solutions that drive efficiency, reliability, and sustainable growth for our partners.",
+    "mission": "Our Mission",
+    "vision": "Our Vision",
+    "why_us": "Why Choose Us"
+  },
+  "Services": {
+    "title": "Our Services",
+    "hero_title": "Comprehensive Industrial Solutions",
+    "hero_desc": "We offer a wide range of services designed to meet the rigorous demands of modern industrial operations.",
+    "view_detail": "View Detail",
+    "learn_more": "Learn More",
+    "overview": "Overview",
+    "description": "Service Description",
+    "benefits": "Benefits",
+    "gallery": "Gallery",
+    "faq": "FAQ",
+    "industrial_supply": "Industrial Supply",
+    "project_management": "Project Management",
+    "engineering": "Engineering",
+    "logistics": "Logistics"
+  },
+  "Projects": {
+    "title": "Our Portfolio",
+    "hero_title": "Successful Project Deliveries",
+    "hero_desc": "Explore our track record of excellence in delivering complex industrial projects on time and within budget.",
+    "technology": "Technology",
+    "timeline": "Timeline",
+    "result": "Result",
+    "overview": "Project Overview",
+    "challenge": "The Challenge",
+    "approach": "Our Approach"
+  },
+  "Blog": {
+    "title": "Insights",
+    "hero_title": "Industry Insights & News",
+    "hero_desc": "Stay updated with the latest trends, technologies, and best practices in the industrial sector.",
+    "author": "Author",
+    "publish_date": "Publish Date",
+    "category": "Category",
+    "reading_time": "min read",
+    "share": "Share",
+    "related": "Related Articles",
+    "prev": "Previous",
+    "next": "Next",
+    "read_more": "Read More"
+  },
+  "Career": {
+    "title": "Career",
+    "hero_title": "Build Your Career With Us",
+    "hero_desc": "Join a team of passionate professionals dedicated to shaping the future of industrial solutions.",
+    "job_description": "Job Description",
+    "requirements": "Requirements",
+    "benefit": "Benefits",
+    "location": "Location",
+    "employment_type": "Employment Type",
+    "apply_button": "Apply Now",
+    "department": "Department"
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "hero_title": "Get in Touch",
+    "hero_desc": "We're here to answer any questions you may have. Reach out to us and we'll respond as soon as we can.",
+    "name": "Full Name",
+    "name_placeholder": "Enter your full name",
+    "email": "Email Address",
+    "email_placeholder": "Enter your email",
+    "phone": "Phone Number",
+    "phone_placeholder": "Enter your phone number",
+    "company": "Company Name",
+    "company_placeholder": "Enter your company name",
+    "message": "Your Message",
+    "message_placeholder": "How can we help you?",
+    "submit": "Send Message",
+    "validation": {
+      "required": "This field is required",
+      "email": "Please enter a valid email",
+      "min_length": "Must be at least 3 characters"
+    },
+    "office": "Head Office",
+    "call_us": "Call Us",
+    "email_us": "Email Us"
+  },
+  "CTA": {
+    "title": "Ready to Elevate Your Business?",
+    "subtitle": "Partner with us to unlock your full industrial potential.",
+    "button": "Get in Touch"
+  },
+  "Partners": {
+    "title": "Valued Partners",
+    "subtitle": "Trusted By National Leaders"
+  },
+  "Footer": {
+    "description": "Leading provider of comprehensive industrial solutions.",
+    "quick_links": "Quick Links",
+    "contact_info": "Contact Info",
+    "rights": "All rights reserved.",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_service": "Terms of Service"
+  },
+  "NotFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "back_home": "Back to Home"
+  },
+  "Common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "empty": "No data found."
+  },
+  "SEO": {
+    "home_title": "Home | PT Andalan Daya Tata Olah",
+    "home_desc": "Leading provider of comprehensive industrial solutions, delivering excellence through innovation, quality, and commitment.",
+    "about_title": "About Us | PT Andalan Daya Tata Olah",
+    "about_desc": "Learn more about our mission, vision, and commitment to driving industrial excellence.",
+    "services_title": "Our Services | PT Andalan Daya Tata Olah",
+    "services_desc": "Explore our wide range of comprehensive industrial solutions and services.",
+    "projects_title": "Projects | PT Andalan Daya Tata Olah",
+    "projects_desc": "Discover our successful project deliveries and track record of excellence.",
+    "blog_title": "Blog & Insights | PT Andalan Daya Tata Olah",
+    "blog_desc": "Read the latest industry insights, news, and best practices from our experts.",
+    "career_title": "Career | PT Andalan Daya Tata Olah",
+    "career_desc": "Join our dynamic team and build a rewarding career in the industrial sector.",
+    "contact_title": "Contact Us | PT Andalan Daya Tata Olah",
+    "contact_desc": "Get in touch with us for inquiries, partnerships, or support."
+  }
+}

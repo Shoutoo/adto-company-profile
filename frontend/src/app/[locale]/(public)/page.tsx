@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import {
   Shield,
@@ -20,107 +21,77 @@ import { HeroSection } from '@/components/molecules/hero-section-main';
 import { SectionWrapper } from '@/components/molecules/section-wrapper';
 import { Button } from '@/components/ui/button';
 import { ROUTES } from '@/lib/constants/routes.constants';
-import { PAGE_SEO } from '@/lib/constants/seo.constants';
-import { generateMetadata as genMeta } from '@/lib/utils/seo';
 
-import type { Metadata } from 'next';
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'SEO' });
+  return {
+    title: t('home_title'),
+    description: t('home_desc'),
+  };
+}
 
-export const metadata: Metadata = PAGE_SEO.HOME
-  ? genMeta(PAGE_SEO.HOME)
-  : { title: 'PT Adto Cipta Usaha Mandiri' };
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const tHero = await getTranslations('Hero');
+  const tAbout = await getTranslations('About');
+  const tServices = await getTranslations('Services');
+  const tProjects = await getTranslations('Projects');
+  const tBlog = await getTranslations('Blog');
+  const tPartners = await getTranslations('Partners');
+  const tContact = await getTranslations('Contact');
+  const tCta = await getTranslations('CTA');
+  const tNav = await getTranslations('Navbar');
 
-const SERVICES = [
-  {
-    icon: Zap,
-    image: '/images/service_chemical_1784816687085.png',
-    title: 'Chemical Drilling & Industrial',
-    description:
-      'Bentonite, Barite, Caustic Soda, Polymer, dll. API Grade & Industrial Grade. Ready stock Depok.',
-  },
-  {
-    icon: Wrench,
-    image: '/images/service_mechanical_1784816644706.png',
-    title: 'Sparepart Alat Berat & Pump',
-    description: 'Supply sparepart Caterpillar, Komatsu, pompa Schlumberger. Pengadaan cepat untuk unit breakdown.',
-  },
-  {
-    icon: Truck,
-    image: '/images/service_heavy_1784816700775.png',
-    title: 'Mobilisasi & Transportasi',
-    description: 'Armada truk tangki, tronton, lowbed. Handle pengiriman chemical & alat berat ke remote area. GPS tracking 24 jam.',
-  },
-];
+  const STATS = [
+    { value: '< 24h', label: 'Max Delivery Time' },
+    { value: '100%', label: 'Quality Assurance' },
+    { value: '0', label: 'Zero Defect Policy' },
+    { value: '24/7', label: 'GPS Tracking' },
+  ];
 
-const STATS = [
-  { value: '< 24h', label: 'Max Delivery Time' },
-  { value: '100%', label: 'Quality Assurance' },
-  { value: '0', label: 'Zero Defect Policy' },
-  { value: '24/7', label: 'GPS Tracking' },
-];
+  const PROJECTS = [
+    { title: 'Pengadaan Bentonite API Grade', category: 'Chemical Drilling', year: '2026' },
+    { title: 'Mobilisasi Alat Berat ke Site Cepu', category: 'Transportasi', year: '2026' },
+    { title: 'Supply Sparepart Pompa Schlumberger', category: 'Industrial Supply', year: '2026' },
+  ];
 
-const PROJECTS = [
-  { title: 'Pengadaan Bentonite API Grade', category: 'Chemical Drilling', year: '2026' },
-  { title: 'Mobilisasi Alat Berat ke Site Cepu', category: 'Transportasi', year: '2026' },
-  { title: 'Supply Sparepart Pompa Schlumberger', category: 'Industrial Supply', year: '2026' },
-];
+  const NEWS = [
+    {
+      title: 'Penerapan ISO 45001 & Sistem Manajemen K3LL',
+      date: 'Jul 15, 2026',
+      category: 'Corporate',
+    },
+    {
+      title: 'Restock 50 Ton Bentonite API Grade di Gudang Depok',
+      date: 'Jul 05, 2026',
+      category: 'Supply Chain',
+    },
+    {
+      title: 'Peresmian Armada Truk Tangki Terbaru',
+      date: 'Jun 20, 2026',
+      category: 'Logistik',
+    },
+  ];
 
-const NEWS = [
-  {
-    title: 'Penerapan ISO 45001 & Sistem Manajemen K3LL',
-    date: 'Jul 15, 2026',
-    category: 'Corporate',
-  },
-  {
-    title: 'Restock 50 Ton Bentonite API Grade di Gudang Depok',
-    date: 'Jul 05, 2026',
-    category: 'Supply Chain',
-  },
-  {
-    title: 'Peresmian Armada Truk Tangki Terbaru',
-    date: 'Jun 20, 2026',
-    category: 'Logistik',
-  },
-];
 
-const TIMELINE = [
-  {
-    year: 'Q1 2026',
-    title: 'Penetrasi Pasar B2B',
-    desc: 'Meloloskan legalitas ke dalam >20 daftar registrasi pasokan vendor korporat besar.',
-  },
-  {
-    year: 'Q3 2026',
-    title: 'Otomasi Logistik IoT',
-    desc: 'Optimalisasi biaya dan pelacakan unit pasokan harian termonitor real-time via RFID.',
-  },
-  {
-    year: 'Q1 2027',
-    title: 'Ekspansi Fasilitas',
-    desc: 'Akuisisi fasilitas gudang independen permanen untuk menjamin ketersediaan material.',
-  },
-  {
-    year: 'Q3 2027',
-    title: 'Tier-1 Supplier',
-    desc: 'Mengikat principal mancanegara dalam pakta sole-distributor eksklusif.',
-  },
-];
 
-export default function HomePage() {
   return (
     <>
       {/* ─── Hero ─────────────────────────────────── */}
       <HeroSection
         actions={[
-          { label: 'Explore Capabilities', href: ROUTES.SERVICES, variant: 'brand' },
-          { label: 'Company Profile', href: ROUTES.ABOUT, variant: 'outline' },
+          { label: tHero('cta_primary'), href: ROUTES.SERVICES, variant: 'brand' },
+          { label: tHero('cta_secondary'), href: ROUTES.CONTACT, variant: 'outline' },
         ]}
         align="left"
         backgroundVariant="dark"
-        description="Mitra strategis terdepan berskala nasional dalam penyediaan kebutuhan industri dan manajemen rantai pasok, mengedepankan presisi, efisiensi, dan keandalan operasional."
-        overline="PT Adto Cipta Usaha Mandiri"
+        description={tHero('description')}
+        overline={tHero('overline')}
         size="lg"
-        title="Energi Terpadu."
-        titleHighlight="Solusi Mandiri."
+        title={tHero('title')}
+        titleHighlight=""
         imageUrl="/images/hero_corporate_1784816610450.png"
       />
 
@@ -129,7 +100,6 @@ export default function HomePage() {
         className="relative overflow-hidden border-b border-[#E8EDF2] py-12"
         style={{ background: 'linear-gradient(135deg, #F0F5FA 0%, #EBF1F7 100%)' }}
       >
-        {/* Subtle dots pattern */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -138,7 +108,6 @@ export default function HomePage() {
             backgroundSize: '24px 24px',
           }}
         />
-        {/* Ambient glow left */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -left-20 top-0 h-full w-64 opacity-20"
@@ -154,7 +123,6 @@ export default function HomePage() {
                 key={stat.label}
                 className="group relative pl-0 text-center md:text-left"
               >
-                {/* Vertical accent line */}
                 {i > 0 && (
                   <div
                     className="absolute left-0 top-1/2 hidden h-10 w-px -translate-y-1/2 md:block"
@@ -179,8 +147,8 @@ export default function HomePage() {
       {/* ─── About Preview ────────────────────────── */}
       <SectionWrapper
         header={{
-          overline: 'Corporate Overview',
-          title: 'Trusted Partner for Your Business',
+          overline: tAbout('title'),
+          title: tAbout('hero_title'),
         }}
       >
         <div className="mt-8 grid grid-cols-1 items-start gap-16 lg:grid-cols-12">
@@ -189,7 +157,7 @@ export default function HomePage() {
               One-stop solution untuk Chemical, Sparepart, dan Mobilisasi operasional industri berat Anda.
             </h3>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              PT Adto Cipta Usaha Mandiri adalah perusahaan penyedia solusi terintegrasi untuk industri migas & pertambangan. Berbasis di Depok, kami fokus pada kecepatan respon & ketepatan spesifikasi untuk operasional di Jabodetabek & Jawa, memastikan no downtime bagi project Anda.
+              {tAbout('hero_desc')}
             </p>
             <Button
               asChild
@@ -197,7 +165,7 @@ export default function HomePage() {
               variant="outline"
             >
               <Link href={ROUTES.ABOUT}>
-                Discover Our Heritage <ArrowRight className="ml-2 h-4 w-4" />
+                {tNav('about')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
@@ -228,7 +196,6 @@ export default function HomePage() {
                 key={item.title}
                 className="surface-card group relative overflow-hidden p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(53,85,122,0.18)] hover:shadow-card-hover"
               >
-                {/* Subtle corner accent */}
                 <div
                   aria-hidden="true"
                   className="pointer-events-none absolute right-0 top-0 h-16 w-16 opacity-30"
@@ -236,7 +203,6 @@ export default function HomePage() {
                     background: 'radial-gradient(circle at top right, rgba(53,85,122,0.08) 0%, transparent 70%)',
                   }}
                 />
-                {/* Icon box */}
                 <div
                   className="mb-4 flex h-11 w-11 items-center justify-center rounded-[12px] transition-all duration-300 group-hover:scale-105"
                   style={{
@@ -260,12 +226,31 @@ export default function HomePage() {
       <SectionWrapper
         background="alt"
         header={{
-          overline: 'Our Expertise',
-          title: 'Comprehensive Solutions',
+          overline: tServices('title'),
+          title: tServices('hero_title'),
         }}
       >
         <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((service) => (
+          {[
+            {
+              icon: Zap,
+              image: '/images/service_chemical_1784816687085.png',
+              title: tServices('industrial_supply'),
+              description: 'Bentonite, Barite, Caustic Soda, Polymer, dll. API Grade & Industrial Grade.',
+            },
+            {
+              icon: Wrench,
+              image: '/images/service_mechanical_1784816644706.png',
+              title: tServices('project_management'),
+              description: 'Supply sparepart Caterpillar, Komatsu, pompa Schlumberger. Pengadaan cepat.',
+            },
+            {
+              icon: Truck,
+              image: '/images/service_heavy_1784816700775.png',
+              title: tServices('logistics'),
+              description: 'Armada truk tangki, tronton, lowbed. Handle pengiriman chemical & alat berat.',
+            },
+          ].map((service, index) => (
             <div
               key={service.title}
               className="surface-card group relative flex flex-col overflow-hidden p-0 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(53,85,122,0.15)] hover:shadow-card-hover"
@@ -273,17 +258,15 @@ export default function HomePage() {
               <div className="relative h-48 w-full overflow-hidden">
                 <Image src={service.image} alt={service.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A2F5C]/80 to-transparent opacity-50" />
-                {/* Number accent */}
                 <div
                   className="absolute right-4 top-4 font-heading text-5xl font-bold leading-none text-white opacity-20"
                   aria-hidden="true"
                 >
-                  {String(SERVICES.indexOf(service) + 1).padStart(2, '0')}
+                  {String(index + 1).padStart(2, '0')}
                 </div>
               </div>
               
               <div className="flex flex-1 flex-col p-8 pt-4">
-                {/* Icon box with gradient */}
                 <div
                   className="-mt-12 mb-4 flex h-14 w-14 items-center justify-center rounded-[14px] bg-white transition-all duration-300 group-hover:scale-110"
                   style={{
@@ -310,7 +293,7 @@ export default function HomePage() {
                   href={ROUTES.SERVICES}
                   style={{ color: '#35557A' }}
                 >
-                  Learn More
+                  {tServices('learn_more')}
                   <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </div>
@@ -322,8 +305,8 @@ export default function HomePage() {
       {/* ─── Products & Projects Preview ──────────── */}
       <SectionWrapper
         header={{
-          overline: 'Portfolio',
-          title: 'Delivering National Impact',
+          overline: tProjects('title'),
+          title: tProjects('hero_title'),
         }}
       >
         <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-2">
@@ -359,20 +342,18 @@ export default function HomePage() {
                 variant="link"
               >
                 <Link href="/projects">
-                  View All Projects <ArrowRight className="ml-2 h-3 w-3" />
+                  {tNav('projects')} <ArrowRight className="ml-2 h-3 w-3" />
                 </Link>
               </Button>
             </div>
           </div>
 
-          {/* Products/Capabilities Block — premium dark */}
           <div
             className="relative flex min-h-[400px] flex-col justify-between overflow-hidden rounded-[24px] p-10 md:p-14"
             style={{
               background: 'linear-gradient(145deg, #0F2D52 0%, #1C2C40 60%, #121C29 100%)',
             }}
           >
-            {/* Subtle mesh glow */}
             <div
               aria-hidden="true"
               className="pointer-events-none absolute inset-0"
@@ -380,7 +361,6 @@ export default function HomePage() {
                 background: 'radial-gradient(ellipse 80% 60% at 15% 20%, rgba(53,85,122,0.4) 0%, transparent 60%)',
               }}
             />
-            {/* Orange accent orb */}
             <div
               aria-hidden="true"
               className="pointer-events-none absolute bottom-0 right-0 h-48 w-48"
@@ -389,7 +369,6 @@ export default function HomePage() {
                 filter: 'blur(30px)',
               }}
             />
-            {/* Grid pattern */}
             <div
               aria-hidden="true"
               className="pointer-events-none absolute inset-0 opacity-[0.04]"
@@ -399,7 +378,6 @@ export default function HomePage() {
                 backgroundSize: '40px 40px',
               }}
             />
-            {/* Accent line top */}
             <div
               aria-hidden="true"
               className="absolute left-10 right-10 top-0 h-px"
@@ -436,51 +414,9 @@ export default function HomePage() {
                 className="w-fit rounded-full border-white/25 text-xs font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-white hover:text-brand-950 hover:shadow-[0_4px_16px_rgba(255,255,255,0.15)]"
                 variant="outline"
               >
-                <Link href="/products">Explore Products</Link>
+                <Link href="/products">{tNav('products')}</Link>
               </Button>
             </div>
-          </div>
-        </div>
-      </SectionWrapper>
-
-      {/* ─── Timeline ─────────────────────────────── */}
-      <SectionWrapper background="alt" padding="lg">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
-          <div className="lg:col-span-1">
-            <div className="mb-4 inline-flex items-center gap-2.5">
-              <span
-                className="inline-block h-[2px] w-7 rounded-full"
-                style={{ background: 'linear-gradient(90deg, #35557A, #F58220)' }}
-              />
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em]" style={{ color: '#35557A' }}>
-                Our Journey
-              </p>
-            </div>
-            <h2 className="text-foreground font-heading text-3xl font-bold">A Decade of Growth</h2>
-          </div>
-          <div className="relative grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-3">
-            {/* Connecting line */}
-            <div
-              className="absolute left-0 right-0 top-[5px] hidden h-px md:block"
-              style={{ background: 'linear-gradient(90deg, rgba(53,85,122,0.15), rgba(53,85,122,0.30), rgba(53,85,122,0.15))' }}
-            />
-            {TIMELINE.map((item) => (
-              <div key={item.year} className="relative z-10">
-                {/* Timeline dot — circular, gradient */}
-                <div
-                  className="mb-6 h-[11px] w-[11px] rounded-full ring-2 ring-white ring-offset-1"
-                  style={{
-                    background: 'linear-gradient(135deg, #35557A, #F58220)',
-                    boxShadow: '0 0 8px rgba(53,85,122,0.3)',
-                  }}
-                />
-                <h4 className="text-foreground mb-2 font-heading text-2xl font-bold">
-                  {item.year}
-                </h4>
-                <p className="mb-3 text-sm font-bold uppercase tracking-wider">{item.title}</p>
-                <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
           </div>
         </div>
       </SectionWrapper>
@@ -488,8 +424,8 @@ export default function HomePage() {
       {/* ─── Clients Trust ────────────────────────── */}
       <SectionWrapper
         header={{
-          overline: 'Valued Partners',
-          title: 'Trusted By National Leaders',
+          overline: tPartners('title'),
+          title: tPartners('subtitle'),
         }}
         padding="lg"
       >
@@ -538,7 +474,7 @@ export default function HomePage() {
                     Media Center
                   </p>
                 </div>
-                <h2 className="text-foreground font-heading text-3xl font-bold">Latest Updates</h2>
+                <h2 className="text-foreground font-heading text-3xl font-bold">{tBlog('hero_title')}</h2>
               </div>
               <Button
                 asChild
@@ -546,7 +482,7 @@ export default function HomePage() {
                 variant="link"
               >
                 <Link href="/news">
-                  All News <ArrowRight className="ml-2 h-3 w-3" />
+                  {tNav('news')} <ArrowRight className="ml-2 h-3 w-3" />
                 </Link>
               </Button>
             </div>
@@ -581,7 +517,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Testimonial card — premium elevated */}
           <div
             className="relative flex flex-col justify-center overflow-hidden rounded-[24px] bg-white p-10 lg:col-span-5"
             style={{
@@ -589,7 +524,6 @@ export default function HomePage() {
               boxShadow: '0 4px 12px rgba(0,0,0,0.05), 0 16px 40px rgba(53,85,122,0.08)',
             }}
           >
-            {/* Background accent */}
             <div
               aria-hidden="true"
               className="pointer-events-none absolute inset-0"
@@ -597,7 +531,6 @@ export default function HomePage() {
                 background: 'radial-gradient(ellipse 80% 60% at 90% 10%, rgba(53,85,122,0.04) 0%, transparent 70%)',
               }}
             />
-            {/* Large quotation mark */}
             <div
               className="absolute right-8 top-6 font-serif text-8xl leading-none"
               style={{ color: '#35557A', opacity: 0.07 }}
@@ -605,24 +538,20 @@ export default function HomePage() {
             >
               &quot;
             </div>
-            {/* Stars */}
             <div className="relative z-10 mb-6 flex gap-1">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="h-4 w-4" fill="#F58220" style={{ color: '#F58220' }} />
               ))}
             </div>
-            {/* Quote text */}
             <blockquote
               className="relative z-10 mb-8 text-lg font-medium leading-loose text-foreground"
             >
               &ldquo;ADTO sangat bisa diandalkan. Kecepatan respon dan komitmen kualitas mereka dalam menyediakan chemical drilling sangat membantu mencegah NPT (Non-Productive Time) di site kami.&rdquo;
             </blockquote>
-            {/* Divider */}
             <div
               className="relative z-10 mb-5 h-px w-12"
               style={{ background: 'linear-gradient(90deg, #35557A, #F58220)' }}
             />
-            {/* Attribution */}
             <div className="relative z-10">
               <p className="text-foreground mb-1 text-sm font-bold uppercase tracking-widest">
                 Procurement Manager
@@ -643,22 +572,20 @@ export default function HomePage() {
         <div className="container-page">
           <div className="grid grid-cols-1 gap-10 text-center md:grid-cols-3">
             {[
-              { icon: MapPin, label: 'Head Office', value: 'Jakarta, Indonesia' },
-              { icon: Phone, label: 'Call Center', value: '+62 21 1234 5678', href: 'tel:+622112345678' },
-              { icon: Mail, label: 'Email Inquiry', value: 'info@adtocipta.co.id', href: 'mailto:info@adtocipta.co.id' },
+              { icon: MapPin, label: tContact('office'), value: 'Jakarta, Indonesia' },
+              { icon: Phone, label: tContact('call_us'), value: '+62 21 1234 5678', href: 'tel:+622112345678' },
+              { icon: Mail, label: tContact('email_us'), value: 'info@adtocipta.co.id', href: 'mailto:info@adtocipta.co.id' },
             ].map((item, idx) => (
               <div
                 key={item.label}
                 className="group relative flex flex-col items-center pt-8 md:pt-0"
               >
-                {/* Vertical divider for md+ */}
                 {idx > 0 && (
                   <div
                     className="absolute left-0 top-1/2 hidden h-12 w-px -translate-y-1/2 md:block"
                     style={{ background: 'linear-gradient(to bottom, transparent, rgba(53,85,122,0.15), transparent)' }}
                   />
                 )}
-                {/* Icon container */}
                 <div
                   className="mb-4 flex h-12 w-12 items-center justify-center rounded-[14px] transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_4px_16px_rgba(53,85,122,0.15)]"
                   style={{
@@ -687,10 +614,10 @@ export default function HomePage() {
 
       {/* ─── CTA ──────────────────────────────────── */}
       <CtaSection
-        description="Partner with us for unparalleled engineering and construction excellence. Let's discuss your next mega-project."
-        primaryAction={{ label: 'Contact Our Team', href: ROUTES.CONTACT }}
-        secondaryAction={{ label: 'Request Quotation', href: '/request-quotation' }}
-        title="Ready to Build the Future?"
+        description={tCta('subtitle')}
+        primaryAction={{ label: tCta('button'), href: ROUTES.CONTACT }}
+        secondaryAction={{ label: tNav('get_quote'), href: '/request-quotation' }}
+        title={tCta('title')}
         variant="brand"
       />
     </>

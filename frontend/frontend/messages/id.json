@@ -1,0 +1,157 @@
+{
+  "Navbar": {
+    "home": "Beranda",
+    "about": "Tentang Kami",
+    "services": "Layanan",
+    "products": "Produk",
+    "industries": "Industri",
+    "projects": "Proyek",
+    "case_studies": "Studi Kasus",
+    "blog": "Blog",
+    "news": "Berita & Media",
+    "knowledge_center": "Pusat Pengetahuan",
+    "media_gallery": "Galeri Media",
+    "career": "Karir",
+    "contact": "Kontak",
+    "get_quote": "Dapatkan Penawaran",
+    "vendor_registration": "Registrasi Vendor"
+  },
+  "Hero": {
+    "overline": "PT Andalan Daya Tata Olah",
+    "title": "Memberdayakan Industri dengan Solusi Andal",
+    "description": "Penyedia solusi industri komprehensif terkemuka, menghadirkan keunggulan melalui inovasi, kualitas, dan komitmen.",
+    "cta_primary": "Temukan Layanan Kami",
+    "cta_secondary": "Hubungi Kami"
+  },
+  "About": {
+    "title": "Tentang Kami",
+    "hero_title": "Mendorong Keunggulan Industri",
+    "hero_desc": "Kami berkomitmen untuk memberikan solusi industri tingkat atas yang mendorong efisiensi, keandalan, dan pertumbuhan berkelanjutan bagi mitra kami.",
+    "mission": "Misi Kami",
+    "vision": "Visi Kami",
+    "why_us": "Mengapa Memilih Kami"
+  },
+  "Services": {
+    "title": "Layanan Kami",
+    "hero_title": "Solusi Industri Komprehensif",
+    "hero_desc": "Kami menawarkan berbagai layanan yang dirancang untuk memenuhi tuntutan ketat operasi industri modern.",
+    "view_detail": "Lihat Detail",
+    "learn_more": "Pelajari Lebih Lanjut",
+    "overview": "Gambaran Umum",
+    "description": "Deskripsi Layanan",
+    "benefits": "Keuntungan",
+    "gallery": "Galeri",
+    "faq": "FAQ",
+    "industrial_supply": "Pasokan Industri",
+    "project_management": "Manajemen Proyek",
+    "engineering": "Rekayasa (Engineering)",
+    "logistics": "Logistik"
+  },
+  "Projects": {
+    "title": "Portofolio Kami",
+    "hero_title": "Pengiriman Proyek yang Sukses",
+    "hero_desc": "Jelajahi rekam jejak keunggulan kami dalam menyelesaikan proyek industri yang kompleks tepat waktu dan sesuai anggaran.",
+    "technology": "Teknologi",
+    "timeline": "Lini Masa",
+    "result": "Hasil",
+    "overview": "Gambaran Proyek",
+    "challenge": "Tantangan",
+    "approach": "Pendekatan Kami"
+  },
+  "Blog": {
+    "title": "Wawasan",
+    "hero_title": "Wawasan & Berita Industri",
+    "hero_desc": "Tetap up-to-date dengan tren, teknologi, dan praktik terbaik terbaru di sektor industri.",
+    "author": "Penulis",
+    "publish_date": "Tanggal Rilis",
+    "category": "Kategori",
+    "reading_time": "mnt baca",
+    "share": "Bagikan",
+    "related": "Artikel Terkait",
+    "prev": "Sebelumnya",
+    "next": "Selanjutnya",
+    "read_more": "Baca Selengkapnya"
+  },
+  "Career": {
+    "title": "Karir",
+    "hero_title": "Bangun Karir Anda Bersama Kami",
+    "hero_desc": "Bergabunglah dengan tim profesional yang berdedikasi untuk membentuk masa depan solusi industri.",
+    "job_description": "Deskripsi Pekerjaan",
+    "requirements": "Persyaratan",
+    "benefit": "Keuntungan",
+    "location": "Lokasi",
+    "employment_type": "Tipe Pekerjaan",
+    "apply_button": "Lamar Sekarang",
+    "department": "Departemen"
+  },
+  "Contact": {
+    "title": "Hubungi Kami",
+    "hero_title": "Mari Berhubungan",
+    "hero_desc": "Kami di sini untuk menjawab pertanyaan Anda. Hubungi kami dan kami akan membalas secepat mungkin.",
+    "name": "Nama Lengkap",
+    "name_placeholder": "Masukkan nama lengkap Anda",
+    "email": "Alamat Email",
+    "email_placeholder": "Masukkan email Anda",
+    "phone": "Nomor Telepon",
+    "phone_placeholder": "Masukkan nomor telepon Anda",
+    "company": "Nama Perusahaan",
+    "company_placeholder": "Masukkan nama perusahaan Anda",
+    "message": "Pesan Anda",
+    "message_placeholder": "Bagaimana kami dapat membantu Anda?",
+    "submit": "Kirim Pesan",
+    "validation": {
+      "required": "Kolom ini wajib diisi",
+      "email": "Masukkan email yang valid",
+      "min_length": "Minimal 3 karakter"
+    },
+    "office": "Kantor Pusat",
+    "call_us": "Hubungi Kami",
+    "email_us": "Email Kami"
+  },
+  "CTA": {
+    "title": "Siap Meningkatkan Bisnis Anda?",
+    "subtitle": "Bermitra dengan kami untuk membuka potensi industri Anda sepenuhnya.",
+    "button": "Hubungi Kami Sekarang"
+  },
+  "Partners": {
+    "title": "Mitra Berharga",
+    "subtitle": "Dipercaya Oleh Pemimpin Nasional"
+  },
+  "Footer": {
+    "description": "Penyedia solusi industri komprehensif terkemuka.",
+    "quick_links": "Tautan Cepat",
+    "contact_info": "Info Kontak",
+    "rights": "Hak cipta dilindungi undang-undang.",
+    "privacy_policy": "Kebijakan Privasi",
+    "terms_of_service": "Syarat Layanan"
+  },
+  "NotFound": {
+    "title": "Halaman Tidak Ditemukan",
+    "description": "Halaman yang Anda cari tidak ada atau telah dipindahkan.",
+    "back_home": "Kembali ke Beranda"
+  },
+  "Common": {
+    "loading": "Memuat...",
+    "error": "Terjadi kesalahan",
+    "success": "Berhasil",
+    "submit": "Kirim",
+    "cancel": "Batal",
+    "empty": "Data tidak ditemukan."
+  },
+  "SEO": {
+    "home_title": "Beranda | PT Andalan Daya Tata Olah",
+    "home_desc": "Penyedia solusi industri komprehensif terkemuka, menghadirkan keunggulan melalui inovasi, kualitas, dan komitmen.",
+    "about_title": "Tentang Kami | PT Andalan Daya Tata Olah",
+    "about_desc": "Pelajari lebih lanjut tentang misi, visi, dan komitmen kami untuk mendorong keunggulan industri.",
+    "services_title": "Layanan Kami | PT Andalan Daya Tata Olah",
+    "services_desc": "Jelajahi berbagai solusi dan layanan industri komprehensif kami.",
+    "projects_title": "Proyek | PT Andalan Daya Tata Olah",
+    "projects_desc": "Temukan pengiriman proyek kami yang sukses dan rekam jejak keunggulan kami.",
+    "blog_title": "Blog & Wawasan | PT Andalan Daya Tata Olah",
+    "blog_desc": "Baca wawasan industri, berita, dan praktik terbaik terbaru dari para ahli kami.",
+    "career_title": "Karir | PT Andalan Daya Tata Olah",
+    "career_desc": "Bergabunglah dengan tim dinamis kami dan bangun karir yang memuaskan di sektor industri.",
+    "contact_title": "Hubungi Kami | PT Andalan Daya Tata Olah",
+    "contact_desc": "Hubungi kami untuk pertanyaan, kemitraan, atau dukungan."
+  }
+}

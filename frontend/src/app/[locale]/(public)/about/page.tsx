@@ -1,5 +1,5 @@
 import { Shield, Target, Zap, Heart, CheckCircle2 } from 'lucide-react';
-import { type Metadata } from 'next';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 
 import { CtaSection } from '@/components/molecules/cta-section';
@@ -7,34 +7,95 @@ import { HeroSection } from '@/components/molecules/hero-section-main';
 import { PageHeader } from '@/components/molecules/page-header';
 import { SectionWrapper } from '@/components/molecules/section-wrapper';
 import { ROUTES } from '@/lib/constants/routes.constants';
-import { PAGE_SEO } from '@/lib/constants/seo.constants';
-import { generateMetadata as getMetadata } from '@/lib/utils/seo';
 
-export function generateMetadata(): Metadata {
-  return PAGE_SEO.ABOUT
-    ? getMetadata(PAGE_SEO.ABOUT)
-    : getMetadata({ title: 'About Us', description: 'About PT Adto Cipta Usaha Mandiri' });
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'SEO' });
+  return {
+    title: t('about_title'),
+    description: t('about_desc'),
+  };
 }
 
-export default function AboutPage() {
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const tAbout = await getTranslations('About');
+  const tNav = await getTranslations('Navbar');
+  const tCta = await getTranslations('CTA');
+
   const breadcrumbItems = [
-    { label: 'Home', href: ROUTES.HOME },
-    { label: 'About Us', href: ROUTES.ABOUT, active: true },
+    { label: tNav('home'), href: ROUTES.HOME },
+    { label: tNav('about'), href: ROUTES.ABOUT, active: true },
+  ];
+
+  const coreValues = [
+    {
+      title: 'Adaptif',
+      icon: Zap,
+      desc: 'Cepat menyesuaikan diri terhadap dinamika kebutuhan spesifikasi teknis dan skala proyek klien di lapangan.',
+    },
+    {
+      title: 'Dedikatif',
+      icon: Heart,
+      desc: 'Sepenuh hati berfokus pada penyelesaian tantangan logistik dan pengadaan secara tuntas.',
+    },
+    {
+      title: 'Tangguh',
+      icon: Shield,
+      desc: 'Memiliki resiliensi tinggi dalam merespon kendala teknis dan menjaga stabilitas pasokan di segala kondisi.',
+    },
+    {
+      title: 'Obyektif',
+      icon: Target,
+      desc: 'Mengedepankan data, transparansi, dan kalkulasi profesional dalam setiap pengambilan keputusan bisnis.',
+    },
+  ];
+
+  const milestones = [
+    {
+      year: 'Q1 2026',
+      title: 'Penetrasi Pasar B2B',
+      desc: 'Meloloskan legalitas ke dalam >20 daftar registrasi pasokan vendor korporat besar tingkat nasional.',
+    },
+    {
+      year: 'Q3 2026',
+      title: 'Otomasi Logistik IoT',
+      desc: 'Optimalisasi biaya dan pelacakan unit pasokan harian termonitor secara real-time via RFID.',
+    },
+    {
+      year: 'Q1 2027',
+      title: 'Ekspansi Fasilitas Gudang',
+      desc: 'Akuisisi fasilitas gudang independen permanen untuk menjamin availability material krusial kapanpun dibutuhkan.',
+    },
+    {
+      year: 'Q3 2027',
+      title: 'Tier-1 Supplier',
+      desc: 'Mengikat principal mancanegara dalam pakta sole-distributor eksklusif untuk regional Indonesia.',
+    },
+  ];
+
+  const leaders = [
+    { name: 'Budi Santoso', role: 'Chief Executive Officer', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800' },
+    { name: 'Siti Rahmawati', role: 'Chief Operating Officer', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800' },
+    { name: 'Agus Wijaya', role: 'Chief Technology Officer', image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800' },
+    { name: 'Dewi Lestari', role: 'Chief Financial Officer', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800' },
   ];
 
   return (
     <>
       <PageHeader
         breadcrumbs={breadcrumbItems}
-        description="A Decade of Building Excellence across Indonesia"
-        title="About Our Company"
+        description={tAbout('hero_desc')}
+        title={tAbout('hero_title')}
       />
 
       <HeroSection
         align="left"
         backgroundVariant="dark"
-        description="Berbasis di Depok, kami adalah mitra strategis Anda dalam penyediaan material bahan kimia industri (chemical), suku cadang mekanikal/elektrikal (sparepart), serta dukungan armada angkutan berat terkalibrasi."
-        overline="Profil Perusahaan"
+        description={tAbout('hero_desc')}
+        overline={tAbout('title')}
         title="Integritas, Efisiensi,"
         titleHighlight="Keandalan Operasional."
         imageUrl="/images/about_meeting_1784816621267.png"
@@ -85,28 +146,7 @@ export default function AboutPage() {
         id="core-values"
       >
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {[
-            {
-              title: 'Adaptif',
-              icon: Zap,
-              desc: 'Cepat menyesuaikan diri terhadap dinamika kebutuhan spesifikasi teknis dan skala proyek klien di lapangan.',
-            },
-            {
-              title: 'Dedikatif',
-              icon: Heart,
-              desc: 'Sepenuh hati berfokus pada penyelesaian tantangan logistik dan pengadaan secara tuntas.',
-            },
-            {
-              title: 'Tangguh',
-              icon: Shield,
-              desc: 'Memiliki resiliensi tinggi dalam merespon kendala teknis dan menjaga stabilitas pasokan di segala kondisi.',
-            },
-            {
-              title: 'Obyektif',
-              icon: Target,
-              desc: 'Mengedepankan data, transparansi, dan kalkulasi profesional dalam setiap pengambilan keputusan bisnis.',
-            },
-          ].map((value, idx) => {
+          {coreValues.map((value, idx) => {
             const Icon = value.icon;
             return (
               <div
@@ -132,62 +172,34 @@ export default function AboutPage() {
         id="history"
       >
         <div className="relative mx-auto mt-16 max-w-4xl">
-          {/* Main Vertical Timeline Line */}
           <div 
             className="absolute bottom-0 left-[21px] top-0 w-px -translate-x-1/2 md:left-1/2" 
             style={{ background: 'linear-gradient(180deg, rgba(53,85,122,0.15), rgba(53,85,122,0.30), rgba(53,85,122,0.15))' }} 
           />
           
-          {[
-            {
-              year: 'Q1 2026',
-              title: 'Penetrasi Pasar B2B',
-              desc: 'Meloloskan legalitas ke dalam >20 daftar registrasi pasokan vendor korporat besar tingkat nasional.',
-            },
-            {
-              year: 'Q3 2026',
-              title: 'Otomasi Logistik IoT',
-              desc: 'Optimalisasi biaya dan pelacakan unit pasokan harian termonitor secara real-time via RFID.',
-            },
-            {
-              year: 'Q1 2027',
-              title: 'Ekspansi Fasilitas Gudang',
-              desc: 'Akuisisi fasilitas gudang independen permanen untuk menjamin availability material krusial kapanpun dibutuhkan.',
-            },
-            {
-              year: 'Q3 2027',
-              title: 'Tier-1 Supplier',
-              desc: 'Mengikat principal mancanegara dalam pakta sole-distributor eksklusif untuk regional Indonesia.',
-            },
-          ].map((milestone, idx) => (
+          {milestones.map((milestone, idx) => (
             <div
               key={idx}
               className={`relative mb-12 flex w-full items-center ${idx % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}
             >
-              {/* Spacer to push card to the side on Desktop */}
               <div className="hidden w-1/2 md:block" />
 
-              {/* Timeline Indicator (Center Node) */}
               <div 
                 className="absolute left-[21px] top-1/2 z-20 h-[14px] w-[14px] -translate-x-1/2 -translate-y-1/2 rounded-full ring-[4px] ring-white md:left-1/2" 
                 style={{ background: 'linear-gradient(135deg, #35557A, #F58220)', boxShadow: '0 4px 12px rgba(53,85,122,0.25)' }} 
               />
 
-              {/* Card Container */}
               <div className="relative w-full pl-[56px] md:w-1/2 md:px-12 md:pl-12">
-                {/* Connector Line (Desktop) */}
                 <div 
                   className={`hidden md:block absolute top-1/2 z-10 h-px w-12 -translate-y-1/2 ${idx % 2 === 0 ? 'right-0' : 'left-0'}`}
                   style={{ background: 'linear-gradient(90deg, rgba(53,85,122,0.15), rgba(53,85,122,0.35), rgba(53,85,122,0.15))' }}
                 />
 
-                {/* Connector Line (Mobile) */}
                 <div 
                   className="absolute left-[21px] top-1/2 z-10 h-px w-[35px] -translate-y-1/2 md:hidden"
                   style={{ background: 'linear-gradient(90deg, rgba(53,85,122,0.30), rgba(53,85,122,0.15))' }}
                 />
 
-                {/* Actual Card */}
                 <div
                   className={`surface-card relative z-20 p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(53,85,122,0.15)] hover:shadow-card-hover ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}
                 >
@@ -208,12 +220,7 @@ export default function AboutPage() {
         id="leadership"
       >
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { name: 'Budi Santoso', role: 'Chief Executive Officer', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800' },
-            { name: 'Siti Rahmawati', role: 'Chief Operating Officer', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800' },
-            { name: 'Agus Wijaya', role: 'Chief Technology Officer', image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800' },
-            { name: 'Dewi Lestari', role: 'Chief Financial Officer', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800' },
-          ].map((member, idx) => (
+          {leaders.map((member, idx) => (
             <div
               key={idx}
               className="surface-card group flex flex-col items-center p-2 transition-all duration-300 hover:-translate-y-2 hover:border-[rgba(53,85,122,0.15)] hover:shadow-card-hover"
@@ -241,9 +248,9 @@ export default function AboutPage() {
       </SectionWrapper>
 
       <CtaSection
-        description="Siap meningkatkan efisiensi operasional perusahaan Anda? Tim ahli kami siap membantu kustomisasi kebutuhan supply Anda."
-        primaryAction={{ label: 'Hubungi Kami Hari Ini', href: ROUTES.CONTACT }}
-        title="Jadikan Kami Mitra Strategis Anda"
+        description={tCta('subtitle')}
+        primaryAction={{ label: tCta('button'), href: ROUTES.CONTACT }}
+        title={tCta('title')}
         variant="brand"
       />
     </>

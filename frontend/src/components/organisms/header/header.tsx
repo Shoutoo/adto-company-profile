@@ -9,9 +9,10 @@ import { usePathname } from '@/i18n/routing';
 import { AnimatePresence } from 'framer-motion';
 import { Menu, X, Search, ChevronDown } from 'lucide-react';
 
+import { useTranslations } from 'next-intl';
+
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/config/site.config';
-import { PUBLIC_NAV_ITEMS } from '@/lib/constants/navigation.constants';
 import { ROUTES } from '@/lib/constants/routes.constants';
 import { cn } from '@/lib/utils/cn';
 import { useUiStore } from '@/stores/ui.store';
@@ -27,6 +28,17 @@ export function Header() {
   const pathname = usePathname();
   const { isMobileMenuOpen, setMobileMenuOpen } = useUiStore();
   const [scrolled, setScrolled] = useState(false);
+
+  const t = useTranslations('Navbar');
+
+  const navItems = [
+    { href: ROUTES.HOME, label: t('home') },
+    { href: ROUTES.ABOUT, label: t('about') },
+    { href: ROUTES.SERVICES, label: t('services') },
+    { href: ROUTES.PROJECTS, label: t('projects') },
+    { href: ROUTES.CAREER, label: t('career') },
+    { href: ROUTES.BLOG, label: t('blog') },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,7 +94,7 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav aria-label="Main navigation" className="hidden items-center gap-6 lg:flex">
-            {PUBLIC_NAV_ITEMS.map((item) => (
+            {navItems.map((item) => (
               <div key={item.href} className="group relative">
                 <Link
                   className={cn(
@@ -133,7 +145,7 @@ export function Header() {
               asChild
               className="hidden rounded-full bg-brand-600 px-6 py-5 text-[13px] font-bold uppercase tracking-wider text-white shadow-sm transition-all duration-300 hover:bg-brand-700 hover:shadow-[0_4px_16px_rgba(53,85,122,0.30)] hover:-translate-y-0.5 md:inline-flex"
             >
-              <Link href={ROUTES.CONTACT}>Contact</Link>
+              <Link href={ROUTES.CONTACT}>{t('contact')}</Link>
             </Button>
 
             {/* Mobile Toggle */}

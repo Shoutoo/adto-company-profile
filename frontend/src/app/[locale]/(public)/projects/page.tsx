@@ -1,24 +1,33 @@
 import { Building2, Calendar, MapPin, Zap, Factory } from 'lucide-react';
-import { type Metadata } from 'next';
 import Image from 'next/image';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { CtaSection } from '@/components/molecules/cta-section';
 import { HeroSection } from '@/components/molecules/hero-section-main';
 import { PageHeader } from '@/components/molecules/page-header';
 import { SectionWrapper } from '@/components/molecules/section-wrapper';
 import { ROUTES } from '@/lib/constants/routes.constants';
-import { generateMetadata } from '@/lib/utils/seo';
 
-export const metadata: Metadata = generateMetadata({
-  title: 'Portofolio Proyek',
-  description:
-    'Jejak rekam PT Adto Cipta Usaha Mandiri dalam penyediaan chemical, sparepart, dan mobilisasi.',
-});
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'SEO' });
+  return {
+    title: t('projects_title'),
+    description: t('projects_desc'),
+  };
+}
 
 /**
  * Projects portfolio page
  */
-export default function ProjectsPage() {
+export default async function ProjectsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const tProjects = await getTranslations('Projects');
+  const tNav = await getTranslations('Navbar');
+  const tCta = await getTranslations('CTA');
+
   const projects = [
     {
       id: 1,
@@ -72,18 +81,18 @@ export default function ProjectsPage() {
     <>
       <PageHeader
         breadcrumbs={[
-          { label: 'Home', href: ROUTES.HOME },
-          { label: 'Projects', href: '/projects', active: true },
+          { label: tNav('home'), href: ROUTES.HOME },
+          { label: tNav('projects'), href: ROUTES.PROJECTS, active: true },
         ]}
-        description="Rekam jejak eksekusi andal di berbagai proyek berskala nasional."
-        title="Portofolio Kami"
+        description={tProjects('hero_desc')}
+        title={tProjects('hero_title')}
       />
 
       <HeroSection
         align="left"
         backgroundVariant="dark"
-        description="Temukan berbagai proyek sukses kami dalam memenuhi pasokan kritikal bagi industri hulu dan hilir di Indonesia."
-        overline="Proyek Unggulan"
+        description={tProjects('hero_desc')}
+        overline={tProjects('title')}
         title="Membangun Kepercayaan."
         titleHighlight="Melampaui Ekspektasi."
       />
@@ -157,12 +166,12 @@ export default function ProjectsPage() {
       </SectionWrapper>
 
       <CtaSection
-        description="Hubungi tim kami hari ini untuk mendiskusikan dukungan supply chain bagi operasional Anda."
+        description={tCta('subtitle')}
         primaryAction={{
-          label: 'Mulai Proyek',
+          label: tCta('button'),
           href: ROUTES.CONTACT,
         }}
-        title="Siap Berkolaborasi?"
+        title={tCta('title')}
         variant="brand"
       />
     </>

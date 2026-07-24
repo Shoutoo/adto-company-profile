@@ -1,12 +1,14 @@
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 
-import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 import { Separator } from '@/components/ui/separator';
 import { siteConfig } from '@/lib/config/site.config';
-import { FOOTER_COLUMNS } from '@/lib/constants/navigation.constants';
+
 import { ROUTES } from '@/lib/constants/routes.constants';
+
+import { useTranslations } from 'next-intl';
 
 /**
  * Site-wide footer with company information, navigation columns,
@@ -14,6 +16,38 @@ import { ROUTES } from '@/lib/constants/routes.constants';
  */
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const tNav = useTranslations('Navbar');
+  const tFooter = useTranslations('Footer');
+
+  const footerColumns = [
+    {
+      title: 'Company',
+      links: [
+        { label: tNav('about'), href: ROUTES.ABOUT },
+        { label: tNav('career'), href: ROUTES.CAREER },
+        { label: tNav('news'), href: '/news' },
+        { label: tNav('contact'), href: ROUTES.CONTACT },
+      ],
+    },
+    {
+      title: tNav('services'),
+      links: [
+        { label: 'Industrial Supply', href: '/services/industrial-supply' },
+        { label: 'Project Management', href: '/services/project-management' },
+        { label: 'Engineering', href: '/services/engineering' },
+        { label: 'Logistics', href: '/services/logistics' },
+      ],
+    },
+    {
+      title: tFooter('quick_links'),
+      links: [
+        { label: tNav('projects'), href: ROUTES.PROJECTS },
+        { label: tNav('blog'), href: ROUTES.BLOG },
+        { label: tNav('knowledge_center'), href: '#' },
+        { label: 'Vendor Registration', href: '#' },
+      ],
+    },
+  ];
 
   return (
     <footer className="bg-surface-dark text-gray-300" role="contentinfo">
@@ -34,7 +68,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="mb-6 max-w-xs text-sm leading-relaxed text-gray-400">
-              {siteConfig.company.description}
+              {tFooter('description')}
             </p>
 
             {/* Contact Info */}
@@ -65,7 +99,7 @@ export function Footer() {
           </div>
 
           {/* Navigation Columns */}
-          {FOOTER_COLUMNS.map((column) => (
+          {footerColumns.map((column) => (
             <div key={column.title} className="lg:col-span-2">
               <h3 className="mb-6 text-xs font-bold uppercase tracking-[0.2em] text-white">
                 {column.title}
@@ -76,12 +110,8 @@ export function Footer() {
                     <Link
                       className="group inline-flex items-center gap-1 text-sm text-gray-400 transition-colors hover:text-white"
                       href={link.href}
-                      {...(link.isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                     >
                       {link.label}
-                      {link.isExternal && (
-                        <ArrowUpRight className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />
-                      )}
                     </Link>
                   </li>
                 ))}
@@ -95,15 +125,15 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-page flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
           <p className="text-sm text-gray-500" suppressHydrationWarning>
-            &copy; {currentYear} {siteConfig.company.name}. All rights reserved.
+            &copy; {currentYear} {siteConfig.company.name}. {tFooter('rights')}
           </p>
           <div className="flex items-center gap-4 text-sm text-gray-500">
             <Link className="transition-colors hover:text-gray-300" href={ROUTES.PRIVACY_POLICY}>
-              Privacy Policy
+              {tFooter('privacy_policy')}
             </Link>
             <Separator className="h-4 bg-white/10" orientation="vertical" />
             <Link className="transition-colors hover:text-gray-300" href={ROUTES.TERMS_OF_SERVICE}>
-              Terms of Service
+              {tFooter('terms_of_service')}
             </Link>
           </div>
         </div>

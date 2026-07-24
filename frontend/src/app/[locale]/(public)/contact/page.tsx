@@ -1,5 +1,5 @@
 import { MapPin, Phone, Mail, MessageCircle, Clock, Navigation } from 'lucide-react';
-import { type Metadata } from 'next';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { DynamicLocationMap } from '@/components/molecules/dynamic-location-map';
 import { HeroSection } from '@/components/molecules/hero-section-main';
@@ -7,60 +7,68 @@ import { PageHeader } from '@/components/molecules/page-header';
 import { SectionWrapper } from '@/components/molecules/section-wrapper';
 import { Separator } from '@/components/ui/separator';
 import { siteConfig } from '@/lib/config/site.config';
-import { PAGE_SEO } from '@/lib/constants/seo.constants';
-import { generateMetadata } from '@/lib/utils/seo';
 
 import { ContactForm } from './contact-form';
 
-export const metadata: Metadata = generateMetadata({
-  title: 'Contact Us',
-  description: PAGE_SEO?.CONTACT?.description || 'Get in touch with our team.',
-});
-
-const CONTACT_INFO = [
-  {
-    icon: MapPin,
-    title: 'Head Office',
-    details: siteConfig.contact.address.full,
-  },
-  {
-    icon: Phone,
-    title: 'Phone',
-    details: siteConfig.contact.phone,
-  },
-  {
-    icon: Mail,
-    title: 'Email',
-    details: siteConfig.contact.email,
-  },
-  {
-    icon: MessageCircle,
-    title: 'WhatsApp',
-    details: siteConfig.contact.whatsapp,
-  },
-];
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'SEO' });
+  return {
+    title: t('contact_title'),
+    description: t('contact_desc'),
+  };
+}
 
 /**
  * Contact Page
  * Server Component
  */
-export default function ContactPage() {
+export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const tContact = await getTranslations('Contact');
+  const tNav = await getTranslations('Navbar');
+
+  const CONTACT_INFO = [
+    {
+      icon: MapPin,
+      title: tContact('office'),
+      details: siteConfig.contact.address.full,
+    },
+    {
+      icon: Phone,
+      title: tContact('call_us'),
+      details: siteConfig.contact.phone,
+    },
+    {
+      icon: Mail,
+      title: tContact('email_us'),
+      details: siteConfig.contact.email,
+    },
+    {
+      icon: MessageCircle,
+      title: 'WhatsApp',
+      details: siteConfig.contact.whatsapp,
+    },
+  ];
+
   return (
     <>
       <PageHeader
         breadcrumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'Contact', href: '/contact', active: true },
+          { label: tNav('home'), href: '/' },
+          { label: tNav('contact'), href: '/contact', active: true },
         ]}
-        description="Get in touch with our team."
-        title="Contact Us"
+        description={tContact('hero_desc')}
+        title={tContact('hero_title')}
       />
 
       <HeroSection
         align="left"
         backgroundVariant="dark"
-        description="Have a question or want to discuss a project? Reach out to us using the details below or fill out the contact form."
-        overline="Contact Us"
+        description={tContact('hero_desc')}
+        overline={tContact('title')}
         title="Get in Touch."
         imageUrl="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
       />
@@ -71,7 +79,7 @@ export default function ContactPage() {
           <div className="flex flex-col gap-12">
             <div>
               <h2 className="mb-6 font-heading text-2xl font-bold uppercase tracking-wider text-foreground">
-                Contact Information
+                {tContact('info_title')}
               </h2>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {CONTACT_INFO.map((info, idx) => (
@@ -155,10 +163,10 @@ export default function ContactPage() {
         <div className="mx-auto max-w-3xl">
           <div className="mb-10 text-center">
             <h2 className="mb-4 font-heading text-3xl font-bold uppercase tracking-wider text-foreground">
-              Send us a Message
+              {tContact('form_title')}
             </h2>
             <p className="text-lg text-muted-foreground">
-              Fill out the form below and our team will get back to you shortly.
+              {tContact('form_desc')}
             </p>
           </div>
           <div className="rounded-2xl border border-border bg-white p-8 shadow-sm md:p-12">

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import {
   Zap,
@@ -7,48 +8,53 @@ import {
   Truck,
   ArrowRight,
 } from 'lucide-react';
-import { type Metadata } from 'next';
+
 
 import { CtaSection } from '@/components/molecules/cta-section';
 import { HeroSection } from '@/components/molecules/hero-section-main';
 import { PageHeader } from '@/components/molecules/page-header';
 import { SectionWrapper } from '@/components/molecules/section-wrapper';
 import { ROUTES } from '@/lib/constants/routes.constants';
-import { PAGE_SEO } from '@/lib/constants/seo.constants';
-import { generateMetadata as getMetadata } from '@/lib/utils/seo';
 
-export function generateMetadata(): Metadata {
-  return PAGE_SEO.SERVICES
-    ? getMetadata(PAGE_SEO.SERVICES)
-    : getMetadata({
-        title: 'Our Services',
-        description: 'Layanan terpadu penyediaan chemical, sparepart, dan mobilisasi dari PT Adto Cipta Usaha Mandiri.',
-      });
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'SEO' });
+  return {
+    title: t('services_title'),
+    description: t('services_desc'),
+  };
 }
 
-export default function ServicesPage() {
+export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const tServices = await getTranslations('Services');
+  const tNav = await getTranslations('Navbar');
+  const tCta = await getTranslations('CTA');
+
   const breadcrumbItems = [
-    { label: 'Home', href: ROUTES.HOME },
-    { label: 'Services', href: ROUTES.SERVICES, active: true },
+    { label: tNav('home'), href: ROUTES.HOME },
+    { label: tNav('services'), href: ROUTES.SERVICES, active: true },
   ];
 
   const services = [
     {
-      title: 'Chemical Drilling & Industrial',
+      title: tServices('industrial_supply'),
       desc: 'Penyediaan material bahan kimia standar API Grade & Industrial Grade dengan sistem ready stock di Depok.',
       icon: Zap,
       image: '/images/service_chemical_1784816687085.png',
       sub: ['Bentonite API Grade', 'Barite', 'Caustic Soda', 'Polyanionic Cellulose (PAC)'],
     },
     {
-      title: 'Sparepart Alat Berat & Pump',
+      title: tServices('project_management'),
       desc: 'Supply sparepart presisi untuk Caterpillar, Komatsu, dan pompa Schlumberger. Solusi cepat untuk unit breakdown.',
       icon: Wrench,
       image: '/images/service_mechanical_1784816644706.png',
       sub: ['Caterpillar Parts', 'Komatsu Parts', 'Schlumberger Pumps', 'Fast-Track Procurement'],
     },
     {
-      title: 'Mobilisasi & Transportasi',
+      title: tServices('logistics'),
       desc: 'Dukungan armada angkutan berat terkalibrasi untuk pengiriman aman ke wilayah operasional terpencil.',
       icon: Truck,
       image: '/images/service_heavy_1784816700775.png',
@@ -56,19 +62,42 @@ export default function ServicesPage() {
     },
   ];
 
+  const processSteps = [
+    {
+      step: '01',
+      title: 'Konsultasi Kebutuhan',
+      desc: 'Identifikasi spesifikasi teknis dan skala proyek yang Anda butuhkan.',
+    },
+    {
+      step: '02',
+      title: 'Sourcing & QC',
+      desc: 'Pengadaan material presisi (API Grade) dengan Quality Control ketat.',
+    },
+    {
+      step: '03',
+      title: 'Mobilisasi Armada',
+      desc: 'Pengaturan logistik menggunakan armada terkalibrasi ke lokasi site.',
+    },
+    {
+      step: '04',
+      title: 'Handover & Support',
+      desc: 'Serah terima tepat waktu dengan dukungan teknis purna jual.',
+    },
+  ];
+
   return (
     <>
       <PageHeader
         breadcrumbs={breadcrumbItems}
-        description="Solusi rantai pasok terintegrasi untuk mendukung kelancaran operasional mega-proyek Anda."
-        title="Layanan Terpadu"
+        description={tServices('hero_desc')}
+        title={tServices('hero_title')}
       />
 
       <HeroSection
         align="left"
         backgroundVariant="dark"
-        description="Kami menghadirkan layanan One-Stop Solution yang responsif dan dapat diandalkan untuk menjamin ketersediaan material dan armada transportasi logistik Anda."
-        overline="Kapabilitas Kami"
+        description={tServices('hero_desc')}
+        overline={tServices('title')}
         title="Keunggulan Layanan & Pengadaan."
         imageUrl="/images/service-1.jpeg"
       />
@@ -114,7 +143,7 @@ export default function ServicesPage() {
                     style={{ color: '#35557A' }}
                     href={`${ROUTES.SERVICES}/${svc.title.toLowerCase().replace(/\s+/g, '-')}`}
                   >
-                    <span className="group-hover:text-brand-800">View Detail</span>
+                    <span className="group-hover:text-brand-800">{tServices('learn_more')}</span>
                     <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                   </Link>
                 </div>
@@ -131,28 +160,7 @@ export default function ServicesPage() {
         <div className="relative mt-16 grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="absolute left-[12%] right-[12%] top-10 z-0 hidden h-px md:block" style={{ background: 'linear-gradient(90deg, transparent, rgba(53,85,122,0.2), rgba(245,130,32,0.3), rgba(53,85,122,0.2), transparent)' }} />
 
-          {[
-            {
-              step: '01',
-              title: 'Konsultasi Kebutuhan',
-              desc: 'Identifikasi spesifikasi teknis dan skala proyek yang Anda butuhkan.',
-            },
-            {
-              step: '02',
-              title: 'Sourcing & QC',
-              desc: 'Pengadaan material presisi (API Grade) dengan Quality Control ketat.',
-            },
-            {
-              step: '03',
-              title: 'Mobilisasi Armada',
-              desc: 'Pengaturan logistik menggunakan armada terkalibrasi ke lokasi site.',
-            },
-            {
-              step: '04',
-              title: 'Handover & Support',
-              desc: 'Serah terima tepat waktu dengan dukungan teknis purna jual.',
-            },
-          ].map((process, idx) => (
+          {processSteps.map((process, idx) => (
             <div key={idx} className="relative z-10 flex flex-col items-center text-center group">
               <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-[20px] bg-white transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_8px_24px_rgba(53,85,122,0.12)]" style={{ border: '1px solid rgba(53,85,122,0.1)', boxShadow: '0 4px 12px rgba(53,85,122,0.06)' }}>
                 <span className="font-heading text-2xl font-bold" style={{ background: 'linear-gradient(135deg, #35557A, #F58220)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
@@ -169,9 +177,9 @@ export default function ServicesPage() {
       </SectionWrapper>
 
       <CtaSection
-        description="Tim ahli kami siap memberikan solusi khusus yang disesuaikan dengan kebutuhan teknis proyek Anda."
-        primaryAction={{ label: 'Diskusikan Proyek Anda', href: ROUTES.CONTACT }}
-        title="Butuh Solusi Kustom?"
+        description={tCta('subtitle')}
+        primaryAction={{ label: tCta('button'), href: ROUTES.CONTACT }}
+        title={tCta('title')}
         variant="brand"
       />
     </>
