@@ -4,6 +4,7 @@ import { Link } from '@/i18n/routing';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 import { Separator } from '@/components/ui/separator';
+import { FadeIn, StaggerContainer, StaggerItem } from '@/components/atoms/animations';
 import { siteConfig } from '@/lib/config/site.config';
 
 import { ROUTES } from '@/lib/constants/routes.constants';
@@ -57,7 +58,7 @@ export function Footer() {
 
       {/* Main Footer */}
       <div className="container-page relative z-10 py-20 lg:py-24">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+        <FadeIn delay={0.2} direction="up" className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-5 pr-4">
             <Link className="mb-8 inline-flex items-center" href={ROUTES.HOME}>
@@ -76,16 +77,16 @@ export function Footer() {
             </p>
 
             {/* Contact Info */}
-            <ul className="space-y-4">
-              <li className="group flex items-start gap-4 text-[15px] transition-transform duration-300 hover:translate-x-1">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy-light/50 text-orange shadow-soft-sm transition-all duration-300 group-hover:scale-105 group-hover:bg-orange group-hover:text-white group-hover:shadow-glow">
-                  <MapPin className="h-4 w-4" />
+            <StaggerContainer className="space-y-4" delayChildren={0.3} staggerChildren={0.1}>
+              <StaggerItem direction="left" className="group flex items-start gap-4 text-[15px] transition-transform duration-300 hover:translate-x-1">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy-light/50 text-orange shadow-soft-sm transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-1 group-hover:bg-orange group-hover:text-white group-hover:shadow-glow">
+                  <MapPin className="h-4 w-4 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110" />
                 </div>
                 <span className="mt-2 text-gray-300 group-hover:text-white transition-colors">{siteConfig.contact.address.full}</span>
-              </li>
-              <li className="group flex items-center gap-4 text-[15px] transition-transform duration-300 hover:translate-x-1">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy-light/50 text-orange shadow-soft-sm transition-all duration-300 group-hover:scale-105 group-hover:bg-orange group-hover:text-white group-hover:shadow-glow">
-                  <Phone className="h-4 w-4" />
+              </StaggerItem>
+              <StaggerItem direction="left" className="group flex items-center gap-4 text-[15px] transition-transform duration-300 hover:translate-x-1">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy-light/50 text-orange shadow-soft-sm transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-1 group-hover:bg-orange group-hover:text-white group-hover:shadow-glow">
+                  <Phone className="h-4 w-4 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110" />
                 </div>
                 <a
                   className="mt-1 text-gray-300 transition-colors group-hover:text-white"
@@ -93,10 +94,10 @@ export function Footer() {
                 >
                   {siteConfig.contact.phone}
                 </a>
-              </li>
-              <li className="group flex items-center gap-4 text-[15px] transition-transform duration-300 hover:translate-x-1">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy-light/50 text-orange shadow-soft-sm transition-all duration-300 group-hover:scale-105 group-hover:bg-orange group-hover:text-white group-hover:shadow-glow">
-                  <Mail className="h-4 w-4" />
+              </StaggerItem>
+              <StaggerItem direction="left" className="group flex items-center gap-4 text-[15px] transition-transform duration-300 hover:translate-x-1">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy-light/50 text-orange shadow-soft-sm transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-1 group-hover:bg-orange group-hover:text-white group-hover:shadow-glow">
+                  <Mail className="h-4 w-4 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110" />
                 </div>
                 <a
                   className="mt-1 text-gray-300 transition-colors group-hover:text-white"
@@ -104,20 +105,20 @@ export function Footer() {
                 >
                   {siteConfig.contact.email}
                 </a>
-              </li>
-            </ul>
+              </StaggerItem>
+            </StaggerContainer>
           </div>
 
           {/* Navigation Columns */}
           <div className="lg:col-span-7 lg:col-start-7 grid grid-cols-1 gap-10 sm:grid-cols-3">
-            {footerColumns.map((column) => (
+            {footerColumns.map((column, colIdx) => (
               <div key={column.title}>
                 <h3 className="mb-6 text-[13px] font-bold uppercase tracking-widest text-white">
                   {column.title}
                 </h3>
-                <ul className="space-y-4">
+                <StaggerContainer className="space-y-4" delayChildren={0.4 + (colIdx * 0.1)} staggerChildren={0.1}>
                   {column.links.map((link, index) => (
-                    <li key={`${link.label}-${index}`}>
+                    <StaggerItem direction="none" key={`${link.label}-${index}`}>
                       <Link
                         className="group relative inline-flex items-center text-[15px] text-gray-400 transition-colors duration-300 hover:text-white"
                         href={link.href}
@@ -125,13 +126,13 @@ export function Footer() {
                         {link.label}
                         <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-orange transition-all duration-300 group-hover:w-full" />
                       </Link>
-                    </li>
+                    </StaggerItem>
                   ))}
-                </ul>
+                </StaggerContainer>
               </div>
             ))}
           </div>
-        </div>
+        </FadeIn>
       </div>
 
       {/* Bottom Bar */}

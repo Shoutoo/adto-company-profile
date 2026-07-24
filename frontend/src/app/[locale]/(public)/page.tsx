@@ -19,6 +19,7 @@ import {
 import { CtaSection } from '@/components/molecules/cta-section';
 import { HeroSection } from '@/components/molecules/hero-section-main';
 import { SectionWrapper } from '@/components/molecules/section-wrapper';
+import { AnimatedCounter, StaggerContainer, StaggerItem } from '@/components/atoms/animations';
 import { Button } from '@/components/ui/button';
 import { ROUTES } from '@/lib/constants/routes.constants';
 
@@ -129,12 +130,20 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                     style={{ background: 'linear-gradient(to bottom, transparent, rgba(53,85,122,0.2), transparent)' }}
                   />
                 )}
-                <p
-                  className="font-heading text-4xl font-bold tracking-tight md:text-5xl"
+                <div
+                  className="font-heading text-4xl font-bold tracking-tight md:text-5xl flex items-baseline justify-center md:justify-start gap-1"
                   style={{ color: '#35557A' }}
                 >
-                  {stat.value}
-                </p>
+                  {stat.value.includes('<') && '< '}
+                  {stat.value.match(/\d+/) ? (
+                    <AnimatedCounter value={parseInt(stat.value.replace(/\D/g, ''), 10)} />
+                  ) : (
+                    stat.value
+                  )}
+                  {stat.value.includes('%') && '%'}
+                  {stat.value.includes('24/7') && '24/7'}
+                  {stat.value.includes('h') && 'h'}
+                </div>
                 <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.18em] text-gray-400">
                   {stat.label}
                 </p>
@@ -169,7 +178,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </Link>
             </Button>
           </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-7">
+          <StaggerContainer className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-7">
             {[
               {
                 icon: Shield,
@@ -192,8 +201,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 desc: 'Efisiensi biaya (cost saving) tanpa mengorbankan kualitas dan keamanan.',
               },
             ].map((item) => (
-              <div
+              <StaggerItem
                 key={item.title}
+                direction="up"
                 className="surface-card group relative overflow-hidden p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(53,85,122,0.18)] hover:shadow-card-hover"
               >
                 <div
@@ -210,15 +220,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                     border: '1px solid rgba(53,85,122,0.12)',
                   }}
                 >
-                  <item.icon className="h-5 w-5" strokeWidth={1.5} style={{ color: '#35557A' }} />
+                  <item.icon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3" strokeWidth={1.5} style={{ color: '#35557A' }} />
                 </div>
-                <h4 className="text-foreground mb-2 text-sm font-bold uppercase tracking-wider">
+                <h4 className="text-foreground mb-2 text-sm font-bold uppercase tracking-wider transition-colors duration-300 group-hover:text-brand-600">
                   {item.title}
                 </h4>
                 <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </SectionWrapper>
 
@@ -230,7 +240,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           title: tServices('hero_title'),
         }}
       >
-        <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+        <StaggerContainer className="mt-12 grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
           {[
             {
               icon: Zap,
@@ -251,13 +261,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               description: 'Armada truk tangki, tronton, lowbed. Handle pengiriman chemical & alat berat.',
             },
           ].map((service, index) => (
-            <div
+            <StaggerItem
               key={service.title}
+              direction="up"
               className="surface-card group relative flex flex-col overflow-hidden p-0 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(53,85,122,0.15)] hover:shadow-card-hover"
             >
               <div className="relative h-48 w-full overflow-hidden">
                 <Image src={service.image} alt={service.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A2F5C]/80 to-transparent opacity-50" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A2F5C]/80 to-transparent opacity-50 transition-opacity duration-300 group-hover:opacity-70" />
                 <div
                   className="absolute right-4 top-4 font-heading text-5xl font-bold leading-none text-white opacity-20"
                   aria-hidden="true"
@@ -275,13 +286,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   }}
                 >
                   <service.icon
-                    className="h-6 w-6 transition-colors duration-300"
+                    className="h-6 w-6 transition-all duration-300 group-hover:rotate-6 group-hover:text-brand-600"
                     strokeWidth={1.5}
                     style={{ color: '#35557A' }}
                   />
                 </div>
                 <h3
-                  className="text-foreground mb-3 font-heading text-lg font-bold uppercase tracking-wide"
+                  className="text-foreground mb-3 font-heading text-lg font-bold uppercase tracking-wide transition-colors duration-300 group-hover:text-brand-600"
                 >
                   {service.title}
                 </h3>
@@ -289,7 +300,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   {service.description}
                 </p>
                 <Link
-                  className="mt-auto inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest transition-all duration-200"
+                  className="mt-auto inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest transition-all duration-200 group-hover:text-brand-700"
                   href={ROUTES.SERVICES}
                   style={{ color: '#35557A' }}
                 >
@@ -297,9 +308,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </SectionWrapper>
 
       {/* ─── Products & Projects Preview ──────────── */}
@@ -429,7 +440,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         }}
         padding="lg"
       >
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 md:gap-8">
+        <StaggerContainer className="mt-12 flex flex-wrap items-center justify-center gap-6 md:gap-8" staggerChildren={0.08} delayChildren={0.2}>
           {[
             { name: 'Pertamina', src: '/images/logos/pertamina.svg' },
             { name: 'PLN', src: '/images/logos/pln.svg' },
@@ -440,8 +451,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             { name: 'Hutama Karya', src: '/images/logos/hutama-karya.svg' },
             { name: 'PP Properti', src: '/images/logos/pp.png' },
           ].map((logo) => (
-            <div
+            <StaggerItem
               key={logo.name}
+              direction="up"
               className="group relative flex h-24 w-36 items-center justify-center rounded-2xl border border-border/50 bg-white p-5 shadow-[0_4px_20px_rgba(15,23,42,0.04)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_12px_30px_rgba(15,23,42,0.08)] sm:w-44 md:w-52"
             >
               <div className="relative h-full w-full opacity-50 grayscale transition-all duration-300 ease-out group-hover:scale-[1.03] group-hover:opacity-100 group-hover:grayscale-0">
@@ -453,9 +465,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   sizes="(max-width: 640px) 144px, (max-width: 768px) 176px, 208px"
                 />
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </SectionWrapper>
 
       {/* ─── News Preview & Testimonials ──────────── */}

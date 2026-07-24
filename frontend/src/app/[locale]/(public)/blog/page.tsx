@@ -5,11 +5,10 @@ import { type Metadata } from 'next';
 
 import { CtaSection } from '@/components/molecules/CtaSection';
 import { HeroSection } from '@/components/molecules/HeroSection';
-import { ResponsiveGrid } from '@/components/molecules/ResponsiveGrid';
 import { SectionWrapper } from '@/components/molecules/SectionWrapper';
+import { StaggerContainer, StaggerItem } from '@/components/atoms/animations';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { CardHeader, CardTitle } from '@/components/ui/card';
 import { siteConfig } from '@/lib/config/site.config';
 import { ROUTES } from '@/lib/constants/routes.constants';
 import { generateMetadata } from '@/lib/utils/seo';
@@ -141,50 +140,56 @@ export default function BlogPage() {
           </Badge>
         </div>
 
-        <ResponsiveGrid cols={{ default: 1, md: 2, lg: 3 }} gap="xl">
+        <StaggerContainer className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post) => (
-            <Link
-              href={`/blog/${post.slug}`}
+            <StaggerItem
               key={post.id}
-              className="hover:border-primary/50 group flex h-full flex-col overflow-hidden border shadow-sm transition-all hover:shadow-md hover:-translate-y-1 bg-card rounded-xl cursor-pointer"
+              direction="up"
+              className="h-full"
             >
-              <div className="block overflow-hidden">
-                <div
-                  className={`aspect-[16/10] w-full bg-gradient-to-br ${post.color} flex items-center justify-center transition-transform duration-300 group-hover:scale-105`}
-                >
-                  <BookOpen className="h-16 w-16 text-white/20" />
+              <Link
+                href={`/blog/${post.slug}`}
+                className="surface-card group flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-[rgba(53,85,122,0.15)] hover:shadow-card-hover cursor-pointer p-0"
+              >
+                <div className="block overflow-hidden relative">
+                  <div
+                    className={`aspect-[16/10] w-full bg-gradient-to-br ${post.color} flex items-center justify-center transition-transform duration-500 group-hover:scale-105`}
+                  >
+                    <BookOpen className="h-16 w-16 text-white/20 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3" />
+                  </div>
+                  <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-              </div>
-              <CardHeader className="flex-1 p-6">
-                <Badge className="bg-muted mb-3 w-fit" variant="secondary">
-                  {post.category}
-                </Badge>
-                <div className="block">
-                  <CardTitle className="group-hover:text-primary line-clamp-2 text-xl leading-snug transition-colors">
-                    {post.title}
-                  </CardTitle>
+                <div className="flex flex-1 flex-col p-8">
+                  <Badge className="mb-4 w-fit bg-brand-50 text-brand-700 hover:bg-brand-100 uppercase tracking-widest text-[10px] font-bold" variant="secondary" style={{ border: '1px solid rgba(53,85,122,0.1)' }}>
+                    {post.category}
+                  </Badge>
+                  <div className="block">
+                    <h3 className="group-hover:text-brand-600 line-clamp-2 font-heading text-xl font-bold leading-tight transition-colors">
+                      {post.title}
+                    </h3>
+                  </div>
+                  <div className="text-muted-foreground mt-4 mb-4 flex items-center gap-4 text-xs font-bold uppercase tracking-widest">
+                    <span className="flex items-center gap-1.5">
+                      <User className="h-3.5 w-3.5" style={{ color: '#35557A' }} />
+                      {post.author}
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <Clock className="h-3.5 w-3.5" style={{ color: '#35557A' }} />
+                      {post.date}
+                    </span>
+                  </div>
+                  <p className="text-muted-foreground mt-auto line-clamp-3 text-sm leading-relaxed">{post.excerpt}</p>
                 </div>
-                <div className="text-muted-foreground mt-4 flex items-center gap-4 text-xs">
-                  <span className="flex items-center gap-1.5">
-                    <User className="h-3.5 w-3.5" />
-                    {post.author}
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <Clock className="h-3.5 w-3.5" />
-                    {post.date}
-                  </span>
+                <div className="mt-auto p-8 pt-0">
+                  <div className="inline-flex items-center text-xs font-bold uppercase tracking-widest transition-colors duration-200" style={{ color: '#35557A' }}>
+                    <span className="group-hover:text-brand-800">Read Article</span>
+                    <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+                  </div>
                 </div>
-                <p className="text-muted-foreground mt-4 line-clamp-3 text-sm">{post.excerpt}</p>
-              </CardHeader>
-              <div className="mt-auto p-6 pt-0">
-                <div className="text-primary inline-flex items-center text-sm font-semibold group-hover:underline">
-                  Read Article{' '}
-                  <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </div>
-              </div>
-            </Link>
+              </Link>
+            </StaggerItem>
           ))}
-        </ResponsiveGrid>
+        </StaggerContainer>
 
         <div className="mt-16 flex justify-center">
           <Button size="lg" variant="outline">

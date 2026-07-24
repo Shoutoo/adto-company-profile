@@ -5,6 +5,7 @@ import { DynamicLocationMap } from '@/components/molecules/dynamic-location-map'
 import { HeroSection } from '@/components/molecules/hero-section-main';
 import { PageHeader } from '@/components/molecules/page-header';
 import { SectionWrapper } from '@/components/molecules/section-wrapper';
+import { StaggerContainer, StaggerItem } from '@/components/atoms/animations';
 import { Separator } from '@/components/ui/separator';
 import { siteConfig } from '@/lib/config/site.config';
 
@@ -85,32 +86,33 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               <h2 className="mb-6 font-heading text-2xl font-bold uppercase tracking-wider text-foreground">
                 {tContact('info_title')}
               </h2>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <StaggerContainer className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 {CONTACT_INFO.map((info, idx) => (
-                  <a
-                    href={info.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    key={idx}
-                    className="group relative flex flex-col items-start overflow-hidden rounded-[24px] border border-slate-100 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.01] hover:border-navy hover:shadow-[0_25px_60px_rgba(15,23,42,0.12)] focus:outline-none focus:ring-2 focus:ring-navy/50 cursor-pointer"
-                    style={{ boxShadow: '0 10px 30px rgba(15,23,42,0.06)' }}
-                  >
-                    <div className="absolute inset-x-0 top-0 h-1 bg-orange opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-slate-50 shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-md">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy text-white transition-colors duration-300 group-hover:bg-orange">
-                        <info.icon
-                          className="h-5 w-5 transition-transform duration-300 group-hover:rotate-3"
-                          strokeWidth={2}
-                        />
+                  <StaggerItem key={idx} direction="up">
+                    <a
+                      href={info.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative flex flex-col items-start h-full overflow-hidden rounded-[24px] border border-slate-100 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.01] hover:border-navy hover:shadow-[0_25px_60px_rgba(15,23,42,0.12)] focus:outline-none focus:ring-2 focus:ring-navy/50 cursor-pointer"
+                      style={{ boxShadow: '0 10px 30px rgba(15,23,42,0.06)' }}
+                    >
+                      <div className="absolute inset-x-0 top-0 h-1 bg-orange opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-slate-50 shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-md">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy text-white transition-colors duration-300 group-hover:bg-orange">
+                          <info.icon
+                            className="h-5 w-5 transition-transform duration-300 group-hover:rotate-3 group-hover:scale-110"
+                            strokeWidth={2}
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <h3 className="mb-3 font-heading text-sm font-bold uppercase tracking-wider text-slate-900 group-hover:text-navy transition-colors">
-                      {info.title}
-                    </h3>
-                    <p className="text-xs leading-relaxed text-slate-500">{info.details}</p>
-                  </a>
+                      <h3 className="mb-3 font-heading text-sm font-bold uppercase tracking-wider text-slate-900 group-hover:text-navy transition-colors">
+                        {info.title}
+                      </h3>
+                      <p className="text-xs leading-relaxed text-slate-500">{info.details}</p>
+                    </a>
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerContainer>
             </div>
 
             <Separator className="bg-border" />

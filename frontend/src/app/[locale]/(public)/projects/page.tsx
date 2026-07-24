@@ -7,6 +7,7 @@ import { CtaSection } from '@/components/molecules/cta-section';
 import { HeroSection } from '@/components/molecules/hero-section-main';
 import { PageHeader } from '@/components/molecules/page-header';
 import { SectionWrapper } from '@/components/molecules/section-wrapper';
+import { StaggerContainer, StaggerItem, AnimatedCounter } from '@/components/atoms/animations';
 import { ROUTES } from '@/lib/constants/routes.constants';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -102,72 +103,83 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
       />
 
       <SectionWrapper background="alt" id="featured-projects">
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <StaggerContainer className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <Link
+            <StaggerItem
               key={project.id}
-              href={`/projects/${project.slug}`}
-              className="surface-card group flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-[rgba(53,85,122,0.15)] hover:shadow-card-hover focus:outline-none focus:ring-2 focus:ring-brand-500/50 cursor-pointer"
+              direction="up"
             >
-              <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden bg-[#0A2F5C]">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A2F5C]/80 to-transparent opacity-40 transition-opacity duration-300 group-hover:opacity-20" />
-              </div>
-              <div className="flex flex-1 flex-col p-8">
-                <div className="mb-4 flex items-center justify-between">
-                  <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: '#35557A' }}>
-                    {project.icon}
-                    {project.category}
-                  </span>
-                  <span className="text-muted-foreground flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest group-hover:text-brand-600 transition-colors">
-                    <Calendar className="h-3.5 w-3.5" />
-                    {project.year}
-                  </span>
+              <Link
+                href={`/projects/${project.slug}`}
+                className="surface-card group flex flex-col h-full overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-[rgba(53,85,122,0.15)] hover:shadow-card-hover focus:outline-none focus:ring-2 focus:ring-brand-500/50 cursor-pointer"
+              >
+                <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden bg-[#0A2F5C]">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A2F5C]/80 to-transparent opacity-40 transition-opacity duration-300 group-hover:opacity-20" />
                 </div>
-                <h3 className="mb-1 font-heading text-xl font-bold leading-tight text-foreground group-hover:text-brand-600 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground mb-4 text-sm font-bold uppercase tracking-wider">
-                  {project.client}
-                </p>
-                <p className="text-muted-foreground mb-6 flex-1 text-sm leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex items-center gap-2 border-t pt-4 text-xs font-bold uppercase tracking-widest" style={{ borderColor: 'rgba(53,85,122,0.1)' }}>
-                  <MapPin className="h-3.5 w-3.5" style={{ color: '#F58220' }} />
-                  {project.location}
+                <div className="flex flex-1 flex-col p-8">
+                  <div className="mb-4 flex items-center justify-between">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: '#35557A' }}>
+                      <span className="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">{project.icon}</span>
+                      {project.category}
+                    </span>
+                    <span className="text-muted-foreground flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest group-hover:text-brand-600 transition-colors">
+                      <Calendar className="h-3.5 w-3.5" />
+                      {project.year}
+                    </span>
+                  </div>
+                  <h3 className="mb-1 font-heading text-xl font-bold leading-tight text-foreground group-hover:text-brand-600 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 text-sm font-bold uppercase tracking-wider">
+                    {project.client}
+                  </p>
+                  <p className="text-muted-foreground mb-6 flex-1 text-sm leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="flex items-center gap-2 border-t pt-4 text-xs font-bold uppercase tracking-widest" style={{ borderColor: 'rgba(53,85,122,0.1)' }}>
+                    <MapPin className="h-3.5 w-3.5" style={{ color: '#F58220' }} />
+                    {project.location}
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </SectionWrapper>
 
       <SectionWrapper
         header={{ overline: 'The Impact', title: 'By The Numbers' }}
         id="project-stats"
       >
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <StaggerContainer className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => (
-            <div
+            <StaggerItem
               key={index}
+              direction="up"
               className="surface-card flex flex-col items-center justify-center p-10 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(53,85,122,0.15)] hover:shadow-card-hover"
             >
-              <span className="mb-3 font-heading text-5xl font-bold" style={{ background: 'linear-gradient(135deg, #35557A, #F58220)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                {stat.value}
-              </span>
+              <div className="mb-3 font-heading text-5xl font-bold flex items-baseline justify-center" style={{ background: 'linear-gradient(135deg, #35557A, #F58220)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                {stat.value.match(/\d+/) ? (
+                  <AnimatedCounter value={parseInt(stat.value.replace(/\D/g, ''), 10)} />
+                ) : (
+                  stat.value
+                )}
+                {stat.value.includes('+') && '+'}
+                {stat.value.includes('%') && '%'}
+              </div>
               <span className="text-muted-foreground text-xs font-bold uppercase tracking-widest">
                 {stat.label}
               </span>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </SectionWrapper>
 
       <CtaSection

@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import { Link } from '@/i18n/routing';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -61,6 +61,10 @@ export function HeroSection({
   size = 'default',
   imageUrl,
 }: HeroSectionProps) {
+  const { scrollY } = useScroll();
+  const yBg = useTransform(scrollY, [0, 1000], [0, 300]);
+  const yDecor = useTransform(scrollY, [0, 1000], [0, -100]);
+
   return (
     <section
       className={cn(
@@ -77,64 +81,67 @@ export function HeroSection({
       {/* Background photo layer */}
       {/* FORCE HMR INVALIDATION */}
       {imageUrl && (
-        <>
+        <motion.div className="absolute inset-0" style={{ y: yBg }}>
           <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            className="absolute -inset-y-48 inset-x-0 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: `url('${imageUrl}')`,
             }}
           />
           {/* Layer 1: Strong white gradient from left to protect text */}
           <div
-            className="absolute inset-0"
+            className="absolute -inset-y-48 inset-x-0"
             style={{
               background: 'linear-gradient(90deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.72) 40%, rgba(255,255,255,0.35) 100%)'
             }}
           />
           {/* Layer 2: Subtle brand tint (Navy to Orange) for premium corporate feel */}
           <div
-            className="absolute inset-0 mix-blend-multiply"
+            className="absolute -inset-y-48 inset-x-0 mix-blend-multiply"
             style={{
               background: 'linear-gradient(135deg, rgba(10,47,92,0.06) 0%, rgba(255,90,0,0.04) 100%)'
             }}
           />
           {/* Layer 3: Soft vignette for depth */}
           <div
-            className="absolute inset-0"
+            className="absolute -inset-y-48 inset-x-0"
             style={{
               background: 'radial-gradient(circle at center, transparent 50%, rgba(0,0,0,0.15) 100%)'
             }}
           />
-        </>
+        </motion.div>
       )}
 
       {/* Radial glow — top center brand bloom */}
-      <div
+      <motion.div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
           background:
             'radial-gradient(ellipse 70% 55% at 50% -5%, rgba(53, 85, 122, 0.12) 0%, transparent 70%)',
+          y: yDecor,
         }}
       />
 
       {/* Floating brand orb — left */}
-      <div
+      <motion.div
         aria-hidden="true"
         className="pointer-events-none absolute -left-32 top-1/3 h-80 w-80 rounded-full opacity-[0.05]"
         style={{
           background: 'radial-gradient(circle, #0A2F5C 0%, transparent 70%)',
           filter: 'blur(40px)',
+          y: yDecor,
         }}
       />
 
       {/* Floating accent orb — right bottom */}
-      <div
+      <motion.div
         aria-hidden="true"
         className="pointer-events-none absolute -right-24 bottom-1/4 h-64 w-64 rounded-full opacity-[0.04]"
         style={{
           background: 'radial-gradient(circle, #FF5A00 0%, transparent 70%)',
           filter: 'blur(50px)',
+          y: yDecor,
         }}
       />
 

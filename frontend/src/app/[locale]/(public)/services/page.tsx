@@ -14,6 +14,7 @@ import { CtaSection } from '@/components/molecules/cta-section';
 import { HeroSection } from '@/components/molecules/hero-section-main';
 import { PageHeader } from '@/components/molecules/page-header';
 import { SectionWrapper } from '@/components/molecules/section-wrapper';
+import { StaggerContainer, StaggerItem } from '@/components/atoms/animations';
 import { ROUTES } from '@/lib/constants/routes.constants';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -106,67 +107,71 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       />
 
       <SectionWrapper background="alt" id="services-list">
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3">
+        <StaggerContainer className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3">
           {services.map((svc, idx) => {
             const Icon = svc.icon;
             return (
-              <Link
+              <StaggerItem
                 key={idx}
-                href={`/services/${svc.slug}`}
-                className="surface-card group flex flex-col overflow-hidden p-0 transition-all duration-300 hover:-translate-y-2 hover:border-[rgba(53,85,122,0.15)] hover:shadow-card-hover focus:outline-none focus:ring-2 focus:ring-brand-500/50 cursor-pointer"
+                direction="up"
               >
-                <div className="relative h-48 w-full overflow-hidden">
-                  <Image src={svc.image} alt={svc.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A2F5C]/80 to-transparent opacity-50 transition-opacity duration-300 group-hover:opacity-40" />
-                </div>
-                
-                <div className="flex flex-1 flex-col p-8 pt-4">
-                  <div className="-mt-12 mb-4 flex h-14 w-14 items-center justify-center rounded-[14px] bg-white transition-all duration-300 group-hover:scale-110" style={{ border: '1px solid rgba(53,85,122,0.14)', boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}>
-                    <Icon
-                      className="h-6 w-6 transition-colors duration-300 group-hover:text-brand-600"
-                      strokeWidth={1.5}
+                <Link
+                  href={`/services/${svc.slug}`}
+                  className="surface-card group flex flex-col overflow-hidden p-0 h-full transition-all duration-300 hover:-translate-y-2 hover:border-[rgba(53,85,122,0.15)] hover:shadow-card-hover focus:outline-none focus:ring-2 focus:ring-brand-500/50 cursor-pointer"
+                >
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <Image src={svc.image} alt={svc.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A2F5C]/80 to-transparent opacity-50 transition-opacity duration-300 group-hover:opacity-40" />
+                  </div>
+                  
+                  <div className="flex flex-1 flex-col p-8 pt-4">
+                    <div className="-mt-12 mb-4 flex h-14 w-14 items-center justify-center rounded-[14px] bg-white transition-all duration-300 group-hover:scale-110" style={{ border: '1px solid rgba(53,85,122,0.14)', boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}>
+                      <Icon
+                        className="h-6 w-6 transition-all duration-300 group-hover:text-brand-600 group-hover:rotate-6"
+                        strokeWidth={1.5}
+                        style={{ color: '#35557A' }}
+                      />
+                    </div>
+                    <h3 className="mb-4 font-heading text-lg font-bold uppercase tracking-wider text-foreground group-hover:text-brand-600 transition-colors">
+                      {svc.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-8 text-sm leading-relaxed">
+                      {svc.desc}
+                    </p>
+                    <ul className="mb-8 space-y-3 flex-1">
+                      {svc.sub.map((item, i) => (
+                        <li key={i} className="text-muted-foreground flex items-center gap-3 text-sm">
+                          <div className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: 'linear-gradient(135deg, #35557A, #F58220)' }} />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div
+                      className="inline-flex items-center text-xs font-bold uppercase tracking-widest transition-colors duration-200"
                       style={{ color: '#35557A' }}
-                    />
+                    >
+                      <span className="group-hover:text-brand-800">{tServices('learn_more')}</span>
+                      <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+                    </div>
                   </div>
-                  <h3 className="mb-4 font-heading text-lg font-bold uppercase tracking-wider text-foreground group-hover:text-brand-600 transition-colors">
-                    {svc.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-8 text-sm leading-relaxed">
-                    {svc.desc}
-                  </p>
-                  <ul className="mb-8 space-y-3 flex-1">
-                    {svc.sub.map((item, i) => (
-                      <li key={i} className="text-muted-foreground flex items-center gap-3 text-sm">
-                        <div className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: 'linear-gradient(135deg, #35557A, #F58220)' }} />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div
-                    className="inline-flex items-center text-xs font-bold uppercase tracking-widest transition-colors duration-200"
-                    style={{ color: '#35557A' }}
-                  >
-                    <span className="group-hover:text-brand-800">{tServices('learn_more')}</span>
-                    <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-                  </div>
-                </div>
-              </Link>
+                </Link>
+              </StaggerItem>
             );
           })}
-        </div>
+        </StaggerContainer>
       </SectionWrapper>
 
       <SectionWrapper
         header={{ overline: 'Methodology', title: 'Our Strategic Process' }}
         id="our-process"
       >
-        <div className="relative mt-16 grid grid-cols-1 gap-8 md:grid-cols-4">
+        <StaggerContainer className="relative mt-16 grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="absolute left-[12%] right-[12%] top-10 z-0 hidden h-px md:block" style={{ background: 'linear-gradient(90deg, transparent, rgba(53,85,122,0.2), rgba(245,130,32,0.3), rgba(53,85,122,0.2), transparent)' }} />
 
           {processSteps.map((process, idx) => (
-            <div key={idx} className="relative z-10 flex flex-col items-center text-center group">
-              <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-[20px] bg-white transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_8px_24px_rgba(53,85,122,0.12)]" style={{ border: '1px solid rgba(53,85,122,0.1)', boxShadow: '0 4px 12px rgba(53,85,122,0.06)' }}>
-                <span className="font-heading text-2xl font-bold" style={{ background: 'linear-gradient(135deg, #35557A, #F58220)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            <StaggerItem key={idx} direction="up" className="relative z-10 flex flex-col items-center text-center group">
+              <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-[20px] bg-white transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_8px_24px_rgba(53,85,122,0.12)] group-hover:scale-105" style={{ border: '1px solid rgba(53,85,122,0.1)', boxShadow: '0 4px 12px rgba(53,85,122,0.06)' }}>
+                <span className="font-heading text-2xl font-bold transition-transform duration-300 group-hover:scale-110" style={{ background: 'linear-gradient(135deg, #35557A, #F58220)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                   {process.step}
                 </span>
               </div>
@@ -174,9 +179,9 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
                 {process.title}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-[200px]">{process.desc}</p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </SectionWrapper>
 
       <CtaSection

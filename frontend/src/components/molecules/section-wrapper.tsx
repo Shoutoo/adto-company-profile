@@ -4,6 +4,7 @@ import * as React from 'react';
 
 import { motion } from 'framer-motion';
 
+import { FadeIn } from '@/components/atoms/animations';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { cn } from '@/lib/utils/cn';
 
@@ -136,7 +137,13 @@ export function SectionWrapper({
           </motion.div>
         )}
 
-        {children}
+        {animate ? (
+          <FadeIn delay={0.2} direction="up">
+            {children}
+          </FadeIn>
+        ) : (
+          children
+        )}
       </div>
     </section>
   );
