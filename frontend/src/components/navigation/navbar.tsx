@@ -37,16 +37,42 @@ function NavbarContent() {
           </Link>
 
           {/* Navigation Cluster (Right aligned) */}
-          <div className="hidden lg:flex flex-1 items-center justify-end gap-6 h-full">
-            <nav className="flex h-full items-center gap-1">
+          <div className="hidden lg:flex flex-1 flex-col justify-center items-end h-full pt-1">
+            {/* Top Navigation: Utility Menu */}
+            <div className="flex items-center justify-end gap-6 pb-2 w-full">
+              <nav className="flex items-center gap-6">
+                <Link 
+                  href="/career" 
+                  className={cn(
+                    "text-[12px] font-bold uppercase tracking-wider transition-colors",
+                    isScrolled ? "text-slate-500 hover:text-brand-600" : "text-white/80 hover:text-white"
+                  )}
+                >
+                  Karir
+                </Link>
+                <Link 
+                  href="/vendor-registration" 
+                  className={cn(
+                    "text-[12px] font-bold uppercase tracking-wider transition-colors",
+                    isScrolled ? "text-slate-500 hover:text-brand-600" : "text-white/80 hover:text-white"
+                  )}
+                >
+                  Pengadaan
+                </Link>
+              </nav>
+              
+              <div className="flex items-center gap-4">
+                <LanguageSwitcher isScrolled={isScrolled} />
+                <NavbarCTA isScrolled={isScrolled} />
+              </div>
+            </div>
+
+            {/* Bottom Navigation: Primary Menu */}
+            <nav className="flex items-center gap-1 w-full justify-end">
               {PUBLIC_NAV_ITEMS.map((item) => (
                 <NavItem key={item.href} item={item} isScrolled={isScrolled} />
               ))}
             </nav>
-            <div className="flex items-center gap-4">
-              <LanguageSwitcher isScrolled={isScrolled} />
-              <NavbarCTA isScrolled={isScrolled} />
-            </div>
           </div>
           
           {/* Mobile Actions */}
