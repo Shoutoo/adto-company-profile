@@ -111,22 +111,26 @@ export default async function CareerPage({ params }: { params: Promise<{ locale:
         }}
         id="benefits"
       >
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {BENEFITS.map((benefit, index) => (
             <div
               key={index}
-              className="border-border bg-background group border p-8 text-center transition-colors hover:border-brand-600"
+              className="group relative flex flex-col items-center overflow-hidden rounded-[24px] border border-slate-100 bg-white p-8 text-center transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.01] hover:border-brand-500 hover:shadow-[0_25px_60px_rgba(15,23,42,0.12)] sm:p-10"
+              style={{ boxShadow: '0 10px 30px rgba(15,23,42,0.06)' }}
             >
-              <div className="mx-auto mb-6 inline-flex h-14 w-14 items-center justify-center bg-surface-secondary text-brand-600">
-                <benefit.icon
-                  className="h-6 w-6 transition-transform group-hover:scale-110"
-                  strokeWidth={1.5}
-                />
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#0A2F5C] to-[#FF5A00] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-slate-50 shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-md">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#0A2F5C] to-[#FF5A00] text-white">
+                  <benefit.icon
+                    className="h-5 w-5 transition-transform duration-300 group-hover:rotate-3"
+                    strokeWidth={2}
+                  />
+                </div>
               </div>
-              <h3 className="mb-3 font-heading text-lg font-bold uppercase tracking-wider">
+              <h3 className="mb-4 font-heading text-xl font-bold uppercase tracking-wider text-slate-900">
                 {benefit.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{benefit.description}</p>
+              <p className="text-sm leading-relaxed text-slate-500">{benefit.description}</p>
             </div>
           ))}
         </div>
@@ -142,29 +146,39 @@ export default async function CareerPage({ params }: { params: Promise<{ locale:
         }}
         id="openings"
       >
-        <div className="mx-auto mt-12 flex max-w-4xl flex-col gap-4">
+        <div className="mx-auto mt-12 flex max-w-4xl flex-col gap-6">
           {OPEN_POSITIONS.map((job, index) => (
             <div
               key={index}
-              className="border-border bg-background group flex flex-col justify-between gap-6 border p-8 transition-colors hover:border-brand-600 md:flex-row md:items-center"
+              className="group relative flex flex-col justify-between gap-6 overflow-hidden rounded-[24px] border border-slate-100 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.01] hover:border-brand-500 hover:shadow-[0_25px_60px_rgba(15,23,42,0.12)] md:flex-row md:items-center sm:p-10 cursor-pointer"
+              style={{ boxShadow: '0 10px 30px rgba(15,23,42,0.06)' }}
             >
-              <div>
-                <h3 className="mb-3 font-heading text-lg font-bold uppercase tracking-wider">
-                  {job.title}
-                </h3>
-                <div className="text-muted-foreground flex flex-wrap items-center gap-4 text-xs font-bold uppercase tracking-widest">
-                  <span className="text-brand-600">{job.department}</span>
+              <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-[#0A2F5C] to-[#FF5A00] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="pl-2">
+                <div className="mb-4 flex items-center gap-3">
+                  <h3 className="font-heading text-xl font-bold uppercase tracking-wider text-slate-900">
+                    {job.title}
+                  </h3>
+                  <span className="hidden rounded-full bg-brand-50 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-600 sm:inline-block">
+                    Hiring
+                  </span>
+                </div>
+                <div className="flex flex-wrap items-center gap-5 text-xs font-bold uppercase tracking-widest text-slate-500">
+                  <span className="flex items-center gap-1.5 text-brand-600">
+                    <span className="h-2 w-2 rounded-full bg-gradient-to-r from-[#0A2F5C] to-[#FF5A00]"></span>
+                    {job.department}
+                  </span>
                   <div className="flex items-center gap-1.5">
-                    <MapPin className="h-3.5 w-3.5" />
+                    <MapPin className="h-4 w-4" />
                     {job.location}
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <Briefcase className="h-3.5 w-3.5" />
+                    <Briefcase className="h-4 w-4" />
                     {job.type}
                   </div>
                 </div>
               </div>
-              <Button className="rounded-none px-8 text-xs font-bold uppercase tracking-widest">
+              <Button className="rounded-[16px] px-8 py-6 text-xs font-bold uppercase tracking-widest shadow-sm transition-all duration-300 group-hover:shadow-md">
                 Apply Now
               </Button>
             </div>

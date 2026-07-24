@@ -81,22 +81,26 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               <h2 className="mb-6 font-heading text-2xl font-bold uppercase tracking-wider text-foreground">
                 {tContact('info_title')}
               </h2>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 {CONTACT_INFO.map((info, idx) => (
                   <div
                     key={idx}
-                    className="group border border-border bg-slate-50 p-6 transition-colors hover:border-brand-600"
+                    className="group relative flex flex-col items-start overflow-hidden rounded-[24px] border border-slate-100 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.01] hover:border-brand-500 hover:shadow-[0_25px_60px_rgba(15,23,42,0.12)]"
+                    style={{ boxShadow: '0 10px 30px rgba(15,23,42,0.06)' }}
                   >
-                    <div className="mb-4 flex h-10 w-10 items-center justify-center bg-white text-brand-600 shadow-sm">
-                      <info.icon
-                        className="h-5 w-5 transition-transform group-hover:scale-110"
-                        strokeWidth={1.5}
-                      />
+                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#0A2F5C] to-[#FF5A00] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-slate-50 shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-md">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#0A2F5C] to-[#FF5A00] text-white">
+                        <info.icon
+                          className="h-5 w-5 transition-transform duration-300 group-hover:rotate-3"
+                          strokeWidth={2}
+                        />
+                      </div>
                     </div>
-                    <h3 className="mb-2 font-heading text-sm font-bold uppercase tracking-wider text-foreground">
+                    <h3 className="mb-3 font-heading text-sm font-bold uppercase tracking-wider text-slate-900">
                       {info.title}
                     </h3>
-                    <p className="text-xs leading-relaxed text-muted-foreground">{info.details}</p>
+                    <p className="text-xs leading-relaxed text-slate-500">{info.details}</p>
                   </div>
                 ))}
               </div>
@@ -108,17 +112,23 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               <h2 className="mb-6 font-heading text-2xl font-bold uppercase tracking-wider text-foreground">
                 Operating Hours
               </h2>
-              <div className="flex items-start gap-4 border border-border bg-slate-50 p-6">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-white text-brand-600 shadow-sm">
-                  <Clock className="h-5 w-5" strokeWidth={1.5} />
+              <div
+                className="group relative flex items-start gap-6 overflow-hidden rounded-[24px] border border-slate-100 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.01] hover:border-brand-500 hover:shadow-[0_25px_60px_rgba(15,23,42,0.12)]"
+                style={{ boxShadow: '0 10px 30px rgba(15,23,42,0.06)' }}
+              >
+                <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-[#0A2F5C] to-[#FF5A00] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-slate-50 shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-md">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#0A2F5C] to-[#FF5A00] text-white">
+                    <Clock className="h-5 w-5 transition-transform duration-300 group-hover:rotate-3" strokeWidth={2} />
+                  </div>
                 </div>
-                <div>
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-3 text-xs uppercase tracking-wider">
-                    <div className="font-bold text-muted-foreground">Monday - Friday:</div>
-                    <div className="font-bold text-foreground">08:00 AM - 05:00 PM</div>
-                    <div className="font-bold text-muted-foreground">Saturday:</div>
-                    <div className="font-bold text-foreground">08:00 AM - 12:00 PM</div>
-                    <div className="font-bold text-muted-foreground">Sunday:</div>
+                <div className="pt-1">
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-4 text-xs uppercase tracking-wider">
+                    <div className="font-bold text-slate-500">Monday - Friday:</div>
+                    <div className="font-bold text-slate-900">08:00 AM - 05:00 PM</div>
+                    <div className="font-bold text-slate-500">Saturday:</div>
+                    <div className="font-bold text-slate-900">08:00 AM - 12:00 PM</div>
+                    <div className="font-bold text-slate-500">Sunday:</div>
                     <div className="font-bold text-brand-600">Closed</div>
                   </div>
                 </div>

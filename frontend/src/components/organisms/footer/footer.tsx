@@ -105,8 +105,8 @@ export function Footer() {
                 {column.title}
               </h3>
               <ul className="space-y-2.5">
-                {column.links.map((link) => (
-                  <li key={link.href}>
+                {column.links.map((link, index) => (
+                  <li key={`${link.label}-${index}`}>
                     <Link
                       className="group inline-flex items-center gap-1 text-sm text-gray-400 transition-colors hover:text-white"
                       href={link.href}

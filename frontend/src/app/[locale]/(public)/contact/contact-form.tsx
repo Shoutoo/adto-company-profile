@@ -58,37 +58,37 @@ export function ContactForm() {
   };
 
   return (
-    <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <div className="space-y-2">
-          <label className="text-sm font-medium" htmlFor="name">
+          <label className="text-sm font-medium text-slate-700" htmlFor="name">
             {tContact('form_name')} *
           </label>
-          <Input id="name" placeholder="John Doe" {...register('name')} />
+          <Input className="rounded-[14px] px-4 py-6 transition-all duration-300 hover:border-brand-500 focus:border-brand-500 focus:ring-brand-500/20" id="name" placeholder="John Doe" {...register('name')} />
           {errors.name && <p className="text-destructive text-xs">{errors.name.message}</p>}
         </div>
         <div className="space-y-2">
-          <label className="text-sm font-medium" htmlFor="email">
+          <label className="text-sm font-medium text-slate-700" htmlFor="email">
             {tContact('form_email')} *
           </label>
-          <Input id="email" placeholder="john@example.com" type="email" {...register('email')} />
+          <Input className="rounded-[14px] px-4 py-6 transition-all duration-300 hover:border-brand-500 focus:border-brand-500 focus:ring-brand-500/20" id="email" placeholder="john@example.com" type="email" {...register('email')} />
           {errors.email && <p className="text-destructive text-xs">{errors.email.message}</p>}
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <div className="space-y-2">
-          <label className="text-sm font-medium" htmlFor="phone">
+          <label className="text-sm font-medium text-slate-700" htmlFor="phone">
             {tContact('form_phone')}
           </label>
-          <Input id="phone" placeholder="+1 (555) 000-0000" type="tel" {...register('phone')} />
+          <Input className="rounded-[14px] px-4 py-6 transition-all duration-300 hover:border-brand-500 focus:border-brand-500 focus:ring-brand-500/20" id="phone" placeholder="+1 (555) 000-0000" type="tel" {...register('phone')} />
         </div>
         <div className="space-y-2">
-          <label className="text-sm font-medium" htmlFor="subject">
+          <label className="text-sm font-medium text-slate-700" htmlFor="subject">
             {tContact('form_subject')} *
           </label>
           <select
-            className="border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-9 w-full items-center justify-between rounded-none border bg-transparent px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-1 disabled:cursor-not-allowed disabled:opacity-50"
+            className="border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-12 w-full items-center justify-between rounded-[14px] border bg-transparent px-4 py-3 text-sm shadow-sm transition-all duration-300 hover:border-brand-500 focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/20 disabled:cursor-not-allowed disabled:opacity-50"
             id="subject"
             {...register('subject')}
           >
@@ -106,11 +106,11 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <label className="text-sm font-medium" htmlFor="message">
+        <label className="text-sm font-medium text-slate-700" htmlFor="message">
           {tContact('form_message')} *
         </label>
         <Textarea
-          className="min-h-[120px] resize-none"
+          className="min-h-[160px] resize-none rounded-[14px] p-4 transition-all duration-300 hover:border-brand-500 focus:border-brand-500 focus:ring-brand-500/20"
           id="message"
           placeholder={tContact('message_placeholder')}
           {...register('message')}
@@ -118,7 +118,7 @@ export function ContactForm() {
         {errors.message && <p className="text-destructive text-xs">{errors.message.message}</p>}
       </div>
 
-      <Button className="w-full sm:w-auto" disabled={isSubmitting} type="submit">
+      <Button className="w-full rounded-[16px] px-8 py-6 text-xs font-bold uppercase tracking-widest shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:w-auto mt-2" disabled={isSubmitting} type="submit">
         {isSubmitting ? tContact('sending') : tContact('send')}
       </Button>
     </form>
