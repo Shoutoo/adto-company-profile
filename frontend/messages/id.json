@@ -31,7 +31,9 @@
     "title": "Mendorong Keunggulan Industri",
     "description": "Kami berkomitmen untuk memberikan solusi industri tingkat atas yang mendorong efisiensi, keandalan, dan pertumbuhan berkelanjutan bagi mitra kami.",
     "mission": "Misi Kami",
-    "vision": "Visi Kami"
+    "vision": "Visi Kami",
+    "hero_title": "Mendorong Keunggulan Industri",
+    "hero_desc": "Kami berkomitmen untuk memberikan solusi industri tingkat atas yang mendorong efisiensi, keandalan, dan pertumbuhan berkelanjutan bagi mitra kami."
   },
   "Services": {
     "overline": "Layanan Kami",
@@ -42,14 +44,21 @@
     "description": "Deskripsi Layanan",
     "benefits": "Keuntungan",
     "gallery": "Galeri",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "hero_title": "Solusi Industri Komprehensif",
+    "hero_desc": "Deskripsi Layanan",
+    "industrial_supply": "Pasokan Industri",
+    "project_management": "Manajemen Proyek",
+    "logistics": "Logistik Berat"
   },
   "Projects": {
     "overline": "Portofolio Kami",
     "title": "Pengiriman Proyek yang Sukses",
     "technology": "Teknologi",
     "timeline": "Lini Masa",
-    "result": "Hasil"
+    "result": "Hasil",
+    "hero_title": "Pengiriman Proyek yang Sukses",
+    "hero_desc": "Pengiriman Proyek yang Sukses"
   },
   "Blog": {
     "overline": "Wawasan",
@@ -61,7 +70,11 @@
     "share": "Bagikan",
     "related": "Artikel Terkait",
     "prev": "Sebelumnya",
-    "next": "Selanjutnya"
+    "next": "Selanjutnya",
+    "hero_title": "Wawasan & Berita Industri",
+    "hero_desc": "Wawasan & Berita Industri",
+    "newsletter_placeholder": "Masukkan alamat email Anda",
+    "subscribe": "Berlangganan"
   },
   "Career": {
     "overline": "Bergabung Bersama Kami",
@@ -71,7 +84,9 @@
     "benefit": "Keuntungan",
     "location": "Lokasi",
     "employment_type": "Tipe Pekerjaan",
-    "apply_button": "Lamar Sekarang"
+    "apply_button": "Lamar Sekarang",
+    "hero_title": "Bangun Karir Anda Bersama Kami",
+    "hero_desc": "Bangun Karir Anda Bersama Kami"
   },
   "Contact": {
     "overline": "Hubungi Kami",
@@ -85,11 +100,43 @@
     "validation": {
       "required": "Kolom ini wajib diisi",
       "email": "Masukkan email yang valid"
+    },
+    "hero_title": "Hubungi Kami",
+    "hero_desc": "Hubungi Kami",
+    "office": "Kantor Pusat",
+    "call_us": "Hubungi Kami",
+    "email_us": "Email Kami",
+    "info_title": "Informasi Kontak",
+    "form_title": "Kirim Pesan",
+    "form_desc": "Kami ingin mendengar dari Anda. Silakan isi formulir di bawah ini.",
+    "subjects": {
+      "quotation": "Permintaan Penawaran",
+      "partnership": "Kemitraan",
+      "career": "Karir",
+      "other": "Lainnya",
+      "general": "Pertanyaan Umum"
+    },
+    "form_message": "Bagaimana kami bisa membantu?",
+    "message_placeholder": "Beri tahu kami detail tentang proyek Anda...",
+    "send": "Kirim Pesan",
+    "form_name": "Nama",
+    "form_email": "Email",
+    "form_phone": "Nomor Telepon",
+    "form_subject": "Subjek",
+    "select_subject": "Pilih Subjek",
+    "errors": {
+      "message_min": "Pesan minimal 10 karakter",
+      "email_invalid": "Alamat email tidak valid",
+      "subject_required": "Subjek harus diisi",
+      "name_min": "Nama minimal 2 karakter"
     }
   },
   "Partners": {
     "overline": "Mitra Berharga",
-    "title": "Dipercaya Oleh Pemimpin Nasional"
+    "title": "Dipercaya Oleh Pemimpin Nasional",
+    "hero_title": "Dipercaya Oleh Pemimpin Nasional",
+    "hero_desc": "Dipercaya Oleh Pemimpin Nasional",
+    "subtitle": "Dipercaya Oleh Pemimpin Nasional"
   },
   "Footer": {
     "description": "Penyedia solusi industri komprehensif terkemuka.",
@@ -103,5 +150,26 @@
     "title": "Halaman Tidak Ditemukan",
     "description": "Halaman yang Anda cari tidak ada.",
     "back_home": "Kembali ke Beranda"
+  },
+  "CTA": {
+    "title": "Siap meningkatkan operasi industri Anda?",
+    "subtitle": "Bermitra dengan kami untuk mencapai efisiensi dan keandalan yang lebih besar.",
+    "button": "Hubungi Kami Sekarang"
+  },
+  "SEO": {
+    "home_title": "Beranda | PT Andalan Daya Tata Olah",
+    "home_desc": "Penyedia solusi industri komprehensif terkemuka.",
+    "about_title": "Tentang Kami | PT Andalan Daya Tata Olah",
+    "about_desc": "Mendorong Keunggulan Industri",
+    "services_title": "Layanan | PT Andalan Daya Tata Olah",
+    "services_desc": "Solusi Industri Komprehensif",
+    "projects_title": "Proyek | PT Andalan Daya Tata Olah",
+    "projects_desc": "Pengiriman Proyek yang Sukses",
+    "news_title": "Berita | PT Andalan Daya Tata Olah",
+    "news_desc": "Wawasan & Berita Industri",
+    "career_title": "Karir | PT Andalan Daya Tata Olah",
+    "career_desc": "Bangun Karir Anda Bersama Kami",
+    "contact_title": "Kontak | PT Andalan Daya Tata Olah",
+    "contact_desc": "Hubungi Kami"
   }
 }

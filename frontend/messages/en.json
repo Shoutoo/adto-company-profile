@@ -31,7 +31,9 @@
     "title": "Driving Industrial Excellence",
     "description": "We are committed to delivering top-tier industrial solutions that drive efficiency, reliability, and sustainable growth for our partners.",
     "mission": "Our Mission",
-    "vision": "Our Vision"
+    "vision": "Our Vision",
+    "hero_title": "Driving Industrial Excellence",
+    "hero_desc": "We are committed to delivering top-tier industrial solutions that drive efficiency, reliability, and sustainable growth for our partners."
   },
   "Services": {
     "overline": "Our Services",
@@ -42,14 +44,21 @@
     "description": "Service Description",
     "benefits": "Benefits",
     "gallery": "Gallery",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "hero_title": "Comprehensive Industrial Solutions",
+    "hero_desc": "Service Description",
+    "industrial_supply": "Industrial Supply",
+    "project_management": "Project Management",
+    "logistics": "Heavy Logistics"
   },
   "Projects": {
     "overline": "Our Portfolio",
     "title": "Successful Project Deliveries",
     "technology": "Technology",
     "timeline": "Timeline",
-    "result": "Result"
+    "result": "Result",
+    "hero_title": "Successful Project Deliveries",
+    "hero_desc": "Successful Project Deliveries"
   },
   "Blog": {
     "overline": "Insights",
@@ -61,7 +70,11 @@
     "share": "Share",
     "related": "Related Articles",
     "prev": "Previous",
-    "next": "Next"
+    "next": "Next",
+    "hero_title": "Industry Insights & News",
+    "hero_desc": "Industry Insights & News",
+    "newsletter_placeholder": "Enter your email address",
+    "subscribe": "Subscribe"
   },
   "Career": {
     "overline": "Join Our Team",
@@ -71,7 +84,9 @@
     "benefit": "Benefits",
     "location": "Location",
     "employment_type": "Employment Type",
-    "apply_button": "Apply Now"
+    "apply_button": "Apply Now",
+    "hero_title": "Build Your Career With Us",
+    "hero_desc": "Build Your Career With Us"
   },
   "Contact": {
     "overline": "Get in Touch",
@@ -85,11 +100,43 @@
     "validation": {
       "required": "This field is required",
       "email": "Please enter a valid email"
+    },
+    "hero_title": "Contact Us",
+    "hero_desc": "Contact Us",
+    "office": "Head Office",
+    "call_us": "Call Us",
+    "email_us": "Email Us",
+    "info_title": "Contact Information",
+    "form_title": "Send us a message",
+    "form_desc": "We would love to hear from you. Please fill out the form below.",
+    "subjects": {
+      "quotation": "Request Quotation",
+      "partnership": "Partnership",
+      "career": "Career",
+      "other": "Other",
+      "general": "General Inquiry"
+    },
+    "form_message": "How can we help?",
+    "message_placeholder": "Please tell us details about your project...",
+    "send": "Send Message",
+    "form_name": "Name",
+    "form_email": "Email",
+    "form_phone": "Phone Number",
+    "form_subject": "Subject",
+    "select_subject": "Select Subject",
+    "errors": {
+      "message_min": "Message must be at least 10 characters",
+      "email_invalid": "Invalid email address",
+      "subject_required": "Subject is required",
+      "name_min": "Name must be at least 2 characters"
     }
   },
   "Partners": {
     "overline": "Valued Partners",
-    "title": "Trusted By National Leaders"
+    "title": "Trusted By National Leaders",
+    "hero_title": "Trusted By National Leaders",
+    "hero_desc": "Trusted By National Leaders",
+    "subtitle": "Trusted By National Leaders"
   },
   "Footer": {
     "description": "Leading provider of comprehensive industrial solutions.",
@@ -103,5 +150,26 @@
     "title": "Page Not Found",
     "description": "The page you are looking for does not exist.",
     "back_home": "Back to Home"
+  },
+  "CTA": {
+    "title": "Ready to elevate your industrial operations?",
+    "subtitle": "Partner with us to achieve greater efficiency and reliability.",
+    "button": "Contact Us Now"
+  },
+  "SEO": {
+    "home_title": "Home | PT Andalan Daya Tata Olah",
+    "home_desc": "Leading provider of comprehensive industrial solutions.",
+    "about_title": "About Us | PT Andalan Daya Tata Olah",
+    "about_desc": "Driving Industrial Excellence",
+    "services_title": "Services | PT Andalan Daya Tata Olah",
+    "services_desc": "Comprehensive Industrial Solutions",
+    "projects_title": "Projects | PT Andalan Daya Tata Olah",
+    "projects_desc": "Successful Project Deliveries",
+    "news_title": "News | PT Andalan Daya Tata Olah",
+    "news_desc": "Industry Insights & News",
+    "career_title": "Career | PT Andalan Daya Tata Olah",
+    "career_desc": "Build Your Career With Us",
+    "contact_title": "Contact | PT Andalan Daya Tata Olah",
+    "contact_desc": "Get in Touch"
   }
 }
