@@ -9,7 +9,8 @@ import { type LucideIcon } from 'lucide-react';
 export interface NavItem {
   readonly label: string;
   readonly href: string;
-  readonly description?: string;
+  readonly descriptionKey?: string;
+  readonly image?: string;
   readonly children?: NavItem[];
   readonly isExternal?: boolean;
 }

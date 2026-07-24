@@ -11,7 +11,7 @@ import { usePathname } from '@/i18n/routing';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { Footer } from '@/components/organisms/footer';
-import { Header } from '@/components/organisms/header';
+import { Navbar } from '@/components/navigation';
 import { AuthProvider } from '@/lib/providers/auth-provider';
 
 interface PublicLayoutProps {
@@ -24,7 +24,7 @@ export function PublicLayout({ children }: PublicLayoutProps) {
   return (
     <AuthProvider>
       <div className="flex min-h-dvh flex-col">
-        <Header />
+        <Navbar />
         <AnimatePresence mode="wait">
           <motion.main
             key={pathname}
