@@ -100,6 +100,7 @@ export default function BlogPage() {
   return (
     <>
       <HeroSection
+        imageUrl="/images/hero_news_1784892776990.png"
         align="center"
         className="bg-muted/30"
         description="Insights, guides, and thought leadership from our team of engineering and construction professionals."
