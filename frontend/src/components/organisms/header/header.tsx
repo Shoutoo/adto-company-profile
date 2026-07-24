@@ -60,13 +60,13 @@ export function Header() {
           'fixed left-0 right-0 top-0 z-50 transition-all duration-300 ease-out',
           'h-20 md:h-[90px]',
           scrolled
-            ? 'bg-white/97 backdrop-blur-xl border-b border-[rgba(53,85,122,0.08)]'
+            ? 'bg-white/95 backdrop-blur-lg border-b border-slate-100/50'
             : 'bg-white/95 backdrop-blur-md border-b border-transparent',
         )}
         style={{
           boxShadow: scrolled
-            ? '0 1px 3px rgba(0,0,0,0.04), 0 6px 20px rgba(53,85,122,0.07)'
-            : '0 1px 2px rgba(0,0,0,0.02)',
+            ? '0 4px 20px rgba(0,0,0,0.03)'
+            : 'none',
         }}
       >
         <div className="container-page flex h-full items-center justify-between">
@@ -90,7 +90,7 @@ export function Header() {
               <div key={item.href} className="group relative flex h-full items-center">
                 <Link
                   className={cn(
-                    'inline-flex h-full items-center gap-1 px-1 text-[14px] font-bold uppercase tracking-wider transition-colors duration-250',
+                    'inline-flex h-full items-center gap-1 px-1 text-[13px] font-semibold uppercase tracking-[0.1em] transition-colors duration-250',
                     isActive(item.href)
                       ? 'text-brand-600'
                       : 'text-foreground hover:text-brand-600'
@@ -105,7 +105,7 @@ export function Header() {
                 {/* Animated underline — gradient */}
                 <div
                   className={cn(
-                    'absolute bottom-0 left-0 right-0 h-[3px] rounded-t-sm transition-transform duration-300 ease-out origin-left',
+                    'absolute bottom-[1px] left-0 right-0 h-[2px] rounded-t-sm transition-transform duration-300 ease-out origin-left',
                     isActive(item.href)
                       ? 'scale-x-100'
                       : 'scale-x-0 group-hover:scale-x-100'
@@ -117,22 +117,24 @@ export function Header() {
 
                 {/* Dropdown Menu */}
                 {item.children && (
-                  <div className="absolute left-0 top-full hidden w-64 pt-2 group-hover:block transition-all duration-300 opacity-0 group-hover:opacity-100">
-                    <div className="rounded-xl border border-border/50 bg-white p-2 shadow-xl backdrop-blur-xl">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className={cn(
-                            'block rounded-lg px-4 py-2.5 text-sm font-medium transition-colors hover:bg-brand-50 hover:text-brand-600',
-                            pathname === child.href || pathname.startsWith(child.href + '/')
-                              ? 'bg-brand-50/50 text-brand-600'
-                              : 'text-muted-foreground'
-                          )}
-                        >
-                          {t(child.label as any)}
-                        </Link>
-                      ))}
+                  <div className="absolute left-0 top-full hidden w-64 pt-3 group-hover:block transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2">
+                    <div className="rounded-[16px] border border-slate-100 bg-white p-3 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
+                      <div className="flex flex-col space-y-1">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className={cn(
+                              'block rounded-lg px-4 py-2.5 text-[14px] font-medium transition-colors hover:bg-slate-50 hover:text-brand-600',
+                              pathname === child.href || pathname.startsWith(child.href + '/')
+                                ? 'bg-brand-50/50 text-brand-600'
+                                : 'text-slate-600'
+                            )}
+                          >
+                            {t(child.label as any)}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}

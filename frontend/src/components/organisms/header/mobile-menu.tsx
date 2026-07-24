@@ -72,7 +72,7 @@ export function MobileMenu() {
               {item.children ? (
                 <button
                   className={cn(
-                    'flex w-full items-center justify-between px-0 py-4 text-sm font-semibold uppercase tracking-wider transition-colors',
+                    'flex w-full items-center justify-between px-0 py-4 text-[13px] font-semibold uppercase tracking-[0.1em] transition-colors',
                     isActive(item.href) ? 'text-brand-600' : 'text-foreground hover:text-brand-600'
                   )}
                   onClick={() => toggleSubmenu(item.href)}
@@ -89,7 +89,7 @@ export function MobileMenu() {
               ) : (
                 <Link
                   className={cn(
-                    'flex w-full items-center justify-between px-0 py-4 text-sm font-semibold uppercase tracking-wider transition-colors',
+                    'flex w-full items-center justify-between px-0 py-4 text-[13px] font-semibold uppercase tracking-[0.1em] transition-colors',
                     isActive(item.href) ? 'text-brand-600' : 'text-foreground hover:text-brand-600'
                   )}
                   href={item.href}
@@ -109,17 +109,17 @@ export function MobileMenu() {
                     transition={{ duration: 0.2 }}
                     className="overflow-hidden"
                   >
-                    <ul className="pb-3 pl-4 space-y-3">
+                    <ul className="mb-3 mt-1 space-y-1 rounded-xl bg-slate-50/60 p-2">
                       {item.children.map((child) => (
                         <li key={child.href}>
                           <Link
                             href={child.href}
                             onClick={closeMenu}
                             className={cn(
-                              'block text-sm transition-colors hover:text-brand-600',
+                              'block rounded-lg px-4 py-3 text-[14px] transition-colors hover:bg-white hover:text-brand-600',
                               pathname === child.href || pathname.startsWith(child.href + '/')
-                                ? 'text-brand-600 font-medium'
-                                : 'text-muted-foreground'
+                                ? 'bg-white text-brand-600 font-medium shadow-sm'
+                                : 'text-slate-600'
                             )}
                           >
                             {t(child.label as any)}
