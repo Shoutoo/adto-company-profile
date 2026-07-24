@@ -10,17 +10,15 @@ interface NavbarCTAProps {
   isScrolled?: boolean;
 }
 
-export function NavbarCTA({ isScrolled = false }: NavbarCTAProps) {
+export function NavbarCTA({}: NavbarCTAProps) {
   const t = useTranslations('Navbar');
 
   return (
     <Button
       asChild
       className={cn(
-        "hidden rounded-full px-6 py-5 text-[14px] font-medium capitalize shadow-sm transition-all duration-300 md:inline-flex",
-        isScrolled
-          ? "bg-brand-600 text-white hover:bg-brand-700 hover:shadow-md hover:-translate-y-0.5"
-          : "bg-transparent border border-white text-white hover:bg-white/10 hover:shadow-md hover:-translate-y-0.5 backdrop-blur-sm"
+        "hidden rounded-full px-7 py-5 text-[15px] font-semibold text-white transition-all duration-250 md:inline-flex shadow-[0_4px_14px_0_rgba(255,90,0,0.39)]",
+        "bg-[#FF5A00] hover:bg-[#E04F00] hover:shadow-[0_6px_20px_rgba(255,90,0,0.23)] hover:-translate-y-1"
       )}
     >
       <Link href={ROUTES.CONTACT}>{t('contact')}</Link>

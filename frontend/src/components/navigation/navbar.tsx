@@ -8,7 +8,6 @@ import { PUBLIC_NAV_ITEMS } from '@/lib/constants/navigation.constants';
 
 import { NavigationProvider, useNavigation } from './navigation-provider';
 import { NavItem } from './nav-item';
-import { LandingPanel } from './landing-panel';
 import { MobileNavigation } from './mobile-navigation';
 import { LanguageSwitcher } from './language-switcher';
 import { NavbarCTA } from './navbar-cta';
@@ -37,42 +36,18 @@ function NavbarContent() {
           </Link>
 
           {/* Navigation Cluster (Right aligned) */}
-          <div className="hidden lg:flex flex-1 flex-col justify-center items-end h-full pt-1">
-            {/* Top Navigation: Utility Menu */}
-            <div className="flex items-center justify-end gap-6 pb-2 w-full">
-              <nav className="flex items-center gap-6">
-                <Link 
-                  href="/career" 
-                  className={cn(
-                    "text-[12px] font-bold uppercase tracking-wider transition-colors",
-                    isScrolled ? "text-slate-500 hover:text-brand-600" : "text-white/80 hover:text-white"
-                  )}
-                >
-                  Karir
-                </Link>
-                <Link 
-                  href="/vendor-registration" 
-                  className={cn(
-                    "text-[12px] font-bold uppercase tracking-wider transition-colors",
-                    isScrolled ? "text-slate-500 hover:text-brand-600" : "text-white/80 hover:text-white"
-                  )}
-                >
-                  Pengadaan
-                </Link>
-              </nav>
-              
-              <div className="flex items-center gap-4">
-                <LanguageSwitcher isScrolled={isScrolled} />
-                <NavbarCTA isScrolled={isScrolled} />
-              </div>
-            </div>
-
-            {/* Bottom Navigation: Primary Menu */}
-            <nav className="flex items-center gap-1 w-full justify-end">
+          <div className="hidden lg:flex flex-1 items-center justify-end gap-8 h-full">
+            {/* Primary Menu */}
+            <nav className="flex items-center gap-1">
               {PUBLIC_NAV_ITEMS.map((item) => (
                 <NavItem key={item.href} item={item} isScrolled={isScrolled} />
               ))}
             </nav>
+            
+            <div className="flex items-center gap-6 border-l border-white/20 pl-6 transition-colors duration-300">
+              <LanguageSwitcher isScrolled={isScrolled} />
+              <NavbarCTA isScrolled={isScrolled} />
+            </div>
           </div>
           
           {/* Mobile Actions */}
@@ -91,10 +66,6 @@ function NavbarContent() {
           </div>
         </div>
 
-        {/* Enterprise Landing Panel */}
-        <div className="hidden lg:block">
-          <LandingPanel />
-        </div>
       </header>
 
       {/* Mobile Navigation */}

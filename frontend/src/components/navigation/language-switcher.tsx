@@ -37,18 +37,14 @@ export function LanguageSwitcher({ isScrolled = false }: LanguageSwitcherProps) 
     <DropdownMenu>
       <DropdownMenuTrigger 
         className={cn(
-          "group flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[13px] font-medium transition-all focus:outline-none focus:ring-2 focus:ring-brand-500/20",
+          "language-switcher-container group flex items-center gap-1.5 rounded-full border p-2.5 transition-all focus:outline-none focus:ring-2 focus:ring-[#FF5A00]/20",
           isScrolled 
-            ? "border-slate-200 bg-white text-slate-700 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:bg-slate-50 hover:shadow-sm data-[state=open]:bg-slate-50" 
-            : "border-white/40 bg-white/10 text-white backdrop-blur-md hover:bg-white/20 data-[state=open]:bg-white/20"
+            ? "border-slate-200 bg-white shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:bg-slate-50 hover:shadow-sm data-[state=open]:bg-slate-50" 
+            : "border-white/40 bg-white/10 backdrop-blur-md hover:bg-white/20 data-[state=open]:bg-white/20"
         )}
       >
-        <Globe className={cn("h-3.5 w-3.5 transition-colors group-hover:text-brand-600", isScrolled ? "text-slate-500" : "text-white/80")} />
-        <span className="flex items-center gap-1.5">
-          <span className="text-sm leading-none">{currentLocaleObj.flag}</span>
-          <span className="uppercase">{currentLocaleObj.name}</span>
-        </span>
-        <ChevronDown className={cn("h-3.5 w-3.5 transition-transform duration-200 group-data-[state=open]:rotate-180", isScrolled ? "text-slate-400" : "text-white/80")} />
+        <Globe className={cn("h-4 w-4 transition-colors", isScrolled ? "text-slate-600 group-hover:text-[#FF5A00]" : "text-white group-hover:text-white/80")} />
+        <ChevronDown className={cn("h-3.5 w-3.5 transition-transform duration-200 group-data-[state=open]:rotate-180", isScrolled ? "text-slate-400 group-hover:text-[#FF5A00]" : "text-white/80")} />
       </DropdownMenuTrigger>
       
       <DropdownMenuContent align="end" className="w-40 rounded-xl p-1 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] border-slate-200">

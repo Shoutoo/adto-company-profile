@@ -1,12 +1,13 @@
 'use client';
 
-import React, { createContext, useContext, useState, useRef, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 interface NavigationContextType {
   activeNav: string | null;
   setActiveNav: (label: string | null) => void;
   activeSubItem: string | null;
   setActiveSubItem: (label: string | null) => void;
+  toggleNav: (label: string) => void;
   closeNav: () => void;
   isMobileMenuOpen: boolean;
   setMobileMenuOpen: (open: boolean) => void;
@@ -20,25 +21,30 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
   const [activeSubItem, setActiveSubItemState] = useState<string | null>(null);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
   const setActiveNav = (label: string | null) => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current);
-      closeTimeoutRef.current = null;
-    }
     setActiveNavState(label);
   };
 
-  const closeNav = () => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current);
-    }
-    closeTimeoutRef.current = setTimeout(() => {
-      setActiveNavState(null);
-      setActiveSubItemState(null);
-    }, 300); // 300ms delay for forgiving Hover Safe Zone
+  const toggleNav = (label: string) => {
+    setActiveNavState((prev) => (prev === label ? null : label));
   };
+
+  const closeNav = () => {
+    setActiveNavState(null);
+    setActiveSubItemState(null);
+  };
+
+  // Close on Outside Click
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.nav-dropdown-container') && !target.closest('.language-switcher-container')) {
+        setActiveNavState(null);
+      }
+    };
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => document.removeEventListener('mousedown', handleOutsideClick);
+  }, []);
 
   // Close on ESC key
   useEffect(() => {
@@ -52,7 +58,6 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
     document.addEventListener('keydown', handleEscape);
     return () => {
       document.removeEventListener('keydown', handleEscape);
-      if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
     };
   }, []);
 
@@ -84,6 +89,7 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
       value={{
         activeNav,
         setActiveNav,
+        toggleNav,
         activeSubItem,
         setActiveSubItem: setActiveSubItemState,
         closeNav,

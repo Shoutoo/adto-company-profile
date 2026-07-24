@@ -78,15 +78,6 @@ export const PUBLIC_NAV_ITEMS: NavItem[] = [
       { label: 'insights', href: `${ROUTES.BLOG}#insights`, descriptionKey: 'desc_insights', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80' },
     ],
   },
-  {
-    label: 'contact',
-    href: ROUTES.CONTACT,
-    children: [
-      { label: 'office_location', href: `${ROUTES.CONTACT}#location`, descriptionKey: 'desc_location', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80' },
-      { label: 'contact_form', href: `${ROUTES.CONTACT}#form`, descriptionKey: 'desc_form', image: 'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&q=80' },
-      { label: 'faq', href: ROUTES.FAQ, descriptionKey: 'desc_faq', image: 'https://images.unsplash.com/photo-1553484771-371a605b060b?auto=format&fit=crop&q=80' },
-    ],
-  },
 ];
 
 /** Admin sidebar navigation groups */
