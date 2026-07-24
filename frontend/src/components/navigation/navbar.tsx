@@ -30,13 +30,13 @@ function NavbarContent() {
             : 'h-[100px] bg-transparent border-b border-transparent'
         )}
       >
-        <div className="container-page relative flex lg:grid h-full lg:grid-cols-[380px_1fr] items-center justify-between gap-4">
+        <div className="container-page relative flex lg:grid h-full lg:grid-cols-[280px_1fr] items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="relative z-10 flex items-center gap-2">
             {isScrolled ? (
-              <img src="/logo-color.svg" alt="ADTO Logo" className="h-[72px] w-auto transition-all duration-300" />
+              <img src="/logo-color.svg" alt="ADTO Logo" className="h-[48px] w-auto transition-all duration-300" />
             ) : (
-              <img src="/logo-white.svg" alt="ADTO Logo" className="h-[72px] w-auto transition-all duration-300" />
+              <img src="/logo-white.svg" alt="ADTO Logo" className="h-[48px] w-auto transition-all duration-300" />
             )}
           </Link>
 
