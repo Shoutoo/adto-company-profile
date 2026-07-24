@@ -35,7 +35,7 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
     closeTimeoutRef.current = setTimeout(() => {
       setActiveNavState(null);
       setActiveSubItemState(null);
-    }, 150); // 150ms delay before closing for better UX
+    }, 300); // 300ms delay for forgiving Hover Safe Zone
   };
 
   // Close on ESC key

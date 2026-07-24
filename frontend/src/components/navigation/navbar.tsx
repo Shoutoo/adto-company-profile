@@ -8,7 +8,7 @@ import { PUBLIC_NAV_ITEMS } from '@/lib/constants/navigation.constants';
 
 import { NavigationProvider, useNavigation } from './navigation-provider';
 import { NavItem } from './nav-item';
-import { MegaMenu } from './mega-menu';
+import { LandingPanel } from './landing-panel';
 import { MobileNavigation } from './mobile-navigation';
 import { LanguageSwitcher } from './language-switcher';
 import { NavbarCTA } from './navbar-cta';
@@ -72,9 +72,9 @@ function NavbarContent() {
           </div>
         </div>
 
-        {/* Mega Menu Dropdown */}
+        {/* Enterprise Landing Panel */}
         <div className="hidden lg:block">
-          <MegaMenu />
+          <LandingPanel />
         </div>
       </header>
 
