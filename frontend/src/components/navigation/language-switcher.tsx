@@ -47,7 +47,7 @@ export function LanguageSwitcher({ isScrolled = false }: LanguageSwitcherProps) 
         <ChevronDown className={cn("h-3.5 w-3.5 transition-transform duration-200 group-data-[state=open]:rotate-180", isScrolled ? "text-slate-400 group-hover:text-[#FF5A00]" : "text-white/80")} />
       </DropdownMenuTrigger>
       
-      <DropdownMenuContent align="end" className="w-40 rounded-xl p-1 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] border-slate-200">
+      <DropdownMenuContent align="end" className="w-40 rounded-xl bg-white p-1 text-slate-700 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] border border-slate-200">
         {LOCALES.map((loc) => (
           <DropdownMenuItem
             key={loc.code}
