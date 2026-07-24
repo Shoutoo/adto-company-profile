@@ -30,21 +30,21 @@ const RESOURCES = [
     description: 'Dokumen profil perusahaan resmi PT ADTO Cipta Usaha Mandiri.',
     icon: BookOpen,
     count: 1,
-    href: '/docs/company-profile.pdf',
+    href: '/contact',
   },
   {
     title: 'Katalog Layanan',
     description: 'Katalog lengkap layanan pengadaan chemical dan sparepart kami.',
     icon: FileText,
     count: 1,
-    href: '/docs/katalog-layanan.pdf',
+    href: '/contact',
   },
   {
     title: 'Brosur Alat Berat',
     description: 'Informasi teknis unit armada dan logistik transportasi kami.',
     icon: Award,
     count: 1,
-    href: '/docs/brosur-alat-berat.pdf',
+    href: '/contact',
   },
   {
     title: 'Sertifikasi & Legalitas',
@@ -125,6 +125,7 @@ export default async function KnowledgeCenterPage() {
       </SectionWrapper>
 
       <SectionWrapper
+        id="faq"
         className="bg-muted/30"
         header={{
           overline: 'FAQ',

@@ -203,7 +203,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: 'All Services', href: ROUTES.SERVICES },
       { label: 'Projects', href: ROUTES.PROJECTS },
-      { label: 'Gallery', href: '/gallery' },
+      { label: 'Gallery', href: ROUTES.MEDIA_GALLERY },
     ],
   },
   {

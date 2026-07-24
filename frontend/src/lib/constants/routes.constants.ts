@@ -16,7 +16,8 @@ export const ROUTES = {
   CAREER: '/career',
   CAREER_DETAIL: (slug: string) => `/career/${slug}` as const,
   CONTACT: '/contact',
-  FAQ: '/faq',
+  FAQ: '/knowledge-center#faq',
+  MEDIA_GALLERY: '/media-gallery',
   PRIVACY_POLICY: '/privacy-policy',
   TERMS_OF_SERVICE: '/terms-of-service',
 } as const;
