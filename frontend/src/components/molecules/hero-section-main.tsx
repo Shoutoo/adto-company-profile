@@ -88,18 +88,18 @@ export function HeroSection({
               backgroundImage: `url('${imageUrl}')`,
             }}
           />
-          {/* Layer 1: Strong white gradient from left to protect text */}
+          {/* Layer 1: Dark Navy Gradient from left for enterprise feel and text contrast */}
           <div
             className="absolute -inset-y-48 inset-x-0"
             style={{
-              background: 'linear-gradient(90deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.72) 40%, rgba(255,255,255,0.35) 100%)'
+              background: 'linear-gradient(90deg, rgba(10,47,92,0.85) 0%, rgba(10,47,92,0.65) 45%, rgba(10,47,92,0.15) 100%)'
             }}
           />
-          {/* Layer 2: Subtle brand tint (Navy to Orange) for premium corporate feel */}
+          {/* Layer 2: Subtle black overlay to darken the overall image without losing details */}
           <div
-            className="absolute -inset-y-48 inset-x-0 mix-blend-multiply"
+            className="absolute -inset-y-48 inset-x-0"
             style={{
-              background: 'linear-gradient(135deg, rgba(10,47,92,0.06) 0%, rgba(255,90,0,0.04) 100%)'
+              background: 'rgba(0,0,0,0.25)'
             }}
           />
           {/* Layer 3: Soft vignette for depth */}
@@ -153,12 +153,12 @@ export function HeroSection({
         />
       )}
 
-      {/* Bottom fade to white (only when no image) */}
+      {/* Bottom fade to dark (only when no image) */}
       {!imageUrl && (
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
-          style={{ background: 'linear-gradient(to top, rgba(255,255,255,0.65) 0%, transparent 50%)' }}
+          style={{ background: 'linear-gradient(to top, rgba(10,47,92,0.8) 0%, transparent 50%)' }}
         />
       )}
 
@@ -182,7 +182,7 @@ export function HeroSection({
               />
               <span
                 className="text-[11px] font-bold uppercase tracking-[0.22em]"
-                style={{ color: '#35557A' }}
+                style={{ color: imageUrl ? '#E2E8F0' : '#35557A' }}
               >
                 {overline}
               </span>
@@ -195,13 +195,13 @@ export function HeroSection({
               size === 'lg' && 'text-5xl md:text-6xl lg:text-7xl',
               size === 'default' && 'text-4xl md:text-5xl lg:text-6xl',
               size === 'sm' && 'text-3xl md:text-4xl lg:text-5xl',
-              'text-[#0A2F5C]'
+              imageUrl ? 'text-white' : 'text-[#0A2F5C]'
             )}
             variants={itemVariants}
           >
             {title}
             {titleHighlight && (
-              <span className="mt-2 block" style={{ color: '#35557A' }}>
+              <span className="mt-2 block" style={{ color: imageUrl ? '#94a3b8' : '#35557A' }}>
                 {titleHighlight}
               </span>
             )}
@@ -209,8 +209,9 @@ export function HeroSection({
 
           <motion.p
             className={cn(
-              'text-body-lg mt-6 max-w-2xl text-slate-600 font-medium',
-              align === 'center' && 'mx-auto'
+              'text-body-lg mt-6 max-w-2xl font-medium',
+              align === 'center' && 'mx-auto',
+              imageUrl ? 'text-white/85' : 'text-slate-600'
             )}
             variants={itemVariants}
           >
@@ -233,7 +234,9 @@ export function HeroSection({
                     action.variant === 'brand' &&
                       'shadow-[0_4px_12px_rgba(53,85,122,0.15)] hover:shadow-[0_8px_24px_rgba(53,85,122,0.30)] hover:-translate-y-1',
                     action.variant === 'outline' &&
-                      'bg-white/80 backdrop-blur-md border border-[rgba(53,85,122,0.15)] text-[#35557A] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:bg-white hover:border-[rgba(53,85,122,0.25)] hover:shadow-[0_6px_16px_rgba(53,85,122,0.12)] hover:-translate-y-1'
+                      (imageUrl 
+                        ? 'bg-transparent border border-white/60 text-white hover:bg-white/10 hover:border-white hover:-translate-y-1'
+                        : 'bg-white/80 backdrop-blur-md border border-[rgba(53,85,122,0.15)] text-[#35557A] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:bg-white hover:border-[rgba(53,85,122,0.25)] hover:shadow-[0_6px_16px_rgba(53,85,122,0.12)] hover:-translate-y-1')
                   )}
                 >
                   <Link className="px-8 text-xs font-bold uppercase tracking-widest" href={action.href}>

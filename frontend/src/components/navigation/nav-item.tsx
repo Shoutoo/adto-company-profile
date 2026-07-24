@@ -41,7 +41,7 @@ export function NavItem({ item, isScrolled = false }: NavItemProps) {
       <Link
         href={item.href}
         className={cn(
-          'inline-flex h-full items-center gap-1.5 px-3 text-[14px] font-medium capitalize transition-all duration-200',
+          'inline-flex h-full items-center gap-1.5 px-4 text-[15px] font-medium tracking-wide capitalize transition-all duration-200',
           isActive
             ? 'text-brand-600'
             : isScrolled
