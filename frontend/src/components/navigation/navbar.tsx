@@ -30,7 +30,7 @@ function NavbarContent() {
             : 'h-[100px] bg-transparent border-b border-transparent'
         )}
       >
-        <div className="container-page flex lg:grid h-full lg:grid-cols-[320px_1fr] items-center justify-between gap-4">
+        <div className="container-page relative flex lg:grid h-full lg:grid-cols-[320px_1fr] items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="relative z-10 flex items-center gap-2">
             {isScrolled ? (
@@ -74,24 +74,30 @@ function NavbarContent() {
           <AnimatePresence>
             {activeNavObj && activeNavObj.children && (
               <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
+                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                exit={{ opacity: 0, y: 10, filter: 'blur(4px)' }}
                 transition={{ duration: 0.25, ease: 'easeOut' }}
-                className="nav-dropdown-container absolute left-0 right-0 top-full mt-2 bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-slate-100 p-8 z-50 cursor-default"
+                className="nav-dropdown-container absolute left-0 right-0 top-full mt-2 bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-slate-100 py-12 px-16 z-50 cursor-default"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                  {activeNavObj.children.map(child => (
-                    <Link
-                      key={child.href}
-                      href={child.href}
-                      onClick={closeNav}
-                      className="group flex items-center justify-start rounded-lg px-4 py-3 text-[15px] font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-[#0A2F5C]"
-                    >
-                      <span>{t(child.label as any)}</span>
-                    </Link>
-                  ))}
+                <div className="flex flex-col items-start gap-5">
+                  {activeNavObj.children.map(child => {
+                    // Check if this submenu is currently active based on pathname
+                    // (Assuming we have pathname, but it's not in NavbarContent, we can just use hover states)
+                    return (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        onClick={closeNav}
+                        className="group relative flex items-center justify-start rounded-md px-4 py-2 text-lg font-medium leading-7 text-slate-700 transition-all duration-200 hover:bg-slate-50 hover:text-[#0A2F5C]"
+                      >
+                        {/* Hover/Active vertical line indicator */}
+                        <div className="absolute left-0 top-1/2 -translate-y-1/2 h-0 w-[3px] rounded-r-md bg-[#0A2F5C] transition-all duration-200 group-hover:h-3/5" />
+                        <span>{t(child.label as any)}</span>
+                      </Link>
+                    );
+                  })}
                 </div>
               </motion.div>
             )}
