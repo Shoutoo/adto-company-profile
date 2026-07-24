@@ -45,6 +45,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       icon: Zap,
       image: '/images/service_chemical_1784816687085.png',
       sub: ['Bentonite API Grade', 'Barite', 'Caustic Soda', 'Polyanionic Cellulose (PAC)'],
+      slug: 'industrial-supply',
     },
     {
       title: tServices('project_management'),
@@ -52,6 +53,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       icon: Wrench,
       image: '/images/service_mechanical_1784816644706.png',
       sub: ['Caterpillar Parts', 'Komatsu Parts', 'Schlumberger Pumps', 'Fast-Track Procurement'],
+      slug: 'project-management',
     },
     {
       title: tServices('logistics'),
@@ -59,6 +61,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       icon: Truck,
       image: '/images/service_heavy_1784816700775.png',
       sub: ['Truk Tangki', 'Tronton & Lowbed', 'GPS Tracking 24/7', 'Pengawalan & Perizinan'],
+      slug: 'logistics',
     },
   ];
 
@@ -107,24 +110,25 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
           {services.map((svc, idx) => {
             const Icon = svc.icon;
             return (
-              <div
+              <Link
                 key={idx}
-                className="surface-card group flex flex-col overflow-hidden p-0 transition-all duration-300 hover:-translate-y-2 hover:border-[rgba(53,85,122,0.15)] hover:shadow-card-hover"
+                href={`/services/${svc.slug}`}
+                className="surface-card group flex flex-col overflow-hidden p-0 transition-all duration-300 hover:-translate-y-2 hover:border-[rgba(53,85,122,0.15)] hover:shadow-card-hover focus:outline-none focus:ring-2 focus:ring-brand-500/50 cursor-pointer"
               >
                 <div className="relative h-48 w-full overflow-hidden">
                   <Image src={svc.image} alt={svc.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A2F5C]/80 to-transparent opacity-50" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A2F5C]/80 to-transparent opacity-50 transition-opacity duration-300 group-hover:opacity-40" />
                 </div>
                 
                 <div className="flex flex-1 flex-col p-8 pt-4">
                   <div className="-mt-12 mb-4 flex h-14 w-14 items-center justify-center rounded-[14px] bg-white transition-all duration-300 group-hover:scale-110" style={{ border: '1px solid rgba(53,85,122,0.14)', boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}>
                     <Icon
-                      className="h-6 w-6 transition-colors duration-300"
+                      className="h-6 w-6 transition-colors duration-300 group-hover:text-brand-600"
                       strokeWidth={1.5}
                       style={{ color: '#35557A' }}
                     />
                   </div>
-                  <h3 className="mb-4 font-heading text-lg font-bold uppercase tracking-wider text-foreground">
+                  <h3 className="mb-4 font-heading text-lg font-bold uppercase tracking-wider text-foreground group-hover:text-brand-600 transition-colors">
                     {svc.title}
                   </h3>
                   <p className="text-muted-foreground mb-8 text-sm leading-relaxed">
@@ -138,16 +142,15 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
                       </li>
                     ))}
                   </ul>
-                  <Link
+                  <div
                     className="inline-flex items-center text-xs font-bold uppercase tracking-widest transition-colors duration-200"
                     style={{ color: '#35557A' }}
-                    href={`${ROUTES.SERVICES}/${svc.title.toLowerCase().replace(/\s+/g, '-')}`}
                   >
                     <span className="group-hover:text-brand-800">{tServices('learn_more')}</span>
                     <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-                  </Link>
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

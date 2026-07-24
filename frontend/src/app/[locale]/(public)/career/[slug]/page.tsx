@@ -97,8 +97,10 @@ export default async function CareerDetailPage({
           </div>
 
           <div className="mt-12 border-t border-slate-200 pt-8">
-            <Button className="w-full sm:w-auto rounded-full bg-brand-600 px-8 py-6 text-base font-semibold hover:bg-brand-700">
-              {t('apply_button')}
+            <Button asChild className="w-full sm:w-auto rounded-[16px] bg-brand-500 px-10 py-7 text-sm font-bold uppercase tracking-widest text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-brand-400 hover:shadow-xl">
+              <a href={`mailto:hr@example.com?subject=Application for ${title} Position`}>
+                {t('apply_button')}
+              </a>
             </Button>
           </div>
         </div>

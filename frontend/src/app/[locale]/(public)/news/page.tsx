@@ -36,6 +36,7 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
     excerpt:
       "PT Adto Cipta Usaha Mandiri has been selected as one of the key contractors for the development of essential utilities and infrastructure in Indonesia's new capital city, Nusantara.",
     color: 'from-blue-600 to-indigo-700',
+    slug: 'adto-cipta-awarded-major-infrastructure-contract-ikn',
   };
 
   const newsItems = [
@@ -47,6 +48,7 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
       excerpt:
         'Opening of our new branch office in Makassar to better serve our growing client base in the eastern regions of Indonesia.',
       color: 'from-slate-700 to-slate-900',
+      slug: 'company-expands-operations-eastern-indonesia',
     },
     {
       id: 2,
@@ -56,6 +58,7 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
       excerpt:
         'Adto Cipta received the National Safety Excellence Award for achieving 5 million man-hours without Lost Time Injury (LTI).',
       color: 'from-amber-500 to-yellow-600',
+      slug: 'recognized-outstanding-safety-record-2023',
     },
     {
       id: 3,
@@ -65,6 +68,7 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
       excerpt:
         'Implementing advanced Building Information Modeling (BIM) across all new major projects to enhance efficiency and collaboration.',
       color: 'from-emerald-600 to-teal-700',
+      slug: 'adoption-new-bim-technologies-future-projects',
     },
     {
       id: 4,
@@ -74,6 +78,7 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
       excerpt:
         'Strategic partnership formed to develop renewable energy infrastructure projects across Southeast Asia over the next five years.',
       color: 'from-slate-700 to-slate-900',
+      slug: 'partnership-announced-global-energy-firm',
     },
     {
       id: 5,
@@ -83,6 +88,7 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
       excerpt:
         "Successful handover of the central business district's newest mixed-use development, completed two months ahead of schedule.",
       color: 'from-slate-700 to-slate-900',
+      slug: 'completion-landmark-commercial-complex-jakarta',
     },
     {
       id: 6,
@@ -92,6 +98,7 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
       excerpt:
         'Our leadership team shared insights on sustainable construction practices and digital transformation at the annual summit.',
       color: 'from-emerald-600 to-teal-700',
+      slug: 'ceo-speaks-national-construction-summit',
     },
   ];
 
@@ -139,7 +146,7 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
               className="w-fit rounded-none px-6 py-6 text-xs font-bold uppercase tracking-wider"
               size="lg"
             >
-              <Link href="#">
+              <Link href={`/news/${featuredNews.slug}`}>
                 Read Full Story <ChevronRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -153,13 +160,14 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {newsItems.map((item) => (
-            <div
+            <Link
+              href={`/news/${item.slug}`}
               key={item.id}
-              className="border-border bg-background group flex flex-col border transition-colors hover:border-brand-600"
+              className="border-border bg-background group flex flex-col border transition-all hover:border-brand-600 hover:-translate-y-1 hover:shadow-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-500/50 rounded-lg overflow-hidden"
             >
               <div className="flex aspect-video w-full items-center justify-center bg-surface-secondary p-8">
                 <Newspaper
-                  className="text-muted-foreground/30 h-12 w-12 transition-colors group-hover:text-brand-600"
+                  className="text-muted-foreground/30 h-12 w-12 transition-transform duration-300 group-hover:scale-110 group-hover:text-brand-600"
                   strokeWidth={1.5}
                 />
               </div>
@@ -168,25 +176,24 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
                   <span className="text-xs font-bold uppercase tracking-widest text-brand-600">
                     {item.category}
                   </span>
-                  <span className="text-muted-foreground flex items-center text-xs font-bold uppercase tracking-widest">
+                  <span className="text-muted-foreground flex items-center text-xs font-bold uppercase tracking-widest group-hover:text-brand-600 transition-colors">
                     <Calendar className="mr-1 h-3.5 w-3.5" />
                     {item.date}
                   </span>
                 </div>
-                <h3 className="mb-3 font-heading text-lg font-bold leading-tight">{item.title}</h3>
+                <h3 className="mb-3 font-heading text-lg font-bold leading-tight group-hover:text-brand-600 transition-colors">{item.title}</h3>
                 <p className="text-muted-foreground mb-6 flex-1 text-sm leading-relaxed">
                   {item.excerpt}
                 </p>
                 <div className="border-border mt-auto border-t pt-4">
-                  <Link
+                  <div
                     className="text-foreground inline-flex items-center text-xs font-bold uppercase tracking-widest transition-colors group-hover:text-brand-600"
-                    href="#"
                   >
-                    Read More <ChevronRight className="ml-1 h-3.5 w-3.5" />
-                  </Link>
+                    Read More <ChevronRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </SectionWrapper>

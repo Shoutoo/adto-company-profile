@@ -132,8 +132,9 @@ export function Header() {
             
             <button
               aria-label="Search"
-              className="text-muted-foreground hover:text-foreground hidden transition-colors duration-200 sm:block"
+              className="text-muted-foreground hover:text-foreground hidden transition-colors duration-200 sm:block focus:outline-none focus:ring-2 focus:ring-brand-500/50 rounded p-1"
               type="button"
+              onClick={() => alert("Search functionality is currently under development.")}
             >
               <Search className="h-[18px] w-[18px]" />
             </button>

@@ -1,11 +1,11 @@
 import { TrendingUp, Heart, GraduationCap, Users, MapPin, Briefcase } from 'lucide-react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
 
 import { CtaSection } from '@/components/molecules/cta-section';
 import { HeroSection } from '@/components/molecules/hero-section-main';
 import { PageHeader } from '@/components/molecules/page-header';
 import { SectionWrapper } from '@/components/molecules/section-wrapper';
-import { Button } from '@/components/ui/button';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -22,30 +22,21 @@ const OPEN_POSITIONS = [
     department: 'Engineering',
     location: 'Jakarta',
     type: 'Full-time',
+    slug: 'project-manager',
   },
   {
-    title: 'MEP Engineer',
+    title: 'Field Engineer',
     department: 'Engineering',
     location: 'Surabaya',
     type: 'Full-time',
-  },
-  {
-    title: 'Procurement Specialist',
-    department: 'Operations',
-    location: 'Jakarta',
-    type: 'Full-time',
-  },
-  {
-    title: 'HSE Officer',
-    department: 'Safety',
-    location: 'Balikpapan',
-    type: 'Full-time',
+    slug: 'field-engineer',
   },
   {
     title: 'Business Development Manager',
     department: 'Commercial',
     location: 'Jakarta',
     type: 'Full-time',
+    slug: 'business-development',
   },
 ];
 
@@ -148,15 +139,16 @@ export default async function CareerPage({ params }: { params: Promise<{ locale:
       >
         <div className="mx-auto mt-12 flex max-w-4xl flex-col gap-6">
           {OPEN_POSITIONS.map((job, index) => (
-            <div
+            <Link
               key={index}
-              className="group relative flex flex-col justify-between gap-6 overflow-hidden rounded-[24px] border border-slate-100 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.01] hover:border-brand-500 hover:shadow-[0_25px_60px_rgba(15,23,42,0.12)] md:flex-row md:items-center sm:p-10 cursor-pointer"
+              href={`/career/${job.slug}`}
+              className="group relative flex flex-col justify-between gap-6 overflow-hidden rounded-[24px] border border-slate-100 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.01] hover:border-brand-500 hover:shadow-[0_25px_60px_rgba(15,23,42,0.12)] md:flex-row md:items-center sm:p-10 cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-500/50"
               style={{ boxShadow: '0 10px 30px rgba(15,23,42,0.06)' }}
             >
               <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-[#0A2F5C] to-[#FF5A00] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               <div className="pl-2">
                 <div className="mb-4 flex items-center gap-3">
-                  <h3 className="font-heading text-xl font-bold uppercase tracking-wider text-slate-900">
+                  <h3 className="font-heading text-xl font-bold uppercase tracking-wider text-slate-900 group-hover:text-brand-600 transition-colors">
                     {job.title}
                   </h3>
                   <span className="hidden rounded-full bg-brand-50 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-600 sm:inline-block">
@@ -178,10 +170,10 @@ export default async function CareerPage({ params }: { params: Promise<{ locale:
                   </div>
                 </div>
               </div>
-              <Button className="rounded-[16px] px-8 py-6 text-xs font-bold uppercase tracking-widest shadow-sm transition-all duration-300 group-hover:shadow-md">
+              <div className="rounded-[16px] px-8 py-6 text-xs font-bold uppercase tracking-widest shadow-sm transition-all duration-300 group-hover:shadow-md bg-brand-600 text-white group-hover:bg-brand-500 text-center">
                 Apply Now
-              </Button>
-            </div>
+              </div>
+            </Link>
           ))}
         </div>
       </SectionWrapper>

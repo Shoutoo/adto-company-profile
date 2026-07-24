@@ -35,21 +35,25 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       icon: MapPin,
       title: tContact('office'),
       details: siteConfig.contact.address.full,
+      href: 'https://www.google.com/maps/search/?api=1&query=-6.291354587959362,106.80360488062927'
     },
     {
       icon: Phone,
       title: tContact('call_us'),
       details: siteConfig.contact.phone,
+      href: `tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, '')}`
     },
     {
       icon: Mail,
       title: tContact('email_us'),
       details: siteConfig.contact.email,
+      href: `mailto:${siteConfig.contact.email}`
     },
     {
       icon: MessageCircle,
       title: 'WhatsApp',
       details: siteConfig.contact.whatsapp,
+      href: `https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9]/g, '')}`
     },
   ];
 
@@ -83,9 +87,12 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               </h2>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 {CONTACT_INFO.map((info, idx) => (
-                  <div
+                  <a
+                    href={info.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     key={idx}
-                    className="group relative flex flex-col items-start overflow-hidden rounded-[24px] border border-slate-100 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.01] hover:border-brand-500 hover:shadow-[0_25px_60px_rgba(15,23,42,0.12)]"
+                    className="group relative flex flex-col items-start overflow-hidden rounded-[24px] border border-slate-100 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.01] hover:border-brand-500 hover:shadow-[0_25px_60px_rgba(15,23,42,0.12)] focus:outline-none focus:ring-2 focus:ring-brand-500/50 cursor-pointer"
                     style={{ boxShadow: '0 10px 30px rgba(15,23,42,0.06)' }}
                   >
                     <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#0A2F5C] to-[#FF5A00] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -97,11 +104,11 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                         />
                       </div>
                     </div>
-                    <h3 className="mb-3 font-heading text-sm font-bold uppercase tracking-wider text-slate-900">
+                    <h3 className="mb-3 font-heading text-sm font-bold uppercase tracking-wider text-slate-900 group-hover:text-brand-600 transition-colors">
                       {info.title}
                     </h3>
                     <p className="text-xs leading-relaxed text-slate-500">{info.details}</p>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>

@@ -9,7 +9,7 @@ import { ResponsiveGrid } from '@/components/molecules/ResponsiveGrid';
 import { SectionWrapper } from '@/components/molecules/SectionWrapper';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardTitle } from '@/components/ui/card';
+import { CardHeader, CardTitle } from '@/components/ui/card';
 import { siteConfig } from '@/lib/config/site.config';
 import { ROUTES } from '@/lib/constants/routes.constants';
 import { generateMetadata } from '@/lib/utils/seo';
@@ -34,6 +34,7 @@ export default function BlogPage() {
       excerpt:
         'Discover the key strategies and methodologies for successfully managing large-scale industrial construction projects from initiation to handover.',
       color: 'from-blue-500 to-indigo-600',
+      slug: 'best-practices-industrial-project-management',
     },
     {
       id: 2,
@@ -45,6 +46,7 @@ export default function BlogPage() {
       excerpt:
         'A comprehensive guide to how mechanical, electrical, and plumbing systems integrate to create efficient, smart, and sustainable modern commercial buildings.',
       color: 'from-emerald-500 to-teal-600',
+      slug: 'understanding-mep-systems-modern-buildings',
     },
     {
       id: 3,
@@ -56,6 +58,7 @@ export default function BlogPage() {
       excerpt:
         'An overview of the critical HSE protocols, compliance requirements, and risk mitigation strategies essential for construction within the oil and gas sector.',
       color: 'from-red-500 to-rose-600',
+      slug: 'safety-standards-oil-gas-construction',
     },
     {
       id: 4,
@@ -67,6 +70,7 @@ export default function BlogPage() {
       excerpt:
         'Exploring the latest green building materials, energy-efficient designs, and sustainable practices shaping the future of the construction industry in Indonesia.',
       color: 'from-green-500 to-emerald-600',
+      slug: 'sustainable-construction-trends-2024',
     },
     {
       id: 5,
@@ -78,6 +82,7 @@ export default function BlogPage() {
       excerpt:
         'How to overcome logistical challenges, manage procurement effectively, and ensure timely material delivery for complex infrastructure developments.',
       color: 'from-purple-500 to-fuchsia-600',
+      slug: 'supply-chain-optimization-large-projects',
     },
     {
       id: 6,
@@ -89,6 +94,7 @@ export default function BlogPage() {
       excerpt:
         'The impact of BIM, drones, IoT sensors, and project management software in revolutionizing traditional construction workflows and improving ROI.',
       color: 'from-cyan-500 to-blue-600',
+      slug: 'digital-transformation-construction-industry',
     },
   ];
 
@@ -137,26 +143,27 @@ export default function BlogPage() {
 
         <ResponsiveGrid cols={{ default: 1, md: 2, lg: 3 }} gap="xl">
           {blogPosts.map((post) => (
-            <Card
+            <Link
+              href={`/blog/${post.slug}`}
               key={post.id}
-              className="hover:border-primary/50 group flex h-full flex-col overflow-hidden border shadow-sm transition-all hover:shadow-md"
+              className="hover:border-primary/50 group flex h-full flex-col overflow-hidden border shadow-sm transition-all hover:shadow-md hover:-translate-y-1 bg-card rounded-xl cursor-pointer"
             >
-              <Link className="block overflow-hidden" href="#">
+              <div className="block overflow-hidden">
                 <div
                   className={`aspect-[16/10] w-full bg-gradient-to-br ${post.color} flex items-center justify-center transition-transform duration-300 group-hover:scale-105`}
                 >
                   <BookOpen className="h-16 w-16 text-white/20" />
                 </div>
-              </Link>
+              </div>
               <CardHeader className="flex-1 p-6">
                 <Badge className="bg-muted mb-3 w-fit" variant="secondary">
                   {post.category}
                 </Badge>
-                <Link href="#">
+                <div className="block">
                   <CardTitle className="group-hover:text-primary line-clamp-2 text-xl leading-snug transition-colors">
                     {post.title}
                   </CardTitle>
-                </Link>
+                </div>
                 <div className="text-muted-foreground mt-4 flex items-center gap-4 text-xs">
                   <span className="flex items-center gap-1.5">
                     <User className="h-3.5 w-3.5" />
@@ -170,15 +177,12 @@ export default function BlogPage() {
                 <p className="text-muted-foreground mt-4 line-clamp-3 text-sm">{post.excerpt}</p>
               </CardHeader>
               <div className="mt-auto p-6 pt-0">
-                <Link
-                  className="text-primary inline-flex items-center text-sm font-semibold group-hover:underline"
-                  href="#"
-                >
+                <div className="text-primary inline-flex items-center text-sm font-semibold group-hover:underline">
                   Read Article{' '}
                   <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+                </div>
               </div>
-            </Card>
+            </Link>
           ))}
         </ResponsiveGrid>
 

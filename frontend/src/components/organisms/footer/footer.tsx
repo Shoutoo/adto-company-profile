@@ -43,8 +43,8 @@ export function Footer() {
       links: [
         { label: tNav('projects'), href: ROUTES.PROJECTS },
         { label: tNav('blog'), href: ROUTES.BLOG },
-        { label: tNav('knowledge_center'), href: '#' },
-        { label: 'Vendor Registration', href: '#' },
+        { label: tNav('knowledge_center'), href: '/knowledge-center' },
+        { label: 'Vendor Registration', href: '/vendor-registration' },
       ],
     },
   ];

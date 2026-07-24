@@ -7,12 +7,13 @@ import Image from 'next/image';
 
 export function generateStaticParams() {
   return [
-    { slug: 'best-practices-industrial-project-management' },
-    { slug: 'understanding-mep-systems-modern-buildings' },
-    { slug: 'safety-standards-oil-gas-construction' },
-    { slug: 'sustainable-construction-trends-2024' },
-    { slug: 'supply-chain-optimization-large-projects' },
-    { slug: 'digital-transformation-construction-industry' },
+    { slug: 'adto-cipta-awarded-major-infrastructure-contract-ikn' },
+    { slug: 'company-expands-operations-eastern-indonesia' },
+    { slug: 'recognized-outstanding-safety-record-2023' },
+    { slug: 'adoption-new-bim-technologies-future-projects' },
+    { slug: 'partnership-announced-global-energy-firm' },
+    { slug: 'completion-landmark-commercial-complex-jakarta' },
+    { slug: 'ceo-speaks-national-construction-summit' },
   ];
 }
 
@@ -26,12 +27,13 @@ export default async function BlogDetailPage({
   const t = await getTranslations('Blog');
 
   const validSlugs = [
-    'best-practices-industrial-project-management',
-    'understanding-mep-systems-modern-buildings',
-    'safety-standards-oil-gas-construction',
-    'sustainable-construction-trends-2024',
-    'supply-chain-optimization-large-projects',
-    'digital-transformation-construction-industry'
+    'adto-cipta-awarded-major-infrastructure-contract-ikn',
+    'company-expands-operations-eastern-indonesia',
+    'recognized-outstanding-safety-record-2023',
+    'adoption-new-bim-technologies-future-projects',
+    'partnership-announced-global-energy-firm',
+    'completion-landmark-commercial-complex-jakarta',
+    'ceo-speaks-national-construction-summit'
   ];
   if (!validSlugs.includes(slug)) {
     notFound();
@@ -43,7 +45,7 @@ export default async function BlogDetailPage({
     <main className="flex-1 bg-white pt-24 pb-16">
       <div className="container-page max-w-4xl">
         <Button asChild variant="ghost" className="mb-8 -ml-4">
-          <Link href="/blog" className="inline-flex items-center gap-2">
+          <Link href="/news" className="inline-flex items-center gap-2">
             <ArrowLeft className="h-4 w-4" /> {t('prev')}
           </Link>
         </Button>
@@ -103,13 +105,13 @@ export default async function BlogDetailPage({
         
         {/* Next & Previous */}
         <div className="mt-16 flex flex-col sm:flex-row items-center justify-between border-t border-slate-200 pt-8 gap-4">
-          <Link href="/blog" className="group flex flex-col items-start gap-1 p-4 w-full sm:w-[48%] rounded-xl border border-slate-100 bg-slate-50 hover:border-brand-300 hover:bg-brand-50 transition-all cursor-pointer">
-             <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Previous Article</span>
-             <span className="font-heading text-lg font-bold text-slate-900 group-hover:text-brand-600">Back to Blog List</span>
+          <Link href="/news" className="group flex flex-col items-start gap-1 p-4 w-full sm:w-[48%] rounded-xl border border-slate-100 bg-slate-50 hover:border-brand-300 hover:bg-brand-50 transition-all cursor-pointer">
+             <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Previous News</span>
+             <span className="font-heading text-lg font-bold text-slate-900 group-hover:text-brand-600">Back to News List</span>
           </Link>
-          <Link href="/blog" className="group flex flex-col items-end text-right gap-1 p-4 w-full sm:w-[48%] rounded-xl border border-slate-100 bg-slate-50 hover:border-brand-300 hover:bg-brand-50 transition-all cursor-pointer">
-             <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Next Article</span>
-             <span className="font-heading text-lg font-bold text-slate-900 group-hover:text-brand-600">Read More Articles</span>
+          <Link href="/news" className="group flex flex-col items-end text-right gap-1 p-4 w-full sm:w-[48%] rounded-xl border border-slate-100 bg-slate-50 hover:border-brand-300 hover:bg-brand-50 transition-all cursor-pointer">
+             <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Next News</span>
+             <span className="font-heading text-lg font-bold text-slate-900 group-hover:text-brand-600">Read More News</span>
           </Link>
         </div>
       </div>
