@@ -33,27 +33,27 @@ export function NavItem({ item, isScrolled = false }: NavItemProps) {
   };
 
   return (
-    <div className="nav-item-container flex h-full items-center relative">
+    <div className="nav-item-container group flex h-full items-center relative">
       <Link
         href={item.href}
         className={cn(
-          'inline-flex h-full items-center px-4 text-[15px] font-semibold transition-all duration-200 whitespace-nowrap',
-          isActive
-            ? 'text-[#FF5A00]' // Orange brand
-            : isScrolled
-            ? 'text-[#0A2F5C] hover:text-[#FF5A00]' // Primary Navy
-            : 'text-white hover:text-white/80'
+          'inline-flex h-full items-center px-4 text-[15px] font-medium transition-colors duration-200 ease-out whitespace-nowrap hover:text-[#E85D04]',
+          isScrolled
+            ? isActive ? 'text-slate-500' : 'text-[#0A2F5C]'
+            : isActive ? 'text-white/80' : 'text-white/95'
         )}
         onClick={handleClick}
       >
         {t(item.label as any)}
       </Link>
       
-      {/* Active Indicator Underline (Orange) */}
+      {/* Indicator Underline */}
       <div
         className={cn(
-          'absolute bottom-[1px] left-0 right-0 h-[2px] rounded-t-sm bg-[#FF5A00] transition-transform duration-200 ease-out origin-left',
-          isActive ? 'scale-x-100' : 'scale-x-0'
+          'absolute bottom-[1px] left-0 right-0 h-[2px] rounded-t-sm transition-all duration-200 ease-out origin-left group-hover:bg-[#E85D04] group-hover:scale-x-100',
+          isActive
+            ? isScrolled ? 'bg-slate-300 scale-x-100' : 'bg-white/50 scale-x-100'
+            : 'bg-[#E85D04] scale-x-0'
         )}
       />
     </div>
