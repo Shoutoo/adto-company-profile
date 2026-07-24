@@ -42,7 +42,8 @@ export default function RequestQuotationPage() {
       />
 
       <HeroSection
-        align="left"
+        imageUrl="/images/hero_quotation_1784892852316.png"
+        align="center"
         backgroundVariant="dark"
         description="Kami siap membantu efisiensi proyek Anda. Berikan detail kebutuhan material atau alat berat untuk menerima proposal komprehensif dari kami."
         overline="Permintaan Penawaran"

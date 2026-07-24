@@ -90,6 +90,8 @@ export default function KnowledgeCenterPage() {
   return (
     <>
       <HeroSection
+        imageUrl="/images/hero_knowledge_1784892808791.png"
+        align="center"
         description="Akses berbagai dokumen resmi, company profile, dan sertifikasi perusahaan kami untuk keperluan kemitraan bisnis."
         overline="Pusat Unduhan"
         title="Dokumen & Sumber Daya"

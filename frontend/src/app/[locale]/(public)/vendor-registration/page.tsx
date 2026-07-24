@@ -33,7 +33,8 @@ export default function VendorRegistrationPage() {
       />
 
       <HeroSection
-        align="left"
+        imageUrl="/images/hero_vendor_1784892863171.png"
+        align="center"
         backgroundVariant="dark"
         description="Bergabunglah dengan jaringan vendor terpercaya kami untuk berpartisipasi dalam pengadaan logistik proyek-proyek berskala nasional."
         overline="Registrasi Vendor"

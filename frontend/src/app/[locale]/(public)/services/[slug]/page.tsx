@@ -43,6 +43,7 @@ export default async function ServiceDetailPage({
   return (
     <main className="flex-1 bg-white">
       <HeroSection
+        imageUrl="/images/hero_services_1784892738576.png"
         title={title}
         description={t('description')}
         overline={t('overline')}

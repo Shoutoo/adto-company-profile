@@ -70,12 +70,12 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       />
 
       <HeroSection
-        align="left"
+        imageUrl="/images/hero_contact_1784892831802.png"
+        align="center"
         backgroundVariant="dark"
         description={tContact('hero_desc')}
         overline={tContact('title')}
         title="Get in Touch."
-        imageUrl="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
       />
 
       <SectionWrapper>

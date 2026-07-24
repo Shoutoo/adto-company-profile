@@ -94,7 +94,8 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
       />
 
       <HeroSection
-        align="left"
+        imageUrl="/images/hero_projects_1784892749913.png"
+        align="center"
         backgroundVariant="dark"
         description={tProjects('hero_desc')}
         overline={tProjects('title')}

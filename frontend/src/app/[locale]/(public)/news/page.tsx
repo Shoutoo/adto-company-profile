@@ -114,7 +114,8 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
       />
 
       <HeroSection
-        align="left"
+        imageUrl="/images/hero_news_1784892776990.png"
+        align="center"
         backgroundVariant="dark"
         description={tBlog('hero_desc')}
         overline={tBlog('title')}

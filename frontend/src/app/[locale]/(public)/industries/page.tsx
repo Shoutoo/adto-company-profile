@@ -74,7 +74,8 @@ export default function IndustriesPage() {
       />
 
       <HeroSection
-        align="left"
+        imageUrl="/images/hero_industries_1784892820273.png"
+        align="center"
         backgroundVariant="dark"
         description="We bring cross-industry expertise to solve complex challenges, driving growth and efficiency in every sector we touch."
         overline="Industries"

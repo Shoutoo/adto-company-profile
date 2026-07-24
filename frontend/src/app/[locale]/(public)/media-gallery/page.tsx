@@ -29,6 +29,8 @@ export default function MediaGalleryPage() {
   return (
     <>
       <HeroSection
+        imageUrl="/images/hero_gallery_1784892794601.png"
+        align="center"
         description="Take a visual journey through our completed projects, corporate events, and the people behind our success."
         overline="Media Gallery"
         title="Visual Portfolio"

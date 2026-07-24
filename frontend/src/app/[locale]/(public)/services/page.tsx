@@ -98,12 +98,12 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       />
 
       <HeroSection
-        align="left"
+        imageUrl="/images/hero_services_1784892738576.png"
+        align="center"
         backgroundVariant="dark"
         description={tServices('hero_desc')}
         overline={tServices('title')}
         title="Keunggulan Layanan & Pengadaan."
-        imageUrl="/images/service-1.jpeg"
       />
 
       <SectionWrapper background="alt" id="services-list">

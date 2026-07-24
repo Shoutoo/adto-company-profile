@@ -81,7 +81,8 @@ export default function ProductsPage() {
       />
 
       <HeroSection
-        align="left"
+        imageUrl="/images/hero_products_1784892763521.png"
+        align="center"
         backgroundVariant="dark"
         description="Solusi suplai yang komprehensif untuk memastikan proyek Anda berjalan lancar, aman, dan tepat jadwal."
         overline="Produk Kami"

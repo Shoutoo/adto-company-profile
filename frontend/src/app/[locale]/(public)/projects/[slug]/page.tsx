@@ -41,6 +41,7 @@ export default async function ProjectDetailPage({
   return (
     <main className="flex-1 bg-white">
       <HeroSection
+        imageUrl="/images/hero_projects_1784892749913.png"
         title={title}
         description={`Discover how we delivered excellence for the ${title} project.`}
         overline={t('overline')}

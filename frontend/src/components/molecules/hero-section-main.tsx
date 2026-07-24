@@ -70,7 +70,7 @@ export function HeroSection({
       className={cn(
         'relative flex items-center justify-center overflow-hidden',
         size === 'lg' && 'min-h-[85vh] py-32',
-        size === 'default' && 'min-h-[60vh] py-24',
+        size === 'default' && 'min-h-[85vh] py-32',
         size === 'sm' && 'min-h-[40vh] py-16',
         backgroundVariant === 'gradient' && 'bg-gradient-hero',
         backgroundVariant === 'mesh' && 'bg-brand-50/50',
@@ -182,7 +182,7 @@ export function HeroSection({
               />
               <span
                 className="text-[11px] font-bold uppercase tracking-[0.22em]"
-                style={{ color: imageUrl ? '#E2E8F0' : '#35557A' }}
+                style={{ color: imageUrl ? '#FF5A00' : '#FF5A00' }}
               >
                 {overline}
               </span>
@@ -201,7 +201,7 @@ export function HeroSection({
           >
             {title}
             {titleHighlight && (
-              <span className="mt-2 block" style={{ color: imageUrl ? '#94a3b8' : '#35557A' }}>
+              <span className="mt-2 block text-[#FF5A00]">
                 {titleHighlight}
               </span>
             )}
@@ -230,9 +230,9 @@ export function HeroSection({
                   size="lg"
                   variant={action.variant ?? 'brand'}
                   className={cn(
-                    'group transition-all duration-[400ms] ease-out',
+                    'group transition-all duration-[400ms] ease-out border-none',
                     action.variant === 'brand' &&
-                      'shadow-[0_4px_12px_rgba(53,85,122,0.15)] hover:shadow-[0_8px_24px_rgba(53,85,122,0.30)] hover:-translate-y-1',
+                      'bg-[#FF5A00] text-white hover:bg-[#E85D04] shadow-[0_4px_12px_rgba(255,90,0,0.25)] hover:shadow-[0_8px_24px_rgba(255,90,0,0.40)] hover:-translate-y-1',
                     action.variant === 'outline' &&
                       (imageUrl 
                         ? 'bg-transparent border border-white/60 text-white hover:bg-white/10 hover:border-white hover:-translate-y-1'
