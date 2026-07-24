@@ -3,8 +3,8 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Link } from '@/i18n/routing';
+import { usePathname } from '@/i18n/routing';
 
 import { AnimatePresence } from 'framer-motion';
 import { Menu, X, Search, ChevronDown } from 'lucide-react';
@@ -16,6 +16,7 @@ import { ROUTES } from '@/lib/constants/routes.constants';
 import { cn } from '@/lib/utils/cn';
 import { useUiStore } from '@/stores/ui.store';
 
+import { LanguageSwitcher } from './language-switcher';
 import { MobileMenu } from './mobile-menu';
 
 /**
@@ -115,6 +116,8 @@ export function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-4">
+            <LanguageSwitcher />
+            
             <button
               aria-label="Search"
               className="text-muted-foreground hover:text-foreground hidden transition-colors duration-200 sm:block"

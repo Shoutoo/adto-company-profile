@@ -1,24 +1,29 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import createMiddleware from 'next-intl/middleware';
+import { routing } from './i18n/routing';
+
+const intlMiddleware = createMiddleware(routing);
 
 /**
  * Next.js Edge Middleware.
+ * - Handles i18n routing
  * - Applies enterprise security headers to all responses
  * - Redirects /admin to /login if not authenticated
  */
 export function middleware(request: NextRequest): NextResponse {
-  const response = NextResponse.next();
-  const { pathname } = request.nextUrl;
-
   // Protect /admin routes
-  if (pathname.startsWith('/admin')) {
+  if (request.nextUrl.pathname.startsWith('/admin')) {
     const token = request.cookies.get('adto-auth-storage');
     if (!token) {
       return NextResponse.redirect(new URL('/login', request.url));
     }
   }
 
-  // Content Security Policy
+  // 1. Run next-intl middleware
+  const response = intlMiddleware(request);
+
+  // 2. Add Content Security Policy
   const csp = [
     `default-src 'self'`,
     `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net`,
@@ -31,8 +36,8 @@ export function middleware(request: NextRequest): NextResponse {
     `object-src 'none'`,
     `base-uri 'self'`,
     `form-action 'self'`,
-    process.env.VERCEL === '1' ? `upgrade-insecure-requests` : '',
-  ].filter(Boolean).join('; ');
+    `upgrade-insecure-requests`,
+  ].join('; ');
 
   // Security Headers
   response.headers.set('Content-Security-Policy', csp);
@@ -48,7 +53,7 @@ export function middleware(request: NextRequest): NextResponse {
 }
 
 export const config = {
-  matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|icons/|screenshots/|browserconfig.xml|site.webmanifest|robots.txt).*)',
-  ],
+  // Match only internationalized pathnames.
+  // CRITICAL: Explicitly exclude /images and /logos to prevent 404s!
+  matcher: ['/', '/(id|en)/:path*', '/((?!_next/static|_next/image|images/|logos/|favicon.ico|icons/|screenshots/|browserconfig.xml|site.webmanifest|robots.txt|logo.svg|admin|api).*)']
 };

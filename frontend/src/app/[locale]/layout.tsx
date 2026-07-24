@@ -73,12 +73,40 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, setRequestLocale } from 'next-intl/server';
+import { routing } from '@/i18n/routing';
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function RootLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  if (!routing.locales.includes(locale as any)) {
+    // If invalid locale is somehow reached, Next.js handles it or we can fallback
+    // Usually notFound() would be called here, but middleware prevents it mostly.
+  }
+
+  // Enable static rendering
+  setRequestLocale(locale);
+
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
+
   return (
     <html
       suppressHydrationWarning
       className={`${openSans.variable} ${montserrat.variable} ${jetbrainsMono.variable}`}
-      lang="id"
+      lang={locale}
     >
       <head>
         <script
@@ -115,12 +143,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="font-sans antialiased">
-        <ThemeProvider>
-          <QueryProvider>
-            {children}
-            <ToastProvider />
-          </QueryProvider>
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          <ThemeProvider>
+            <QueryProvider>
+              {children}
+              <ToastProvider />
+            </QueryProvider>
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

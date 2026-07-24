@@ -8,7 +8,7 @@
 
 import { useEffect } from 'react';
 
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@/i18n/routing';
 
 import { Bell, Search, User, Sun, Moon } from 'lucide-react';
 import { useTheme } from 'next-themes';

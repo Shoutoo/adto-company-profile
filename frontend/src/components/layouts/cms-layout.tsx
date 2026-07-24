@@ -6,7 +6,7 @@
  * @module components/layouts/cms-layout
  */
 
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 
 import { ArrowLeft, Save, Eye, MoreVertical } from 'lucide-react';
 

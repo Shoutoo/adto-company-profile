@@ -1,0 +1,107 @@
+{
+  "Navbar": {
+    "home": "Beranda",
+    "about": "Tentang Kami",
+    "services": "Layanan",
+    "products": "Produk",
+    "industries": "Industri",
+    "portfolio": "Portofolio",
+    "projects": "Proyek",
+    "case_studies": "Studi Kasus",
+    "resources": "Sumber Daya",
+    "blog": "Blog",
+    "news": "Berita & Media",
+    "knowledge_center": "Pusat Pengetahuan",
+    "media_gallery": "Galeri Media",
+    "company": "Perusahaan",
+    "career": "Karir",
+    "contact": "Hubungi Kami",
+    "get_quote": "Dapatkan Penawaran",
+    "vendor_registration": "Registrasi Vendor"
+  },
+  "Hero": {
+    "overline": "PT Andalan Daya Tata Olah",
+    "title": "Memberdayakan Industri dengan Solusi Andal",
+    "description": "Penyedia solusi industri komprehensif terkemuka, menghadirkan keunggulan melalui inovasi, kualitas, dan komitmen.",
+    "cta_primary": "Temukan Layanan Kami",
+    "cta_secondary": "Hubungi Kami"
+  },
+  "About": {
+    "overline": "Tentang Kami",
+    "title": "Mendorong Keunggulan Industri",
+    "description": "Kami berkomitmen untuk memberikan solusi industri tingkat atas yang mendorong efisiensi, keandalan, dan pertumbuhan berkelanjutan bagi mitra kami.",
+    "mission": "Misi Kami",
+    "vision": "Visi Kami"
+  },
+  "Services": {
+    "overline": "Layanan Kami",
+    "title": "Solusi Industri Komprehensif",
+    "view_detail": "Lihat Detail",
+    "learn_more": "Pelajari Lebih Lanjut",
+    "overview": "Gambaran Umum",
+    "description": "Deskripsi Layanan",
+    "benefits": "Keuntungan",
+    "gallery": "Galeri",
+    "faq": "FAQ"
+  },
+  "Projects": {
+    "overline": "Portofolio Kami",
+    "title": "Pengiriman Proyek yang Sukses",
+    "technology": "Teknologi",
+    "timeline": "Lini Masa",
+    "result": "Hasil"
+  },
+  "Blog": {
+    "overline": "Wawasan",
+    "title": "Wawasan & Berita Industri",
+    "author": "Penulis",
+    "publish_date": "Tanggal Rilis",
+    "category": "Kategori",
+    "reading_time": "mnt baca",
+    "share": "Bagikan",
+    "related": "Artikel Terkait",
+    "prev": "Sebelumnya",
+    "next": "Selanjutnya"
+  },
+  "Career": {
+    "overline": "Bergabung Bersama Kami",
+    "title": "Bangun Karir Anda Bersama Kami",
+    "job_description": "Deskripsi Pekerjaan",
+    "requirements": "Persyaratan",
+    "benefit": "Keuntungan",
+    "location": "Lokasi",
+    "employment_type": "Tipe Pekerjaan",
+    "apply_button": "Lamar Sekarang"
+  },
+  "Contact": {
+    "overline": "Hubungi Kami",
+    "title": "Hubungi Kami",
+    "name": "Nama Lengkap",
+    "email": "Alamat Email",
+    "phone": "Nomor Telepon",
+    "company": "Nama Perusahaan",
+    "message": "Pesan Anda",
+    "submit": "Kirim Pesan",
+    "validation": {
+      "required": "Kolom ini wajib diisi",
+      "email": "Masukkan email yang valid"
+    }
+  },
+  "Partners": {
+    "overline": "Mitra Berharga",
+    "title": "Dipercaya Oleh Pemimpin Nasional"
+  },
+  "Footer": {
+    "description": "Penyedia solusi industri komprehensif terkemuka.",
+    "quick_links": "Tautan Cepat",
+    "contact_info": "Info Kontak",
+    "rights": "Hak cipta dilindungi undang-undang.",
+    "privacy_policy": "Kebijakan Privasi",
+    "terms_of_service": "Syarat Layanan"
+  },
+  "NotFound": {
+    "title": "Halaman Tidak Ditemukan",
+    "description": "Halaman yang Anda cari tidak ada.",
+    "back_home": "Kembali ke Beranda"
+  }
+}

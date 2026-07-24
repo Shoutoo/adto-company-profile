@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 
 import { ArrowRight, BookOpen, Clock, User } from 'lucide-react';
 import { type Metadata } from 'next';
