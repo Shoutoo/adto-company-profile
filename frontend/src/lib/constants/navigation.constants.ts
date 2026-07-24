@@ -31,14 +31,6 @@ export const PUBLIC_NAV_ITEMS: NavItem[] = [
   {
     label: 'about',
     href: ROUTES.ABOUT,
-    children: [
-      { label: 'company_profile', href: ROUTES.ABOUT, descriptionKey: 'desc_profile', image: 'https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80' },
-      { label: 'vision_mission', href: `${ROUTES.ABOUT}#vision`, descriptionKey: 'desc_vision', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80' },
-      { label: 'company_values', href: `${ROUTES.ABOUT}#values`, descriptionKey: 'desc_values', image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80' },
-      { label: 'why_choose_us', href: `${ROUTES.ABOUT}#why`, descriptionKey: 'desc_why', image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80' },
-      { label: 'organization', href: `${ROUTES.ABOUT}#org`, descriptionKey: 'desc_org', image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80' },
-      { label: 'our_team', href: `${ROUTES.ABOUT}#team`, descriptionKey: 'desc_team', image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80' },
-    ],
   },
   {
     label: 'services',
@@ -53,21 +45,10 @@ export const PUBLIC_NAV_ITEMS: NavItem[] = [
   {
     label: 'projects',
     href: ROUTES.PROJECTS,
-    children: [
-      { label: 'featured_projects', href: `${ROUTES.PROJECTS}#featured`, descriptionKey: 'desc_featured', image: 'https://images.unsplash.com/photo-1541888081622-0d170a48a529?auto=format&fit=crop&q=80' },
-      { label: 'all_projects', href: ROUTES.PROJECTS, descriptionKey: 'desc_all_projects', image: 'https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?auto=format&fit=crop&q=80' },
-      { label: 'project_categories', href: `${ROUTES.PROJECTS}#categories`, descriptionKey: 'desc_project_categories', image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80' },
-    ],
   },
   {
     label: 'career',
     href: ROUTES.CAREER,
-    children: [
-      { label: 'open_positions', href: `${ROUTES.CAREER}#positions`, descriptionKey: 'desc_positions', image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80' },
-      { label: 'recruitment_process', href: `${ROUTES.CAREER}#process`, descriptionKey: 'desc_process', image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80' },
-      { label: 'company_culture', href: `${ROUTES.CAREER}#culture`, descriptionKey: 'desc_culture', image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80' },
-      { label: 'benefits', href: `${ROUTES.CAREER}#benefits`, descriptionKey: 'desc_benefits', image: 'https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&q=80' },
-    ],
   },
   {
     label: 'blog',
@@ -75,7 +56,6 @@ export const PUBLIC_NAV_ITEMS: NavItem[] = [
     children: [
       { label: 'latest_articles', href: ROUTES.BLOG, descriptionKey: 'desc_articles', image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80' },
       { label: 'news', href: `/news`, descriptionKey: 'desc_news', image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80' },
-      { label: 'insights', href: `${ROUTES.BLOG}#insights`, descriptionKey: 'desc_insights', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80' },
     ],
   },
 ];
