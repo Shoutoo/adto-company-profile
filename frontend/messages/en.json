@@ -116,10 +116,24 @@
     "related": "Related Articles",
     "prev": "Previous",
     "next": "Next",
-    "hero_title": "Industry Insights & News",
-    "hero_desc": "Industry Insights & News",
+    "hero_title": "Industry Knowledge & Expertise",
+    "hero_desc": "Insights, guides, and thought leadership from our team of engineering and construction professionals.",
     "newsletter_placeholder": "Enter your email address",
-    "subscribe": "Subscribe"
+    "subscribe": "Subscribe",
+    "all_posts": "All Posts",
+    "engineering": "Engineering",
+    "management": "Management",
+    "safety": "Safety",
+    "industry": "Industry",
+    "read_article": "Read Article",
+    "load_more": "Load More Articles",
+    "expert_advice": "Looking for Expert Advice?",
+    "expert_advice_desc": "Our team of seasoned professionals is ready to provide consultation for your next major project.",
+    "expert_author": "Expert Author",
+    "previous_article": "Previous Article",
+    "next_article": "Next Article",
+    "back_to_list": "Back to Blog List",
+    "read_more_articles": "Read More Articles"
   },
   "Career": {
     "overline": "Join Our Team",
@@ -216,5 +230,35 @@
     "career_desc": "Build Your Career With Us",
     "contact_title": "Contact | PT ADTO Cipta Usaha Mandiri",
     "contact_desc": "Get in Touch"
+  },
+  "Products": {
+    "hero_title": "Industrial Equipment & Materials",
+    "hero_desc": "Comprehensive supply solutions to ensure your projects run smoothly, safely, and on schedule.",
+    "overline": "Our Products"
+  },
+  "MediaGallery": {
+    "hero_title": "Visual Portfolio",
+    "hero_desc": "Take a visual journey through our completed projects, corporate events, and the people behind our success.",
+    "overline": "Media Gallery"
+  },
+  "Industries": {
+    "hero_title": "Sectors We Serve",
+    "hero_desc": "We bring cross-industry expertise to solve complex challenges, driving growth and efficiency in every sector we touch.",
+    "overline": "Industries"
+  },
+  "RequestQuotation": {
+    "hero_title": "Request Quotation",
+    "hero_desc": "We are ready to help improve your project's efficiency. Provide details of your material or heavy equipment needs to receive a comprehensive proposal from us.",
+    "overline": "Request Quotation"
+  },
+  "VendorRegistration": {
+    "hero_title": "Become Our Partner",
+    "hero_desc": "Join our trusted vendor network to participate in national scale project logistics procurement.",
+    "overline": "Vendor Registration"
+  },
+  "KnowledgeCenter": {
+    "hero_title": "Documents & Resources",
+    "hero_desc": "Access various official documents, company profiles, and our company certifications for business partnership purposes.",
+    "overline": "Download Center"
   }
 }

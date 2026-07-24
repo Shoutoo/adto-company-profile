@@ -1,4 +1,5 @@
 import { Link } from '@/i18n/routing';
+import { getTranslations } from 'next-intl/server';
 
 import {
   ShieldAlert,
@@ -25,7 +26,8 @@ export function generateMetadata(): Metadata {
   });
 }
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+  const t = await getTranslations('Products');
   const breadcrumbItems = [
     { label: 'Home', href: ROUTES.HOME },
     { label: 'Products', href: '/products', active: true },
@@ -84,10 +86,9 @@ export default function ProductsPage() {
         imageUrl="/images/hero_products_1784892763521.png"
         align="center"
         backgroundVariant="dark"
-        description="Solusi suplai yang komprehensif untuk memastikan proyek Anda berjalan lancar, aman, dan tepat jadwal."
-        overline="Produk Kami"
-        title="Bahan Berkualitas."
-        titleHighlight="Dukungan Maksimal."
+        description={t('hero_desc')}
+        overline={t('overline')}
+        title={t('hero_title')}
       />
 
       <SectionWrapper background="alt" id="categories">

@@ -116,10 +116,24 @@
     "related": "Artikel Terkait",
     "prev": "Sebelumnya",
     "next": "Selanjutnya",
-    "hero_title": "Wawasan & Berita Industri",
-    "hero_desc": "Wawasan & Berita Industri",
+    "hero_title": "Wawasan & Keahlian Industri",
+    "hero_desc": "Wawasan, panduan, dan pemikiran terdepan dari tim profesional rekayasa dan konstruksi kami.",
     "newsletter_placeholder": "Masukkan alamat email Anda",
-    "subscribe": "Berlangganan"
+    "subscribe": "Berlangganan",
+    "all_posts": "Semua Artikel",
+    "engineering": "Rekayasa",
+    "management": "Manajemen",
+    "safety": "Keselamatan",
+    "industry": "Industri",
+    "read_article": "Baca Artikel",
+    "load_more": "Muat Lebih Banyak Artikel",
+    "expert_advice": "Mencari Saran Ahli?",
+    "expert_advice_desc": "Tim profesional berpengalaman kami siap memberikan konsultasi untuk proyek besar Anda berikutnya.",
+    "expert_author": "Penulis Ahli",
+    "previous_article": "Artikel Sebelumnya",
+    "next_article": "Artikel Selanjutnya",
+    "back_to_list": "Kembali ke Daftar Blog",
+    "read_more_articles": "Baca Artikel Lainnya"
   },
   "Career": {
     "overline": "Bergabung Bersama Kami",
@@ -216,5 +230,35 @@
     "career_desc": "Bangun Karir Anda Bersama Kami",
     "contact_title": "Kontak | PT ADTO Cipta Usaha Mandiri",
     "contact_desc": "Hubungi Kami"
+  },
+  "Products": {
+    "hero_title": "Peralatan & Material Industri",
+    "hero_desc": "Solusi suplai yang komprehensif untuk memastikan proyek Anda berjalan lancar, aman, dan tepat jadwal.",
+    "overline": "Produk Kami"
+  },
+  "MediaGallery": {
+    "hero_title": "Portofolio Visual",
+    "hero_desc": "Jelajahi portofolio visual dari proyek yang telah kami selesaikan, acara perusahaan, dan orang-orang di balik kesuksesan kami.",
+    "overline": "Galeri Media"
+  },
+  "Industries": {
+    "hero_title": "Sektor yang Kami Layani",
+    "hero_desc": "Kami membawa keahlian lintas industri untuk menyelesaikan tantangan kompleks, mendorong pertumbuhan dan efisiensi di setiap sektor yang kami sentuh.",
+    "overline": "Industri"
+  },
+  "RequestQuotation": {
+    "hero_title": "Permintaan Penawaran",
+    "hero_desc": "Kami siap membantu efisiensi proyek Anda. Berikan detail kebutuhan material atau alat berat untuk menerima proposal komprehensif dari kami.",
+    "overline": "Permintaan Penawaran"
+  },
+  "VendorRegistration": {
+    "hero_title": "Menjadi Mitra Kami",
+    "hero_desc": "Bergabunglah dengan jaringan vendor terpercaya kami untuk berpartisipasi dalam pengadaan logistik proyek-proyek berskala nasional.",
+    "overline": "Registrasi Vendor"
+  },
+  "KnowledgeCenter": {
+    "hero_title": "Dokumen & Sumber Daya",
+    "hero_desc": "Akses berbagai dokumen resmi, company profile, dan sertifikasi perusahaan kami untuk keperluan kemitraan bisnis.",
+    "overline": "Pusat Unduhan"
   }
 }

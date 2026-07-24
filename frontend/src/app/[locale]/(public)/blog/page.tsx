@@ -2,6 +2,7 @@ import { Link } from '@/i18n/routing';
 
 import { ArrowRight, BookOpen, Clock, User } from 'lucide-react';
 import { type Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
 import { CtaSection } from '@/components/molecules/CtaSection';
 import { HeroSection } from '@/components/molecules/HeroSection';
@@ -21,7 +22,8 @@ export const metadata: Metadata = generateMetadata({
 /**
  * Blog listing page
  */
-export default function BlogPage() {
+export default async function BlogPage() {
+  const t = await getTranslations('Blog');
   const blogPosts = [
     {
       id: 1,
@@ -103,41 +105,41 @@ export default function BlogPage() {
         imageUrl="/images/hero_news_1784892776990.png"
         align="center"
         className="bg-muted/30"
-        description="Insights, guides, and thought leadership from our team of engineering and construction professionals."
-        overline="Blog & Insights"
+        description={t('hero_desc')}
+        overline={t('overline')}
         size="default"
-        title="Industry Knowledge & Expertise"
+        title={t('hero_title')}
       />
 
       <SectionWrapper className="py-16 md:py-24">
         {/* Category Filter (Visual Only) */}
         <div className="mb-12 flex flex-wrap justify-center gap-3">
           <Badge className="cursor-pointer px-4 py-1.5 text-sm" variant="default">
-            All Posts
+            {t('all_posts')}
           </Badge>
           <Badge
             className="hover:bg-secondary/80 cursor-pointer px-4 py-1.5 text-sm"
             variant="secondary"
           >
-            Engineering
+            {t('engineering')}
           </Badge>
           <Badge
             className="hover:bg-secondary/80 cursor-pointer px-4 py-1.5 text-sm"
             variant="secondary"
           >
-            Management
+            {t('management')}
           </Badge>
           <Badge
             className="hover:bg-secondary/80 cursor-pointer px-4 py-1.5 text-sm"
             variant="secondary"
           >
-            Safety
+            {t('safety')}
           </Badge>
           <Badge
             className="hover:bg-secondary/80 cursor-pointer px-4 py-1.5 text-sm"
             variant="secondary"
           >
-            Industry
+            {t('industry')}
           </Badge>
         </div>
 
@@ -183,7 +185,7 @@ export default function BlogPage() {
                 </div>
                 <div className="mt-auto p-8 pt-0">
                   <div className="inline-flex items-center text-xs font-bold uppercase tracking-widest transition-colors duration-200" style={{ color: '#35557A' }}>
-                    <span className="group-hover:text-brand-800">Read Article</span>
+                    <span className="group-hover:text-brand-800">{t('read_article')}</span>
                     <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                   </div>
                 </div>
@@ -194,18 +196,18 @@ export default function BlogPage() {
 
         <div className="mt-16 flex justify-center">
           <Button size="lg" variant="outline">
-            Load More Articles
+            {t('load_more')}
           </Button>
         </div>
       </SectionWrapper>
 
       <CtaSection
-        description="Our team of seasoned professionals is ready to provide consultation for your next major project."
+        description={t('expert_advice_desc')}
         primaryAction={{
           label: 'Contact Us',
           href: ROUTES.CONTACT,
         }}
-        title="Looking for Expert Advice?"
+        title={t('expert_advice')}
       />
     </>
   );

@@ -1,5 +1,6 @@
 import { FileText, Search, Send, ShieldCheck, Clock, Calculator } from 'lucide-react';
 import { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 import { generateMetadata } from '@/lib/utils/seo';
 import { HeroSection } from '@/components/molecules/hero-section-main';
 import { SectionWrapper } from '@/components/molecules/section-wrapper';
@@ -11,7 +12,8 @@ export const metadata: Metadata = generateMetadata({
   description: 'Dapatkan penawaran harga khusus untuk kebutuhan operasional proyek Anda.',
 });
 
-export default function RequestQuotationPage() {
+export default async function RequestQuotationPage() {
+  const t = await getTranslations('RequestQuotation');
   const steps = [
     {
       icon: <Send className="text-primary h-5 w-5" />,
@@ -45,9 +47,9 @@ export default function RequestQuotationPage() {
         imageUrl="/images/hero_quotation_1784892852316.png"
         align="center"
         backgroundVariant="dark"
-        description="Kami siap membantu efisiensi proyek Anda. Berikan detail kebutuhan material atau alat berat untuk menerima proposal komprehensif dari kami."
-        overline="Permintaan Penawaran"
-        title="Penawaran Harga Kustom."
+        description={t('hero_desc')}
+        overline={t('overline')}
+        title={t('hero_title')}
       />
       <SectionWrapper>
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-12">

@@ -2,6 +2,7 @@ import { Link } from '@/i18n/routing';
 
 import { BookOpen, FileText, Award, ShieldCheck, ArrowRight } from 'lucide-react';
 import { type Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
 import { CtaSection } from '@/components/molecules/cta-section';
 import { HeroSection } from '@/components/molecules/hero-section-main';
@@ -86,15 +87,16 @@ const FAQS = [
  * Knowledge Center / Resources Page
  * Server Component
  */
-export default function KnowledgeCenterPage() {
+export default async function KnowledgeCenterPage() {
+  const t = await getTranslations('KnowledgeCenter');
   return (
     <>
       <HeroSection
         imageUrl="/images/hero_knowledge_1784892808791.png"
         align="center"
-        description="Akses berbagai dokumen resmi, company profile, dan sertifikasi perusahaan kami untuk keperluan kemitraan bisnis."
-        overline="Pusat Unduhan"
-        title="Dokumen & Sumber Daya"
+        description={t('hero_desc')}
+        overline={t('overline')}
+        title={t('hero_title')}
       />
 
       <SectionWrapper>

@@ -1,5 +1,6 @@
 import { Droplets, Zap, Pickaxe, Factory, Building, Home, Signal, Landmark } from 'lucide-react';
 import { type Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
 import { CtaSection } from '@/components/molecules/cta-section';
 import { HeroSection } from '@/components/molecules/hero-section-main';
@@ -16,7 +17,8 @@ export function generateMetadata(): Metadata {
   });
 }
 
-export default function IndustriesPage() {
+export default async function IndustriesPage() {
+  const t = await getTranslations('Industries');
   const breadcrumbItems = [
     { label: 'Home', href: ROUTES.HOME },
     { label: 'Industries', href: '/industries', active: true },
@@ -77,9 +79,9 @@ export default function IndustriesPage() {
         imageUrl="/images/hero_industries_1784892820273.png"
         align="center"
         backgroundVariant="dark"
-        description="We bring cross-industry expertise to solve complex challenges, driving growth and efficiency in every sector we touch."
-        overline="Industries"
-        title="Cross-Industry Expertise."
+        description={t('hero_desc')}
+        overline={t('overline')}
+        title={t('hero_title')}
       />
 
       <SectionWrapper id="industries">

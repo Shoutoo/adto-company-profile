@@ -1,5 +1,6 @@
 import { Play } from 'lucide-react';
 import { type Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
 import { HeroSection } from '@/components/molecules/hero-section-main';
 import { ResponsiveGrid } from '@/components/molecules/responsive-grid';
@@ -25,15 +26,16 @@ const GALLERY_ITEMS = Array.from({ length: 8 }).map((_, i) => ({
  * Media Gallery Page
  * Server Component
  */
-export default function MediaGalleryPage() {
+export default async function MediaGalleryPage() {
+  const t = await getTranslations('MediaGallery');
   return (
     <>
       <HeroSection
         imageUrl="/images/hero_gallery_1784892794601.png"
         align="center"
-        description="Take a visual journey through our completed projects, corporate events, and the people behind our success."
-        overline="Media Gallery"
-        title="Visual Portfolio"
+        description={t('hero_desc')}
+        overline={t('overline')}
+        title={t('hero_title')}
       />
 
       <SectionWrapper>

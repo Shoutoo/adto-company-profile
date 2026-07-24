@@ -1,5 +1,6 @@
 import { CheckCircle2, FileText, Briefcase, Building2 } from 'lucide-react';
 import { type Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
 import { HeroSection } from '@/components/molecules/hero-section-main';
 import { PageHeader } from '@/components/molecules/page-header';
@@ -13,7 +14,8 @@ export const metadata: Metadata = generateMetadata({
   description: 'Jadilah mitra bisnis kami dengan mendaftar sebagai vendor resmi.',
 });
 
-export default function VendorRegistrationPage() {
+export default async function VendorRegistrationPage() {
+  const t = await getTranslations('VendorRegistration');
   const requirements = [
     { icon: <FileText className="text-primary h-5 w-5" />, text: 'Akta Pendirian Perusahaan' },
     { icon: <FileText className="text-primary h-5 w-5" />, text: 'NIB & NPWP' },
@@ -36,9 +38,9 @@ export default function VendorRegistrationPage() {
         imageUrl="/images/hero_vendor_1784892863171.png"
         align="center"
         backgroundVariant="dark"
-        description="Bergabunglah dengan jaringan vendor terpercaya kami untuk berpartisipasi dalam pengadaan logistik proyek-proyek berskala nasional."
-        overline="Registrasi Vendor"
-        title="Bermitra untuk Tumbuh."
+        description={t('hero_desc')}
+        overline={t('overline')}
+        title={t('hero_title')}
       />
       <SectionWrapper>
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-12">

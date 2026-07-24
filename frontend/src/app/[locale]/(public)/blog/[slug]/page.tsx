@@ -81,7 +81,7 @@ export default async function BlogDetailPage({
         
         <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500 mb-8">
           <span className="flex items-center gap-2">
-            <User className="h-4 w-4" /> Expert Author
+            <User className="h-4 w-4" /> {t('expert_author')}
           </span>
           <span className="flex items-center gap-2">
             <Calendar className="h-4 w-4" /> {t('publish_date')}: 12 Oct 2023
@@ -131,12 +131,12 @@ export default async function BlogDetailPage({
         {/* Next & Previous */}
         <div className="mt-16 flex flex-col sm:flex-row items-center justify-between border-t border-slate-200 pt-8 gap-4">
           <Link href="/blog" className="group flex flex-col items-start gap-1 p-4 w-full sm:w-[48%] rounded-xl border border-slate-100 bg-slate-50 hover:border-brand-300 hover:bg-brand-50 transition-all cursor-pointer">
-             <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Previous Article</span>
-             <span className="font-heading text-lg font-bold text-slate-900 group-hover:text-brand-600">Back to Blog List</span>
+             <span className="text-xs font-bold uppercase tracking-widest text-slate-500">{t('previous_article')}</span>
+             <span className="font-heading text-lg font-bold text-slate-900 group-hover:text-brand-600">{t('back_to_list')}</span>
           </Link>
           <Link href="/blog" className="group flex flex-col items-end text-right gap-1 p-4 w-full sm:w-[48%] rounded-xl border border-slate-100 bg-slate-50 hover:border-brand-300 hover:bg-brand-50 transition-all cursor-pointer">
-             <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Next Article</span>
-             <span className="font-heading text-lg font-bold text-slate-900 group-hover:text-brand-600">Read More Articles</span>
+             <span className="text-xs font-bold uppercase tracking-widest text-slate-500">{t('next_article')}</span>
+             <span className="font-heading text-lg font-bold text-slate-900 group-hover:text-brand-600">{t('read_more_articles')}</span>
           </Link>
         </div>
       </div>
