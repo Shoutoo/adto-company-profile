@@ -2,6 +2,8 @@
 
 
 import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { PUBLIC_NAV_ITEMS } from '@/lib/constants/navigation.constants';
@@ -13,7 +15,10 @@ import { LanguageSwitcher } from './language-switcher';
 import { NavbarCTA } from './navbar-cta';
 
 function NavbarContent() {
-  const { setMobileMenuOpen, isScrolled } = useNavigation();
+  const { setMobileMenuOpen, isScrolled, activeNav, closeNav } = useNavigation();
+  const t = useTranslations('Navbar');
+  
+  const activeNavObj = PUBLIC_NAV_ITEMS.find(item => item.label === activeNav);
 
   return (
     <>
@@ -64,6 +69,33 @@ function NavbarContent() {
               <Menu className={cn("h-6 w-6", isScrolled ? "text-slate-600" : "text-white")} />
             </button>
           </div>
+
+          {/* Mega Menu Full Width Panel */}
+          <AnimatePresence>
+            {activeNavObj && activeNavObj.children && (
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.25, ease: 'easeOut' }}
+                className="nav-dropdown-container absolute left-0 right-0 top-full mt-2 bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-slate-100 p-8 z-50 cursor-default"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {activeNavObj.children.map(child => (
+                    <Link
+                      key={child.href}
+                      href={child.href}
+                      onClick={closeNav}
+                      className="group flex items-center justify-start rounded-lg px-4 py-3 text-[15px] font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-[#0A2F5C]"
+                    >
+                      <span>{t(child.label as any)}</span>
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
       </header>
