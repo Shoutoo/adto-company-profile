@@ -54,7 +54,7 @@ export function MobileMenu() {
   return (
     <motion.div
       animate={{ opacity: 1, y: 0 }}
-      className="fixed inset-x-0 bottom-0 top-20 z-[100] overflow-y-auto bg-white lg:hidden"
+      className="fixed inset-x-0 bottom-0 top-16 md:top-20 z-[100] overflow-y-auto bg-white lg:hidden"
       exit={{ opacity: 0, y: -10 }}
       initial={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.2 }}
@@ -72,7 +72,7 @@ export function MobileMenu() {
               {item.children ? (
                 <button
                   className={cn(
-                    'flex w-full items-center justify-between px-0 py-4 text-[13px] font-semibold uppercase tracking-[0.1em] transition-colors',
+                    'flex w-full items-center justify-between px-0 py-4 text-[14px] font-medium capitalize transition-colors',
                     isActive(item.href) ? 'text-brand-600' : 'text-foreground hover:text-brand-600'
                   )}
                   onClick={() => toggleSubmenu(item.href)}
@@ -89,7 +89,7 @@ export function MobileMenu() {
               ) : (
                 <Link
                   className={cn(
-                    'flex w-full items-center justify-between px-0 py-4 text-[13px] font-semibold uppercase tracking-[0.1em] transition-colors',
+                    'flex w-full items-center justify-between px-0 py-4 text-[14px] font-medium capitalize transition-colors',
                     isActive(item.href) ? 'text-brand-600' : 'text-foreground hover:text-brand-600'
                   )}
                   href={item.href}
@@ -109,16 +109,16 @@ export function MobileMenu() {
                     transition={{ duration: 0.2 }}
                     className="overflow-hidden"
                   >
-                    <ul className="mb-3 mt-1 space-y-1 rounded-xl bg-slate-50/60 p-2">
+                    <ul className="mb-3 mt-1 space-y-1 rounded-[12px] bg-slate-50/60 p-2">
                       {item.children.map((child) => (
                         <li key={child.href}>
                           <Link
                             href={child.href}
                             onClick={closeMenu}
                             className={cn(
-                              'block rounded-lg px-4 py-3 text-[14px] transition-colors hover:bg-white hover:text-brand-600',
+                              'block rounded-md px-4 py-3 text-[14px] font-medium transition-colors hover:bg-white hover:text-brand-600',
                               pathname === child.href || pathname.startsWith(child.href + '/')
-                                ? 'bg-white text-brand-600 font-medium shadow-sm'
+                                ? 'bg-white text-brand-600 shadow-sm'
                                 : 'text-slate-600'
                             )}
                           >

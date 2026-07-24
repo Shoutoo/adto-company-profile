@@ -57,17 +57,12 @@ export function Header() {
     <>
       <header
         className={cn(
-          'fixed left-0 right-0 top-0 z-50 transition-all duration-300 ease-out',
-          'h-20 md:h-[90px]',
+          'fixed left-0 right-0 top-0 z-50 transition-all duration-300 ease-out bg-white',
+          'h-16 md:h-20',
           scrolled
-            ? 'bg-white/95 backdrop-blur-lg border-b border-slate-100/50'
-            : 'bg-white/95 backdrop-blur-md border-b border-transparent',
+            ? 'shadow-[0_2px_15px_-3px_rgba(0,0,0,0.05)]'
+            : 'border-b border-transparent',
         )}
-        style={{
-          boxShadow: scrolled
-            ? '0 4px 20px rgba(0,0,0,0.03)'
-            : 'none',
-        }}
       >
         <div className="container-page flex h-full items-center justify-between">
           {/* Logo */}
@@ -90,7 +85,7 @@ export function Header() {
               <div key={item.href} className="group relative flex h-full items-center">
                 <Link
                   className={cn(
-                    'inline-flex h-full items-center gap-1 px-1 text-[13px] font-semibold uppercase tracking-[0.1em] transition-colors duration-250',
+                    'inline-flex h-full items-center gap-1 px-1 text-[14px] font-medium capitalize transition-colors duration-200',
                     isActive(item.href)
                       ? 'text-brand-600'
                       : 'text-foreground hover:text-brand-600'
@@ -102,32 +97,29 @@ export function Header() {
                     <ChevronDown className="h-3.5 w-3.5 opacity-50 transition-transform duration-200 group-hover:rotate-180" />
                   )}
                 </Link>
-                {/* Animated underline — gradient */}
+                {/* Active indicator */}
                 <div
                   className={cn(
-                    'absolute bottom-[1px] left-0 right-0 h-[2px] rounded-t-sm transition-transform duration-300 ease-out origin-left',
+                    'absolute bottom-[1px] left-0 right-0 h-[2px] bg-brand-600 rounded-t-sm transition-transform duration-200 ease-out origin-left',
                     isActive(item.href)
                       ? 'scale-x-100'
                       : 'scale-x-0 group-hover:scale-x-100'
                   )}
-                  style={{
-                    background: 'linear-gradient(90deg, #35557A, #F58220)',
-                  }}
                 />
 
                 {/* Dropdown Menu */}
                 {item.children && (
-                  <div className="absolute left-0 top-full hidden w-64 pt-3 group-hover:block transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2">
-                    <div className="rounded-[16px] border border-slate-100 bg-white p-3 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
+                  <div className="absolute left-0 top-full hidden w-64 pt-3 group-hover:block transition-all duration-200 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2">
+                    <div className="rounded-[12px] border border-gray-200 bg-white p-2 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)]">
                       <div className="flex flex-col space-y-1">
                         {item.children.map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}
                             className={cn(
-                              'block rounded-lg px-4 py-2.5 text-[14px] font-medium transition-colors hover:bg-slate-50 hover:text-brand-600',
+                              'block rounded-md px-4 py-2.5 text-[14px] font-medium transition-colors hover:bg-slate-50 hover:text-brand-600',
                               pathname === child.href || pathname.startsWith(child.href + '/')
-                                ? 'bg-brand-50/50 text-brand-600'
+                                ? 'bg-slate-50 text-brand-600'
                                 : 'text-slate-600'
                             )}
                           >
@@ -160,7 +152,7 @@ export function Header() {
             />
             <Button
               asChild
-              className="hidden rounded-full bg-brand-600 px-6 py-5 text-[13px] font-bold uppercase tracking-wider text-white shadow-sm transition-all duration-300 hover:bg-brand-700 hover:shadow-[0_4px_16px_rgba(53,85,122,0.30)] hover:-translate-y-0.5 md:inline-flex"
+              className="hidden rounded-full bg-brand-600 px-6 py-5 text-[14px] font-medium capitalize text-white shadow-sm transition-all duration-200 hover:bg-brand-700 hover:shadow-md hover:-translate-y-0.5 md:inline-flex"
             >
               <Link href={ROUTES.CONTACT}>{t('contact')}</Link>
             </Button>
@@ -180,7 +172,7 @@ export function Header() {
       </header>
 
       {/* Spacer */}
-      <div className="h-20 md:h-[90px]" />
+      <div className="h-16 md:h-20" />
 
       {/* Mobile Menu */}
       <AnimatePresence>{isMobileMenuOpen && <MobileMenu />}</AnimatePresence>
