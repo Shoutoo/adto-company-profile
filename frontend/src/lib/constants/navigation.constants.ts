@@ -27,13 +27,66 @@ import { ROUTES, ADMIN_ROUTES } from './routes.constants';
 
 /** Main public navigation items */
 export const PUBLIC_NAV_ITEMS: NavItem[] = [
-  { label: 'Home', href: ROUTES.HOME },
-  { label: 'About', href: ROUTES.ABOUT },
-  { label: 'Services', href: ROUTES.SERVICES },
-  { label: 'Projects', href: ROUTES.PROJECTS },
-  { label: 'Blog', href: ROUTES.BLOG },
-  { label: 'Career', href: ROUTES.CAREER },
-  { label: 'Contact', href: ROUTES.CONTACT },
+  { label: 'home', href: ROUTES.HOME },
+  {
+    label: 'about',
+    href: ROUTES.ABOUT,
+    children: [
+      { label: 'company_profile', href: ROUTES.ABOUT },
+      { label: 'vision_mission', href: `${ROUTES.ABOUT}#vision` },
+      { label: 'company_values', href: `${ROUTES.ABOUT}#values` },
+      { label: 'why_choose_us', href: `${ROUTES.ABOUT}#why` },
+      { label: 'organization', href: `${ROUTES.ABOUT}#org` },
+      { label: 'our_team', href: `${ROUTES.ABOUT}#team` },
+    ],
+  },
+  {
+    label: 'services',
+    href: ROUTES.SERVICES,
+    children: [
+      { label: 'all_services', href: ROUTES.SERVICES },
+      { label: 'consulting', href: ROUTES.SERVICE_DETAIL('consulting') },
+      { label: 'engineering', href: ROUTES.SERVICE_DETAIL('engineering') },
+      { label: 'operations', href: ROUTES.SERVICE_DETAIL('operations') },
+    ],
+  },
+  {
+    label: 'projects',
+    href: ROUTES.PROJECTS,
+    children: [
+      { label: 'featured_projects', href: `${ROUTES.PROJECTS}#featured` },
+      { label: 'all_projects', href: ROUTES.PROJECTS },
+      { label: 'project_categories', href: `${ROUTES.PROJECTS}#categories` },
+    ],
+  },
+  {
+    label: 'career',
+    href: ROUTES.CAREER,
+    children: [
+      { label: 'open_positions', href: `${ROUTES.CAREER}#positions` },
+      { label: 'recruitment_process', href: `${ROUTES.CAREER}#process` },
+      { label: 'company_culture', href: `${ROUTES.CAREER}#culture` },
+      { label: 'benefits', href: `${ROUTES.CAREER}#benefits` },
+    ],
+  },
+  {
+    label: 'blog',
+    href: ROUTES.BLOG,
+    children: [
+      { label: 'latest_articles', href: ROUTES.BLOG },
+      { label: 'news', href: `/news` },
+      { label: 'insights', href: `${ROUTES.BLOG}#insights` },
+    ],
+  },
+  {
+    label: 'contact',
+    href: ROUTES.CONTACT,
+    children: [
+      { label: 'office_location', href: `${ROUTES.CONTACT}#location` },
+      { label: 'contact_form', href: `${ROUTES.CONTACT}#form` },
+      { label: 'faq', href: ROUTES.FAQ },
+    ],
+  },
 ];
 
 /** Admin sidebar navigation groups */

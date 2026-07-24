@@ -5,6 +5,14 @@ import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
 
 export function generateStaticParams() {
   return [
@@ -23,6 +31,7 @@ export default async function ServiceDetailPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('Services');
+  const tNavbar = await getTranslations('Navbar');
 
   const validSlugs = ['industrial-supply', 'project-management', 'engineering', 'logistics'];
   if (!validSlugs.includes(slug)) {
@@ -40,6 +49,25 @@ export default async function ServiceDetailPage({
         align="center"
       />
       
+      {/* Breadcrumb */}
+      <div className="container-page py-6">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild><Link href="/">{tNavbar('home')}</Link></BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild><Link href="/services">{tNavbar('services')}</Link></BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{title}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
+
       {/* Description & Benefits */}
       <section className="container-page py-16 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-2">

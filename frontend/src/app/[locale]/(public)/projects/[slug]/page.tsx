@@ -3,6 +3,15 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { HeroSection } from '@/components/molecules/hero-section-main';
 import { Layers, Calendar, Trophy } from 'lucide-react';
 import Image from 'next/image';
+import { Link } from '@/i18n/routing';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
 
 export function generateStaticParams() {
   return [
@@ -20,6 +29,7 @@ export default async function ProjectDetailPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('Projects');
+  const tNavbar = await getTranslations('Navbar');
 
   const validSlugs = ['pertamina-refinery-upgrade', 'pln-grid-modernization', 'telkom-data-center'];
   if (!validSlugs.includes(slug)) {
@@ -37,6 +47,25 @@ export default async function ProjectDetailPage({
         align="center"
       />
       
+      {/* Breadcrumb */}
+      <div className="container-page py-6">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild><Link href="/">{tNavbar('home')}</Link></BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild><Link href="/projects">{tNavbar('projects')}</Link></BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{title}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
+
       <section className="container-page py-16 lg:py-24">
         {/* Project Meta */}
         <div className="mb-16 grid gap-8 sm:grid-cols-3 border-b border-slate-200 pb-12">

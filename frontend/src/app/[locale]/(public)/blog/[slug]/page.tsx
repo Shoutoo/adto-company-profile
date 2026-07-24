@@ -4,6 +4,14 @@ import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 import Image from 'next/image';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
 
 export function generateStaticParams() {
   return [
@@ -24,6 +32,7 @@ export default async function BlogDetailPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('Blog');
+  const tNavbar = await getTranslations('Navbar');
 
   const validSlugs = [
     'best-practices-industrial-project-management',
@@ -42,6 +51,24 @@ export default async function BlogDetailPage({
   return (
     <main className="flex-1 bg-white pt-24 pb-16">
       <div className="container-page max-w-4xl">
+        <div className="mb-8">
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild><Link href="/">{tNavbar('home')}</Link></BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild><Link href="/blog">{tNavbar('blog')}</Link></BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>{title}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
+        
         <Button asChild variant="ghost" className="mb-8 -ml-4">
           <Link href="/blog" className="inline-flex items-center gap-2">
             <ArrowLeft className="h-4 w-4" /> {t('prev')}

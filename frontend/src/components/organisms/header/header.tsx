@@ -13,6 +13,7 @@ import { useTranslations } from 'next-intl';
 
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/config/site.config';
+import { PUBLIC_NAV_ITEMS } from '@/lib/constants/navigation.constants';
 import { ROUTES } from '@/lib/constants/routes.constants';
 import { cn } from '@/lib/utils/cn';
 import { useUiStore } from '@/stores/ui.store';
@@ -30,15 +31,6 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   const t = useTranslations('Navbar');
-
-  const navItems = [
-    { href: ROUTES.HOME, label: t('home') },
-    { href: ROUTES.ABOUT, label: t('about') },
-    { href: ROUTES.SERVICES, label: t('services') },
-    { href: ROUTES.PROJECTS, label: t('projects') },
-    { href: ROUTES.CAREER, label: t('career') },
-    { href: ROUTES.BLOG, label: t('blog') },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,7 +86,7 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav aria-label="Main navigation" className="hidden h-full items-center gap-8 lg:flex">
-            {navItems.map((item) => (
+            {PUBLIC_NAV_ITEMS.map((item) => (
               <div key={item.href} className="group relative flex h-full items-center">
                 <Link
                   className={cn(
@@ -105,8 +97,8 @@ export function Header() {
                   )}
                   href={item.href}
                 >
-                  {item.label}
-                  {item.href === ROUTES.SERVICES && (
+                  {t(item.label as any)}
+                  {item.children && (
                     <ChevronDown className="h-3.5 w-3.5 opacity-50 transition-transform duration-200 group-hover:rotate-180" />
                   )}
                 </Link>
@@ -122,6 +114,28 @@ export function Header() {
                     background: 'linear-gradient(90deg, #35557A, #F58220)',
                   }}
                 />
+
+                {/* Dropdown Menu */}
+                {item.children && (
+                  <div className="absolute left-0 top-full hidden w-64 pt-2 group-hover:block transition-all duration-300 opacity-0 group-hover:opacity-100">
+                    <div className="rounded-xl border border-border/50 bg-white p-2 shadow-xl backdrop-blur-xl">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          className={cn(
+                            'block rounded-lg px-4 py-2.5 text-sm font-medium transition-colors hover:bg-brand-50 hover:text-brand-600',
+                            pathname === child.href || pathname.startsWith(child.href + '/')
+                              ? 'bg-brand-50/50 text-brand-600'
+                              : 'text-muted-foreground'
+                          )}
+                        >
+                          {t(child.label as any)}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </nav>
