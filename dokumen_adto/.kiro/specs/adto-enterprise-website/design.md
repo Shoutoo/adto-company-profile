@@ -2,13 +2,13 @@
 
 <!-- 
   Technical Design Document (TDD)
-  PT Adto Cipta Usaha Mandiri — Enterprise Website Platform
+  PT ADTO Cipta Usaha Mandiri — Enterprise Website Platform
   Dokumen: TDD-ADTO-ENT-001 | Versi: 1.0.0 | Tanggal: 2026-07-01
 -->
 
 ## Overview
 
-**Adto Enterprise Website Platform** adalah platform digital enterprise terpadu untuk PT Adto Cipta Usaha Mandiri, perusahaan B2B industrial di sektor Oil & Gas. Platform ini dirancang dengan arsitektur modern yang memisahkan Frontend, Backend API, dan CMS sebagai komponen mandiri namun terintegrasi erat.
+**Adto Enterprise Website Platform** adalah platform digital enterprise terpadu untuk PT ADTO Cipta Usaha Mandiri, perusahaan B2B industrial di sektor Oil & Gas. Platform ini dirancang dengan arsitektur modern yang memisahkan Frontend, Backend API, dan CMS sebagai komponen mandiri namun terintegrasi erat.
 
 ### Tujuan Desain
 
@@ -1015,6 +1015,6 @@ Scenario E2E kritikal yang harus lulus sebelum release:
 
 ---
 
-*Akhir Dokumen Desain Teknis — PT Adto Cipta Usaha Mandiri Enterprise Website Platform*
+*Akhir Dokumen Desain Teknis — PT ADTO Cipta Usaha Mandiri Enterprise Website Platform*
 *Versi: 1.0.0 | Tanggal: 2026-07-01*
 *Dokumen ini mengacu pada SRS-ADTO-ENT-001 sebagai baseline requirements.*

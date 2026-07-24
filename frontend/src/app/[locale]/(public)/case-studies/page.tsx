@@ -13,7 +13,7 @@ import { generateMetadata } from '@/lib/utils/seo';
 export const metadata: Metadata = generateMetadata({
   title: 'Case Studies',
   description:
-    'In-depth analysis of complex engineering and construction projects delivered by PT Adto Cipta Usaha Mandiri.',
+    'In-depth analysis of complex engineering and construction projects delivered by PT ADTO Cipta Usaha Mandiri.',
 });
 
 /**

@@ -66,7 +66,7 @@ export function Header() {
       <header
         className={cn(
           'fixed left-0 right-0 top-0 z-50 transition-all duration-300 ease-out',
-          'h-20 md:h-[88px]',
+          'h-20 md:h-[90px]',
           scrolled
             ? 'bg-white/97 backdrop-blur-xl border-b border-[rgba(53,85,122,0.08)]'
             : 'bg-white/95 backdrop-blur-md border-b border-transparent',
@@ -93,12 +93,12 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav aria-label="Main navigation" className="hidden items-center gap-6 lg:flex">
+          <nav aria-label="Main navigation" className="hidden h-full items-center gap-8 lg:flex">
             {navItems.map((item) => (
-              <div key={item.href} className="group relative">
+              <div key={item.href} className="group relative flex h-full items-center">
                 <Link
                   className={cn(
-                    'inline-flex items-center gap-1 py-7 text-[13px] font-bold uppercase tracking-widest transition-colors duration-250',
+                    'inline-flex h-full items-center gap-1 px-1 text-[14px] font-bold uppercase tracking-wider transition-colors duration-250',
                     isActive(item.href)
                       ? 'text-brand-600'
                       : 'text-foreground hover:text-brand-600'
@@ -113,7 +113,7 @@ export function Header() {
                 {/* Animated underline — gradient */}
                 <div
                   className={cn(
-                    'absolute bottom-0 left-0 right-0 h-0.5 rounded-full transition-transform duration-300 ease-out origin-left',
+                    'absolute bottom-0 left-0 right-0 h-[3px] rounded-t-sm transition-transform duration-300 ease-out origin-left',
                     isActive(item.href)
                       ? 'scale-x-100'
                       : 'scale-x-0 group-hover:scale-x-100'
@@ -127,7 +127,7 @@ export function Header() {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 lg:gap-6">
             <LanguageSwitcher />
             
             <button
@@ -164,7 +164,7 @@ export function Header() {
       </header>
 
       {/* Spacer */}
-      <div className="h-20 md:h-[88px]" />
+      <div className="h-20 md:h-[90px]" />
 
       {/* Mobile Menu */}
       <AnimatePresence>{isMobileMenuOpen && <MobileMenu />}</AnimatePresence>

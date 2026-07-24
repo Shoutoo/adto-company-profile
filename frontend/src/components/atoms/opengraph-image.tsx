@@ -66,7 +66,7 @@ export default function OgImage() {
           letterSpacing: '-0.02em',
         }}
       >
-        PT Adto Cipta Usaha Mandiri
+        PT ADTO Cipta Usaha Mandiri
       </div>
 
       {/* Tagline */}

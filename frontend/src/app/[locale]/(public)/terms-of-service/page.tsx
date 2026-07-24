@@ -5,8 +5,8 @@ import { SectionWrapper } from '@/components/molecules/SectionWrapper';
 import { generateMetadata } from '@/lib/utils/seo';
 
 export const metadata: Metadata = generateMetadata({
-  title: 'Terms of Service | PT Adto Cipta Usaha Mandiri',
-  description: 'Terms of Service and usage conditions for PT Adto Cipta Usaha Mandiri.',
+  title: 'Terms of Service | PT ADTO Cipta Usaha Mandiri',
+  description: 'Terms of Service and usage conditions for PT ADTO Cipta Usaha Mandiri.',
 });
 
 export default function TermsOfServicePage() {
@@ -34,7 +34,7 @@ export default function TermsOfServicePage() {
             <h2>1. Agreement to Terms</h2>
             <p>
               These Terms of Service constitute a legally binding agreement made between you,
-              whether personally or on behalf of an entity (&quot;you&quot;) and PT Adto Cipta Usaha
+              whether personally or on behalf of an entity (&quot;you&quot;) and PT PT ADTO Cipta Usaha Mandiri Usaha
               Mandiri (&quot;we,&quot; &quot;us&quot; or &quot;our&quot;), concerning your access to
               and use of our website as well as any other media form, media channel, mobile website
               or mobile application related, linked, or otherwise connected thereto.
@@ -42,7 +42,7 @@ export default function TermsOfServicePage() {
 
             <h2>2. Services Description</h2>
             <p>
-              PT Adto Cipta Usaha Mandiri provides construction, procurement, engineering, and
+              PT ADTO Cipta Usaha Mandiri provides construction, procurement, engineering, and
               project management services. The information provided on the website is not intended
               for distribution to or use by any person or entity in any jurisdiction or country
               where such distribution or use would be contrary to law or regulation.
@@ -94,7 +94,7 @@ export default function TermsOfServicePage() {
             <h2>7. Governing Law</h2>
             <p>
               These Terms shall be governed by and defined following the laws of the Republic of
-              Indonesia. PT Adto Cipta Usaha Mandiri and yourself irrevocably consent that the
+              Indonesia. PT ADTO Cipta Usaha Mandiri and yourself irrevocably consent that the
               courts of Indonesia shall have exclusive jurisdiction to resolve any dispute which may
               arise in connection with these terms.
             </p>
@@ -121,7 +121,7 @@ export default function TermsOfServicePage() {
               regarding use of the Site, please contact us at:
             </p>
             <p>
-              PT Adto Cipta Usaha Mandiri
+              PT ADTO Cipta Usaha Mandiri
               <br />
               Email: legal@adto.co.id
               <br />

@@ -21,7 +21,7 @@ import { generateMetadata as getMetadata } from '@/lib/utils/seo';
 export function generateMetadata(): Metadata {
   return getMetadata({
     title: 'Produk Industri',
-    description: 'Material chemical, sparepart, dan logistik oleh PT Adto Cipta Usaha Mandiri.',
+    description: 'Material chemical, sparepart, dan logistik oleh PT ADTO Cipta Usaha Mandiri.',
   });
 }
 

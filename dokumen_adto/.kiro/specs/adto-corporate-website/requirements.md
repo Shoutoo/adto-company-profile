@@ -1,9 +1,9 @@
 ﻿# Requirements Document
-<!-- ADTO Corporate Website — PT Adto Cipta Usaha Mandiri -->
+<!-- ADTO Corporate Website — PT ADTO Cipta Usaha Mandiri -->
 
 ## Introduction
 
-PT Adto Cipta Usaha Mandiri adalah perusahaan penyedia solusi terintegrasi (one-stop solution) untuk industri minyak dan gas (migas) serta pertambangan yang berbasis di Depok, Jawa Barat. Perusahaan beroperasi melalui tiga lini bisnis utama: Chemical Oil & Gas (Bentonite, Barite, dan produk kimia drilling), Sparepart & Service (komponen industri, pompa, valve, peralatan rig), dan Mobilisasi/Demobilisasi (jasa transportasi alat berat ke site).
+PT ADTO Cipta Usaha Mandiri adalah perusahaan penyedia solusi terintegrasi (one-stop solution) untuk industri minyak dan gas (migas) serta pertambangan yang berbasis di Depok, Jawa Barat. Perusahaan beroperasi melalui tiga lini bisnis utama: Chemical Oil & Gas (Bentonite, Barite, dan produk kimia drilling), Sparepart & Service (komponen industri, pompa, valve, peralatan rig), dan Mobilisasi/Demobilisasi (jasa transportasi alat berat ke site).
 
 Website ini dirancang sebagai ekosistem digital enterprise yang mencakup corporate branding, marketing platform, lead generation, vendor registration portal, request quotation platform, career portal, knowledge center, dan product showcase. Website menggunakan tagline resmi "Energi Terpadu, Solusi Mandiri" dengan identitas visual Navy #0A2F5C sebagai warna primer, Orange #FF5A00 sebagai warna aksen, dan Cool Gray #E9ECEF sebagai warna netral.
 
@@ -13,7 +13,7 @@ Stack teknologi yang digunakan: Next.js + React + TypeScript + Tailwind CSS (Fro
 
 ## Glossary
 
-- **Website**: Platform web enterprise PT Adto Cipta Usaha Mandiri secara keseluruhan
+- **Website**: Platform web enterprise PT ADTO Cipta Usaha Mandiri secara keseluruhan
 - **Frontend**: Aplikasi Next.js yang di-render di sisi klien dan server
 - **Backend_API**: Layanan NestJS yang menyediakan RESTful API untuk seluruh operasi data
 - **CMS**: Payload CMS yang digunakan tim konten untuk mengelola konten website
@@ -71,7 +71,7 @@ Stack teknologi yang digunakan: Next.js + React + TypeScript + Tailwind CSS (Fro
 
 ### Requirements 2: Halaman Beranda (Homepage)
 
-**User Story:** Sebagai Pengunjung, saya ingin melihat halaman beranda yang kuat dan informatif, agar saya dapat langsung memahami identitas, nilai, dan layanan utama PT Adto Cipta Usaha Mandiri.
+**User Story:** Sebagai Pengunjung, saya ingin melihat halaman beranda yang kuat dan informatif, agar saya dapat langsung memahami identitas, nilai, dan layanan utama PT ADTO Cipta Usaha Mandiri.
 
 #### Kriteria Penerimaan
 
@@ -146,7 +146,7 @@ Stack teknologi yang digunakan: Next.js + React + TypeScript + Tailwind CSS (Fro
 
 ### Requirements 6: Portal Registrasi Vendor
 
-**User Story:** Sebagai pemasok atau mitra potensial, saya ingin mendaftarkan perusahaan saya sebagai vendor resmi PT Adto Cipta Usaha Mandiri melalui website, agar saya dapat dipertimbangkan dalam proses pengadaan ADTO secara transparan dan terstandarisasi.
+**User Story:** Sebagai pemasok atau mitra potensial, saya ingin mendaftarkan perusahaan saya sebagai vendor resmi PT ADTO Cipta Usaha Mandiri melalui website, agar saya dapat dipertimbangkan dalam proses pengadaan ADTO secara transparan dan terstandarisasi.
 
 #### Kriteria Penerimaan
 
@@ -165,7 +165,7 @@ Stack teknologi yang digunakan: Next.js + React + TypeScript + Tailwind CSS (Fro
 
 ### Requirements 7: Portal Karir
 
-**User Story:** Sebagai profesional yang mencari peluang karir di industri migas, saya ingin mengakses daftar lowongan kerja dan melamar posisi yang tersedia di PT Adto Cipta Usaha Mandiri, agar saya dapat bergabung dengan tim yang berpengalaman di bidang migas.
+**User Story:** Sebagai profesional yang mencari peluang karir di industri migas, saya ingin mengakses daftar lowongan kerja dan melamar posisi yang tersedia di PT ADTO Cipta Usaha Mandiri, agar saya dapat bergabung dengan tim yang berpengalaman di bidang migas.
 
 #### Kriteria Penerimaan
 

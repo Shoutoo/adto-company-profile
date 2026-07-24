@@ -1,6 +1,6 @@
 # Panduan Deployment Render (Manual Web Service)
 
-Dokumen ini berisi panduan teknis langkah demi langkah untuk melakukan deployment aplikasi **PT Adto Cipta Usaha Mandiri** ke Render tanpa menggunakan Blueprint, melainkan dengan membuat dua Web Service secara manual.
+Dokumen ini berisi panduan teknis langkah demi langkah untuk melakukan deployment aplikasi **PT ADTO Cipta Usaha Mandiri** ke Render tanpa menggunakan Blueprint, melainkan dengan membuat dua Web Service secara manual.
 
 ---
 
@@ -42,7 +42,7 @@ Render **tidak memiliki environment native untuk PHP**. Oleh karena itu, kita **
 Tambahkan variabel berikut pada tab *Environment* di dashboard Render:
 | Key | Value (Contoh) |
 | :--- | :--- |
-| `APP_NAME` | `PT Adto Cipta Usaha Mandiri` |
+| `APP_NAME` | `PT ADTO Cipta Usaha Mandiri` |
 | `APP_ENV` | `production` |
 | `APP_DEBUG` | `false` |
 | `APP_URL` | `https://adto-backend.onrender.com` (Ganti sesuai URL web service backend) |

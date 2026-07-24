@@ -7,7 +7,7 @@ import { PageHeader } from '@/components/molecules/page-header';
 import { QuotationForm } from './quotation-form';
 
 export const metadata: Metadata = generateMetadata({
-  title: 'Permintaan Penawaran | PT Adto Cipta Usaha Mandiri',
+  title: 'Permintaan Penawaran | PT ADTO Cipta Usaha Mandiri',
   description: 'Dapatkan penawaran harga khusus untuk kebutuhan operasional proyek Anda.',
 });
 

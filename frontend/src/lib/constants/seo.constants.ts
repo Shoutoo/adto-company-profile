@@ -7,17 +7,17 @@
 import type { PageSeoConfig } from '@/lib/utils/seo';
 
 const BASE_URL = 'https://www.adtociptausahamandiri.co.id';
-const COMPANY = 'PT Adto Cipta Usaha Mandiri';
+const COMPANY = 'PT ADTO Cipta Usaha Mandiri';
 const TAGLINE = 'Building Excellence, Delivering Trust';
 
 export const PAGE_SEO: Record<string, PageSeoConfig> = {
   HOME: {
     title: `${COMPANY} — ${TAGLINE}`,
     description:
-      'PT Adto Cipta Usaha Mandiri is a trusted Indonesian enterprise delivering construction, MEP engineering, procurement, project management, and consulting solutions nationwide.',
+      'PT ADTO Cipta Usaha Mandiri is a trusted Indonesian enterprise delivering construction, MEP engineering, procurement, project management, and consulting solutions nationwide.',
     keywords: [
       'konstruksi Indonesia',
-      'PT Adto Cipta Usaha Mandiri',
+      'PT ADTO Cipta Usaha Mandiri',
       'general contractor',
       'MEP engineering',
       'procurement Indonesia',
@@ -31,9 +31,9 @@ export const PAGE_SEO: Record<string, PageSeoConfig> = {
   ABOUT: {
     title: `About Us — ${COMPANY}`,
     description:
-      "Learn about PT Adto Cipta Usaha Mandiri — our history, vision, mission, core values, and the expert team behind Indonesia's trusted enterprise solutions provider since 2015.",
+      "Learn about PT ADTO Cipta Usaha Mandiri — our history, vision, mission, core values, and the expert team behind Indonesia's trusted enterprise solutions provider since 2015.",
     keywords: [
-      'about PT Adto Cipta Usaha Mandiri',
+      'about PT ADTO Cipta Usaha Mandiri',
       'company profile',
       'sejarah perusahaan',
       'visi misi',
@@ -99,7 +99,7 @@ export const PAGE_SEO: Record<string, PageSeoConfig> = {
   NEWS: {
     title: `News & Updates — ${COMPANY}`,
     description:
-      'Latest company news, press releases, industry updates, and awards from PT Adto Cipta Usaha Mandiri.',
+      'Latest company news, press releases, industry updates, and awards from PT ADTO Cipta Usaha Mandiri.',
     keywords: ['berita perusahaan', 'company news', 'press release konstruksi Indonesia'],
     canonicalUrl: `${BASE_URL}/news`,
   },
@@ -118,7 +118,7 @@ export const PAGE_SEO: Record<string, PageSeoConfig> = {
   KNOWLEDGE_CENTER: {
     title: `Knowledge Center — ${COMPANY}`,
     description:
-      'Access technical guides, white papers, certifications documentation, standards & compliance resources from PT Adto Cipta Usaha Mandiri.',
+      'Access technical guides, white papers, certifications documentation, standards & compliance resources from PT ADTO Cipta Usaha Mandiri.',
     keywords: [
       'technical guides',
       'white paper konstruksi',
@@ -149,14 +149,14 @@ export const PAGE_SEO: Record<string, PageSeoConfig> = {
   CONTACT: {
     title: `Contact Us — ${COMPANY}`,
     description:
-      'Get in touch with PT Adto Cipta Usaha Mandiri. Visit our office in Jakarta or contact us via phone, email, or WhatsApp for inquiries and partnerships.',
-    keywords: ['kontak PT Adto', 'contact contractor Jakarta', 'alamat perusahaan', 'hubungi kami'],
+      'Get in touch with PT ADTO Cipta Usaha Mandiri. Visit our office in Jakarta or contact us via phone, email, or WhatsApp for inquiries and partnerships.',
+    keywords: ['kontak PT ADTO Cipta Usaha Mandiri', 'contact contractor Jakarta', 'alamat perusahaan', 'hubungi kami'],
     canonicalUrl: `${BASE_URL}/contact`,
   },
   VENDOR_REGISTRATION: {
     title: `Vendor Registration — ${COMPANY}`,
     description:
-      'Register as an approved vendor or supplier of PT Adto Cipta Usaha Mandiri. Join our trusted network of partners across Indonesia.',
+      'Register as an approved vendor or supplier of PT ADTO Cipta Usaha Mandiri. Join our trusted network of partners across Indonesia.',
     keywords: ['vendor registration', 'supplier Indonesia', 'daftar vendor', 'mitra bisnis'],
     canonicalUrl: `${BASE_URL}/vendor-registration`,
   },
@@ -170,14 +170,14 @@ export const PAGE_SEO: Record<string, PageSeoConfig> = {
   PRIVACY_POLICY: {
     title: `Privacy Policy — ${COMPANY}`,
     description:
-      'Privacy Policy of PT Adto Cipta Usaha Mandiri — how we collect, use, and protect your personal information.',
+      'Privacy Policy of PT ADTO Cipta Usaha Mandiri — how we collect, use, and protect your personal information.',
     canonicalUrl: `${BASE_URL}/privacy-policy`,
     noIndex: false,
   },
   TERMS_OF_SERVICE: {
     title: `Terms of Service — ${COMPANY}`,
     description:
-      'Terms of Service governing your use of PT Adto Cipta Usaha Mandiri website and services.',
+      'Terms of Service governing your use of PT ADTO Cipta Usaha Mandiri website and services.',
     canonicalUrl: `${BASE_URL}/terms-of-service`,
     noIndex: false,
   },
@@ -192,7 +192,7 @@ export const ORGANIZATION_SCHEMA = {
   url: BASE_URL,
   logo: { '@type': 'ImageObject', url: `${BASE_URL}/icons/icon-192x192.png` },
   description:
-    'PT Adto Cipta Usaha Mandiri is a trusted Indonesian enterprise delivering construction, engineering, procurement, and consulting solutions.',
+    'PT ADTO Cipta Usaha Mandiri is a trusted Indonesian enterprise delivering construction, engineering, procurement, and consulting solutions.',
   foundingDate: '2015',
   address: {
     '@type': 'PostalAddress',

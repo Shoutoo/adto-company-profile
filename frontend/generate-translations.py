@@ -22,7 +22,7 @@ en = {
     "vendor_registration": "Vendor Registration"
   },
   "Hero": {
-    "overline": "PT Andalan Daya Tata Olah",
+    "overline": "PT ADTO Cipta Usaha Mandiri",
     "title": "Empowering Industries with Reliable Solutions",
     "description": "Leading provider of comprehensive industrial solutions, delivering excellence through innovation, quality, and commitment.",
     "cta_primary": "Discover Our Services",
@@ -144,19 +144,19 @@ en = {
     "empty": "No data found."
   },
   "SEO": {
-    "home_title": "Home | PT Andalan Daya Tata Olah",
+    "home_title": "Home | PT ADTO Cipta Usaha Mandiri",
     "home_desc": "Leading provider of comprehensive industrial solutions, delivering excellence through innovation, quality, and commitment.",
-    "about_title": "About Us | PT Andalan Daya Tata Olah",
+    "about_title": "About Us | PT ADTO Cipta Usaha Mandiri",
     "about_desc": "Learn more about our mission, vision, and commitment to driving industrial excellence.",
-    "services_title": "Our Services | PT Andalan Daya Tata Olah",
+    "services_title": "Our Services | PT ADTO Cipta Usaha Mandiri",
     "services_desc": "Explore our wide range of comprehensive industrial solutions and services.",
-    "projects_title": "Projects | PT Andalan Daya Tata Olah",
+    "projects_title": "Projects | PT ADTO Cipta Usaha Mandiri",
     "projects_desc": "Discover our successful project deliveries and track record of excellence.",
-    "blog_title": "Blog & Insights | PT Andalan Daya Tata Olah",
+    "blog_title": "Blog & Insights | PT ADTO Cipta Usaha Mandiri",
     "blog_desc": "Read the latest industry insights, news, and best practices from our experts.",
-    "career_title": "Career | PT Andalan Daya Tata Olah",
+    "career_title": "Career | PT ADTO Cipta Usaha Mandiri",
     "career_desc": "Join our dynamic team and build a rewarding career in the industrial sector.",
-    "contact_title": "Contact Us | PT Andalan Daya Tata Olah",
+    "contact_title": "Contact Us | PT ADTO Cipta Usaha Mandiri",
     "contact_desc": "Get in touch with us for inquiries, partnerships, or support."
   }
 }
@@ -180,7 +180,7 @@ id_dict = {
     "vendor_registration": "Registrasi Vendor"
   },
   "Hero": {
-    "overline": "PT Andalan Daya Tata Olah",
+    "overline": "PT ADTO Cipta Usaha Mandiri",
     "title": "Memberdayakan Industri dengan Solusi Andal",
     "description": "Penyedia solusi industri komprehensif terkemuka, menghadirkan keunggulan melalui inovasi, kualitas, dan komitmen.",
     "cta_primary": "Temukan Layanan Kami",
@@ -302,19 +302,19 @@ id_dict = {
     "empty": "Data tidak ditemukan."
   },
   "SEO": {
-    "home_title": "Beranda | PT Andalan Daya Tata Olah",
+    "home_title": "Beranda | PT ADTO Cipta Usaha Mandiri",
     "home_desc": "Penyedia solusi industri komprehensif terkemuka, menghadirkan keunggulan melalui inovasi, kualitas, dan komitmen.",
-    "about_title": "Tentang Kami | PT Andalan Daya Tata Olah",
+    "about_title": "Tentang Kami | PT ADTO Cipta Usaha Mandiri",
     "about_desc": "Pelajari lebih lanjut tentang misi, visi, dan komitmen kami untuk mendorong keunggulan industri.",
-    "services_title": "Layanan Kami | PT Andalan Daya Tata Olah",
+    "services_title": "Layanan Kami | PT ADTO Cipta Usaha Mandiri",
     "services_desc": "Jelajahi berbagai solusi dan layanan industri komprehensif kami.",
-    "projects_title": "Proyek | PT Andalan Daya Tata Olah",
+    "projects_title": "Proyek | PT ADTO Cipta Usaha Mandiri",
     "projects_desc": "Temukan pengiriman proyek kami yang sukses dan rekam jejak keunggulan kami.",
-    "blog_title": "Blog & Wawasan | PT Andalan Daya Tata Olah",
+    "blog_title": "Blog & Wawasan | PT ADTO Cipta Usaha Mandiri",
     "blog_desc": "Baca wawasan industri, berita, dan praktik terbaik terbaru dari para ahli kami.",
-    "career_title": "Karir | PT Andalan Daya Tata Olah",
+    "career_title": "Karir | PT ADTO Cipta Usaha Mandiri",
     "career_desc": "Bergabunglah dengan tim dinamis kami dan bangun karir yang memuaskan di sektor industri.",
-    "contact_title": "Hubungi Kami | PT Andalan Daya Tata Olah",
+    "contact_title": "Hubungi Kami | PT ADTO Cipta Usaha Mandiri",
     "contact_desc": "Hubungi kami untuk pertanyaan, kemitraan, atau dukungan."
   }
 }

@@ -8,7 +8,7 @@ import { z } from 'zod';
 
 /** Schema for public environment variables (available in browser) */
 const publicEnvSchema = z.object({
-  NEXT_PUBLIC_APP_NAME: z.string().min(1).default('PT Adto Cipta Usaha Mandiri'),
+  NEXT_PUBLIC_APP_NAME: z.string().min(1).default('PT ADTO Cipta Usaha Mandiri'),
   NEXT_PUBLIC_APP_URL: z.string().default('https://adtociptausahamandiri.co.id'),
   NEXT_PUBLIC_API_URL: z.string().default(''),
   NEXT_PUBLIC_GA_MEASUREMENT_ID: z.string().optional(),

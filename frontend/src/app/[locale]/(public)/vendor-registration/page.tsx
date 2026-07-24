@@ -9,7 +9,7 @@ import { generateMetadata } from '@/lib/utils/seo';
 import { VendorForm } from './vendor-form';
 
 export const metadata: Metadata = generateMetadata({
-  title: 'Registrasi Vendor | PT Adto Cipta Usaha Mandiri',
+  title: 'Registrasi Vendor | PT ADTO Cipta Usaha Mandiri',
   description: 'Jadilah mitra bisnis kami dengan mendaftar sebagai vendor resmi.',
 });
 
@@ -47,7 +47,7 @@ export default function VendorRegistrationPage() {
                 Kemitraan Jangka Panjang
               </h2>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Di PT Adto Cipta Usaha Mandiri, kami percaya pada kekuatan kolaborasi. Dengan mendaftar sebagai vendor, perusahaan Anda akan dipertimbangkan untuk peluang pengadaan material dan sparepart pada proyek-proyek strategis kami.
+                Di PT ADTO Cipta Usaha Mandiri, kami percaya pada kekuatan kolaborasi. Dengan mendaftar sebagai vendor, perusahaan Anda akan dipertimbangkan untuk peluang pengadaan material dan sparepart pada proyek-proyek strategis kami.
               </p>
             </div>
 

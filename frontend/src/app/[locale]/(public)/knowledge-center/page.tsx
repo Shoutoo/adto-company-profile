@@ -19,14 +19,14 @@ import { Card, CardContent } from '@/components/ui/card';
 import { generateMetadata } from '@/lib/utils/seo';
 
 export const metadata: Metadata = generateMetadata({
-  title: 'Pusat Unduhan & Dokumen | PT Adto Cipta Usaha Mandiri',
+  title: 'Pusat Unduhan & Dokumen | PT ADTO Cipta Usaha Mandiri',
   description: 'Akses berbagai dokumen resmi, company profile, dan sertifikasi perusahaan kami.',
 });
 
 const RESOURCES = [
   {
     title: 'Company Profile',
-    description: 'Dokumen profil perusahaan resmi PT Adto Cipta Usaha Mandiri.',
+    description: 'Dokumen profil perusahaan resmi PT ADTO Cipta Usaha Mandiri.',
     icon: BookOpen,
     count: 1,
     href: '/docs/company-profile.pdf',
@@ -56,7 +56,7 @@ const RESOURCES = [
 
 const FAQS = [
   {
-    question: 'Layanan utama apa yang ditawarkan PT Adto Cipta Usaha Mandiri?',
+    question: 'Layanan utama apa yang ditawarkan PT ADTO Cipta Usaha Mandiri?',
     answer:
       'Kami menyediakan layanan pengadaan chemical industri (termasuk mud drilling API grade), suplai sparepart alat berat (Caterpillar, Komatsu), dan dukungan logistik mobilitas menggunakan armada terkalibrasi.',
   },
@@ -76,7 +76,7 @@ const FAQS = [
       'Anda dapat mengisi formulir pada halaman Registrasi Vendor dan melampirkan dokumen legalitas (Akta, NIB, NPWP, Company Profile, dan Laporan Keuangan).',
   },
   {
-    question: 'Apakah PT Adto Cipta Usaha Mandiri melayani pengiriman ke luar pulau?',
+    question: 'Apakah PT ADTO Cipta Usaha Mandiri melayani pengiriman ke luar pulau?',
     answer:
       'Tentu, kami memiliki kapabilitas logistik untuk memobilisasi armada dan mengirim pasokan ke berbagai site operasional di seluruh Indonesia, termasuk area terpencil.',
   },

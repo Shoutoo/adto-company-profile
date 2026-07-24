@@ -10,9 +10,9 @@ import { env } from './env.config';
 export const siteConfig = {
   /** Company details */
   company: {
-    name: 'PT Adto Cipta Usaha Mandiri',
+    name: 'PT ADTO Cipta Usaha Mandiri',
     shortName: 'ADTO',
-    legalName: 'PT Adto Cipta Usaha Mandiri',
+    legalName: 'PT ADTO Cipta Usaha Mandiri',
     tagline: 'Energi Terpadu, Solusi Mandiri',
     description:
       'Mitra strategis terdepan berskala nasional dalam penyediaan kebutuhan industri dan manajemen rantai pasok.',
@@ -57,13 +57,12 @@ export const siteConfig = {
 
   /** SEO defaults */
   seo: {
-    titleTemplate: '%s | PT Adto Cipta Usaha Mandiri',
-    defaultTitle: 'PT Adto Cipta Usaha Mandiri — Energi Terpadu, Solusi Mandiri',
+    titleTemplate: '%s | PT ADTO Cipta Usaha Mandiri',
+    defaultTitle: 'PT ADTO Cipta Usaha Mandiri — Energi Terpadu, Solusi Mandiri',
     defaultDescription:
-      'PT Adto Cipta Usaha Mandiri adalah perusahaan penyedia solusi terintegrasi untuk industri migas & pertambangan.',
+      'PT ADTO Cipta Usaha Mandiri adalah perusahaan penyedia solusi terintegrasi untuk industri migas & pertambangan.',
     defaultKeywords: [
-      'PT Adto Cipta Usaha Mandiri',
-      'Adto Cipta',
+      'PT ADTO Cipta Usaha Mandiri',
       'company profile',
       'enterprise services',
       'Indonesia',

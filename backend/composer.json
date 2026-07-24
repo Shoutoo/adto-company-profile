@@ -1,6 +1,6 @@
 {
     "name": "adto/company-profile-backend",
-    "description": "PT Adto Cipta Usaha Mandiri - Company Profile API Backend",
+    "description": "PT ADTO Cipta Usaha Mandiri - Company Profile API Backend",
     "keywords": ["laravel", "framework", "api"],
     "license": "proprietary",
     "require": {

@@ -12,7 +12,7 @@ describe('String utilities', () => {
         .replace(/^-+|-+$/g, '');
 
     expect(slugify('Hello World')).toBe('hello-world');
-    expect(slugify('PT Adto Cipta Usaha Mandiri')).toBe('pt-adto-cipta-usaha-mandiri');
+    expect(slugify('PT ADTO Cipta Usaha Mandiri')).toBe('pt-adto-cipta-usaha-mandiri');
     expect(slugify('  Leading & Trailing  ')).toBe('leading-trailing');
   });
 

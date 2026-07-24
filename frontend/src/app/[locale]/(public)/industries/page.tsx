@@ -12,7 +12,7 @@ export function generateMetadata(): Metadata {
   return getMetadata({
     title: 'Industries We Serve',
     description:
-      'PT Adto Cipta Usaha Mandiri serves diverse sectors across Indonesia, providing tailored solutions for maximum impact.',
+      'PT ADTO Cipta Usaha Mandiri serves diverse sectors across Indonesia, providing tailored solutions for maximum impact.',
   });
 }
 

@@ -7,7 +7,7 @@
 import { siteConfig } from '@/lib/config/site.config';
 
 const BASE_URL = 'https://www.adtociptausahamandiri.co.id';
-const COMPANY_NAME = 'PT Adto Cipta Usaha Mandiri';
+const COMPANY_NAME = 'PT ADTO Cipta Usaha Mandiri';
 
 // ─── Generic JSON-LD injector ─────────────────────────────────────────────
 interface JsonLdProps {
@@ -37,7 +37,7 @@ export function OrganizationSchema() {
         url: BASE_URL,
         logo: { '@type': 'ImageObject', url: `${BASE_URL}/icons/icon-192x192.png` },
         description:
-          'PT Adto Cipta Usaha Mandiri is a trusted Indonesian enterprise delivering construction, MEP engineering, procurement, and consulting solutions.',
+          'PT ADTO Cipta Usaha Mandiri is a trusted Indonesian enterprise delivering construction, MEP engineering, procurement, and consulting solutions.',
         foundingDate: '2015',
         numberOfEmployees: { '@type': 'QuantitativeValue', value: 300 },
         address: {

@@ -1,12 +1,12 @@
 # Enterprise Stakeholder Analysis
 <!--
-  PT Adto Cipta Usaha Mandiri — Enterprise Website Platform
+  PT ADTO Cipta Usaha Mandiri — Enterprise Website Platform
   Dokumen: SA-ADTO-ENT-001 | Versi: 1.0.0 | Tanggal: 2026-07-13
   Standar: IEEE 830-1998 / ISO/IEC/IEEE 29148:2018
   Status: BASELINE
 -->
 
-**Nama Proyek:** Enterprise Website Platform PT Adto Cipta Usaha Mandiri  
+**Nama Proyek:** Enterprise Website Platform PT ADTO Cipta Usaha Mandiri  
 **Nomor Dokumen:** SA-ADTO-ENT-001  
 **Versi:** 1.0.0  
 **Tanggal:** 13 Juli 2026  
@@ -31,7 +31,7 @@
 
 ### 1.1 Definisi Stakeholder
 
-Stakeholder dalam konteks proyek ini adalah setiap individu, kelompok, atau organisasi yang memiliki kepentingan, pengaruh, atau dipengaruhi oleh keberadaan dan operasional **Enterprise Website Platform PT Adto Cipta Usaha Mandiri**.
+Stakeholder dalam konteks proyek ini adalah setiap individu, kelompok, atau organisasi yang memiliki kepentingan, pengaruh, atau dipengaruhi oleh keberadaan dan operasional **Enterprise Website Platform PT ADTO Cipta Usaha Mandiri**.
 
 ### 1.2 Kategori Stakeholder
 
@@ -969,5 +969,5 @@ Dokumen ini menjadi dasar resmi untuk:
 ---
 
 *SA-ADTO-ENT-001 | Versi 1.0.0 | 13 Juli 2026*  
-*PT Adto Cipta Usaha Mandiri — Enterprise Website Platform*  
+*PT ADTO Cipta Usaha Mandiri — Enterprise Website Platform*  
 *"Energi Terpadu, Solusi Mandiri"*

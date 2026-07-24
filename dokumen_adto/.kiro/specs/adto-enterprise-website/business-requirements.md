@@ -1,12 +1,12 @@
 # Business Requirements Specification (BRS)
 <!-- 
-  PT Adto Cipta Usaha Mandiri — Enterprise Website Platform
+  PT ADTO Cipta Usaha Mandiri — Enterprise Website Platform
   Dokumen: BRS-ADTO-ENT-001 | Versi: 1.0.0 | Tanggal: 2026-07-13
   Standar: IEEE 830-1998 / ISO/IEC/IEEE 29148:2018
   Status: BASELINE — Dilarang mengubah tanpa proses formal change request
 -->
 
-**Nama Proyek:** Enterprise Website Platform PT Adto Cipta Usaha Mandiri  
+**Nama Proyek:** Enterprise Website Platform PT ADTO Cipta Usaha Mandiri  
 **Nomor Dokumen:** BRS-ADTO-ENT-001  
 **Versi:** 1.0.0  
 **Tanggal:** 13 Juli 2026  
@@ -36,7 +36,7 @@
 
 Industri minyak dan gas (migas) Indonesia terus mengalami pertumbuhan permintaan layanan pendukung operasional, terutama di segmen pengadaan chemical drilling, sparepart industri, dan jasa logistik lapangan. Berdasarkan tren digitalisasi yang terjadi secara global, proses procurement B2B di sektor energi semakin bergeser ke platform digital — di mana calon klien melakukan validasi vendor melalui kehadiran digital sebelum memulai proses pengadaan formal.
 
-PT Adto Cipta Usaha Mandiri adalah perusahaan B2B industrial yang berdiri dengan tiga lini bisnis utama: Chemical Oil & Gas, Sparepart & Service, dan Jasa Mobilisasi/Demobilisasi. Perusahaan beroperasi di kawasan Depok, Jawa Barat, dan melayani klien dari segmen perusahaan migas, kontraktor EPC, dan service company skala nasional.
+PT ADTO Cipta Usaha Mandiri adalah perusahaan B2B industrial yang berdiri dengan tiga lini bisnis utama: Chemical Oil & Gas, Sparepart & Service, dan Jasa Mobilisasi/Demobilisasi. Perusahaan beroperasi di kawasan Depok, Jawa Barat, dan melayani klien dari segmen perusahaan migas, kontraktor EPC, dan service company skala nasional.
 
 Saat ini, perusahaan belum memiliki kehadiran digital yang memadai. Seluruh proses akuisisi klien, pengajuan penawaran, dan komunikasi dengan vendor masih dilakukan secara manual melalui WhatsApp, email, dan tatap muka langsung. Kondisi ini menempatkan perusahaan pada posisi yang tidak kompetitif dibandingkan vendor lain yang telah memiliki platform digital terstandarisasi.
 
@@ -100,7 +100,7 @@ Website ini dibangun dari awal (greenfield) karena:
 
 > **"Menjadi perusahaan penyedia solusi industrial B2B yang dikenal secara digital sebagai mitra terpercaya di industri energi Indonesia, dibuktikan melalui platform digital enterprise yang mencerminkan kredibilitas, keahlian, dan komitmen terhadap klien."**
 
-PT Adto Cipta Usaha Mandiri memiliki visi bisnis untuk bertransformasi dari perusahaan yang bergantung pada jaringan personal menjadi entitas bisnis yang memiliki mesin akuisisi klien digital yang berjalan secara mandiri. Website ini adalah aset bisnis strategis pertama yang meletakkan fondasi pertumbuhan jangka panjang.
+PT ADTO Cipta Usaha Mandiri memiliki visi bisnis untuk bertransformasi dari perusahaan yang bergantung pada jaringan personal menjadi entitas bisnis yang memiliki mesin akuisisi klien digital yang berjalan secara mandiri. Website ini adalah aset bisnis strategis pertama yang meletakkan fondasi pertumbuhan jangka panjang.
 
 ### 2.2 Digital Vision
 
@@ -113,7 +113,7 @@ Platform digital ini dirancang untuk berkembang dari sebuah corporate website me
 > **"Menjadi one-stop digital hub yang memungkinkan calon klien menemukan informasi produk, mengajukan RFQ, dan memulai percakapan bisnis — semuanya dalam satu sesi kunjungan yang mulus dan profesional."**
 
 Website harus mampu menjawab tiga pertanyaan utama pengunjung dalam 30 detik pertama:
-1. *Siapa PT Adto Cipta Usaha Mandiri dan mengapa saya harus mempercayai mereka?*
+1. *Siapa PT ADTO Cipta Usaha Mandiri dan mengapa saya harus mempercayai mereka?*
 2. *Apakah mereka menyediakan apa yang saya butuhkan?*
 3. *Bagaimana cara tercepat untuk memulai percakapan bisnis dengan mereka?*
 
@@ -228,7 +228,7 @@ Fitur-fitur berikut secara eksplisit **tidak termasuk** dalam pengembangan versi
 
 ## BAB 5 — Business Value {#bab-5}
 
-### 5.1 Value untuk Perusahaan (PT Adto Cipta Usaha Mandiri)
+### 5.1 Value untuk Perusahaan (PT ADTO Cipta Usaha Mandiri)
 
 | Dimensi Value | Deskripsi | Dampak Terukur |
 |---|---|---|
@@ -475,5 +475,5 @@ Perubahan apapun terhadap isi dokumen ini harus melalui proses formal **Change R
 ---
 
 *BRS-ADTO-ENT-001 | Versi 1.0.0 | 13 Juli 2026*  
-*PT Adto Cipta Usaha Mandiri — Enterprise Website Platform*  
+*PT ADTO Cipta Usaha Mandiri — Enterprise Website Platform*  
 *"Energi Terpadu, Solusi Mandiri"*

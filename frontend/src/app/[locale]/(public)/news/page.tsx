@@ -30,11 +30,11 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
   const tNav = await getTranslations('Navbar');
 
   const featuredNews = {
-    title: 'Adto Cipta Awarded Major Infrastructure Contract in New Capital City (IKN)',
+    title: 'PT ADTO Cipta Usaha Mandiri Awarded Major Infrastructure Contract in New Capital City (IKN)',
     category: 'Featured',
     date: 'October 15, 2024',
     excerpt:
-      "PT Adto Cipta Usaha Mandiri has been selected as one of the key contractors for the development of essential utilities and infrastructure in Indonesia's new capital city, Nusantara.",
+      "PT ADTO Cipta Usaha Mandiri has been selected as one of the key contractors for the development of essential utilities and infrastructure in Indonesia's new capital city, Nusantara.",
     color: 'from-blue-600 to-indigo-700',
     slug: 'adto-cipta-awarded-major-infrastructure-contract-ikn',
   };
@@ -56,7 +56,7 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
       category: 'Award',
       date: 'August 12, 2024',
       excerpt:
-        'Adto Cipta received the National Safety Excellence Award for achieving 5 million man-hours without Lost Time Injury (LTI).',
+        'PT ADTO Cipta Usaha Mandiri received the National Safety Excellence Award for achieving 5 million man-hours without Lost Time Injury (LTI).',
       color: 'from-amber-500 to-yellow-600',
       slug: 'recognized-outstanding-safety-record-2023',
     },

@@ -2,7 +2,7 @@
 
 <!-- 
   Business Requirements Specification (BRS) + Software Requirements Specification (SRS)
-  PT Adto Cipta Usaha Mandiri — Enterprise Website Platform
+  PT ADTO Cipta Usaha Mandiri — Enterprise Website Platform
   Dokumen: BRS-SRS-ADTO-ENT-001 | Versi: 2.0.0 | Tanggal: 2026-07-01
   Standar: IEEE 830-1998 / ISO/IEC/IEEE 29148:2018
 -->
@@ -13,7 +13,7 @@
 
 <!-- 
   Business Requirements Specification (BRS)
-  PT Adto Cipta Usaha Mandiri — Enterprise Website Platform
+  PT ADTO Cipta Usaha Mandiri — Enterprise Website Platform
   Dokumen: BRS-ADTO-ENT-001 | Versi: 1.0.0 | Tanggal: 2026-07-01
   Standar: IEEE 830-1998 / ISO/IEC/IEEE 29148:2018
 -->
@@ -40,11 +40,11 @@ Industri minyak dan gas (migas) di Indonesia merupakan salah satu sektor ekonomi
 
 Di sisi lain, transformasi digital dalam ekosistem procurement B2B industri migas sedang berlangsung secara masif. Kontraktor EPC, service company, dan operator migas skala nasional semakin mengandalkan penelusuran digital untuk mengidentifikasi, mengevaluasi, dan memvalidasi vendor sebelum proses pengadaan dimulai. Studi industri menunjukkan bahwa lebih dari 70% keputusan pembelian B2B industri dimulai dari pencarian daring, dan vendor yang tidak memiliki kehadiran digital yang kredibel secara efektif tidak dipertimbangkan sejak tahap seleksi awal.
 
-Tren ini menciptakan urgensi yang nyata bagi PT Adto Cipta Usaha Mandiri untuk membangun platform digital enterprise yang bukan sekadar "brosur online", melainkan sebuah ekosistem digital terintegrasi yang mampu mewakili kapabilitas perusahaan secara profesional, menghasilkan lead komersial secara konsisten, dan menjadi fondasi infrastruktur digital jangka panjang.
+Tren ini menciptakan urgensi yang nyata bagi PT ADTO Cipta Usaha Mandiri untuk membangun platform digital enterprise yang bukan sekadar "brosur online", melainkan sebuah ekosistem digital terintegrasi yang mampu mewakili kapabilitas perusahaan secara profesional, menghasilkan lead komersial secara konsisten, dan menjadi fondasi infrastruktur digital jangka panjang.
 
-### 1.2 Kondisi Digital Saat Ini PT Adto Cipta Usaha Mandiri
+### 1.2 Kondisi Digital Saat Ini PT ADTO Cipta Usaha Mandiri
 
-PT Adto Cipta Usaha Mandiri saat ini tidak memiliki kehadiran digital yang terstruktur. Berikut adalah kondisi digital perusahaan pada saat dokumen ini disusun:
+PT ADTO Cipta Usaha Mandiri saat ini tidak memiliki kehadiran digital yang terstruktur. Berikut adalah kondisi digital perusahaan pada saat dokumen ini disusun:
 
 | Aspek Digital | Kondisi Saat Ini | Dampak Bisnis |
 |---|---|---|
@@ -110,7 +110,7 @@ Proyek ini membangun platform digital dari nol (greenfield) karena:
 
 ### 2.1 Business Vision
 
-PT Adto Cipta Usaha Mandiri bervisi menjadi **pemimpin digital di segmen B2B supply chain industri migas Indonesia**. Dalam konteks ini, "pemimpin digital" didefinisikan sebagai vendor migas yang paling mudah ditemukan, diverifikasi, dan dihubungi secara online oleh procurement manager dan engineering manager di perusahaan migas nasional maupun multinasional yang beroperasi di Indonesia.
+PT ADTO Cipta Usaha Mandiri bervisi menjadi **pemimpin digital di segmen B2B supply chain industri migas Indonesia**. Dalam konteks ini, "pemimpin digital" didefinisikan sebagai vendor migas yang paling mudah ditemukan, diverifikasi, dan dihubungi secara online oleh procurement manager dan engineering manager di perusahaan migas nasional maupun multinasional yang beroperasi di Indonesia.
 
 ### 2.2 Digital Vision
 
@@ -346,7 +346,7 @@ Berikut adalah fitur yang secara eksplisit tidak termasuk dalam v1.0:
 
 ## BRS BAB 5 — Business Value {#brs-bab-5}
 
-### 5.1 Nilai bagi PT Adto Cipta Usaha Mandiri (Perusahaan)
+### 5.1 Nilai bagi PT ADTO Cipta Usaha Mandiri (Perusahaan)
 
 | Dimensi Nilai | Manfaat Spesifik | Metrik |
 |---|---|---|
@@ -642,16 +642,16 @@ Keterangan skala: **Impact**: 1=Low, 2=Medium, 3=High | **Probability**: 1=Low, 
 
 <!-- 
   Software Requirements Specification (SRS)
-  PT Adto Cipta Usaha Mandiri — Enterprise Website Platform
+  PT ADTO Cipta Usaha Mandiri — Enterprise Website Platform
   Dokumen: SRS-ADTO-ENT-001 | Versi: 1.0.0 | Tanggal: 2026-07-01
   Standar: IEEE 830-1998 / ISO/IEC/IEEE 29148:2018
 -->
 
 ## Introduction
 
-Dokumen ini merupakan **Software Requirements Specification (SRS)** lengkap untuk proyek **Enterprise Website Platform PT Adto Cipta Usaha Mandiri**, disusun sesuai standar IEEE 830-1998 dan ISO/IEC/IEEE 29148:2018.
+Dokumen ini merupakan **Software Requirements Specification (SRS)** lengkap untuk proyek **Enterprise Website Platform PT ADTO Cipta Usaha Mandiri**, disusun sesuai standar IEEE 830-1998 dan ISO/IEC/IEEE 29148:2018.
 
-**PT Adto Cipta Usaha Mandiri** adalah perusahaan B2B industrial di sektor Oil & Gas yang menyediakan:
+**PT ADTO Cipta Usaha Mandiri** adalah perusahaan B2B industrial di sektor Oil & Gas yang menyediakan:
 - Chemical Oil & Gas (Bentonite API, Barite API, dll.)
 - Sparepart & Service untuk peralatan industri
 - Jasa Mobilisasi/Demobilisasi alat berat
@@ -683,7 +683,7 @@ Platform ini mencakup: Corporate Website, Marketing & Lead Generation, RFQ Platf
 
 | Istilah | Definisi |
 |---|---|
-| **System** | Enterprise Website Platform PT Adto Cipta Usaha Mandiri secara keseluruhan |
+| **System** | Enterprise Website Platform PT ADTO Cipta Usaha Mandiri secara keseluruhan |
 | **Frontend** | Antarmuka web berbasis Next.js yang diakses pengguna melalui browser |
 | **Backend** | Layanan API berbasis NestJS yang memproses logika bisnis |
 | **CMS** | Content Management System berbasis Payload CMS untuk pengelolaan konten |
@@ -707,7 +707,7 @@ Platform ini mencakup: Corporate Website, Marketing & Lead Generation, RFQ Platf
 
 ### 1.1 Tujuan Dokumen
 
-Dokumen ini merupakan Software Requirements Specification (SRS) lengkap untuk proyek **Enterprise Website Platform PT Adto Cipta Usaha Mandiri**. Dokumen ini disusun sesuai standar IEEE 830-1998 dan ISO/IEC/IEEE 29148:2018 sebagai acuan resmi bagi seluruh pemangku kepentingan — tim bisnis, perancang sistem, pengembang perangkat lunak, dan tim QA — dalam proses pengembangan, pengujian, dan penerimaan sistem.
+Dokumen ini merupakan Software Requirements Specification (SRS) lengkap untuk proyek **Enterprise Website Platform PT ADTO Cipta Usaha Mandiri**. Dokumen ini disusun sesuai standar IEEE 830-1998 dan ISO/IEC/IEEE 29148:2018 sebagai acuan resmi bagi seluruh pemangku kepentingan — tim bisnis, perancang sistem, pengembang perangkat lunak, dan tim QA — dalam proses pengembangan, pengujian, dan penerimaan sistem.
 
 ### 1.2 Ruang Lingkup Sistem
 
@@ -733,7 +733,7 @@ Sistem ini bukan sistem ERP, bukan sistem akuntansi, dan bukan platform e-commer
 
 ### 1.3 Latar Belakang Bisnis
 
-PT Adto Cipta Usaha Mandiri adalah perusahaan B2B industrial di sektor Oil & Gas yang menyediakan tiga lini layanan utama:
+PT ADTO Cipta Usaha Mandiri adalah perusahaan B2B industrial di sektor Oil & Gas yang menyediakan tiga lini layanan utama:
 
 1. **Chemical Oil & Gas** — Bentonite API, Barite API, dan produk kimia penunjang industri migas
 2. **Sparepart & Service** — Suku cadang dan jasa perawatan peralatan industri
@@ -767,7 +767,7 @@ Lihat bagian **Glossary** di atas dokumen ini.
 | 5 | Next.js 14 Documentation (App Router) | Vercel |
 | 6 | NestJS Documentation | NestJS |
 | 7 | Payload CMS Documentation | Payload |
-| 8 | Corporate Handbook PT Adto Cipta Usaha Mandiri | Internal |
+| 8 | Corporate Handbook PT ADTO Cipta Usaha Mandiri | Internal |
 
 ### 1.7 Ikhtisar Dokumen
 
@@ -1632,7 +1632,7 @@ THE System dinyatakan berhasil apabila:
 |---|---|---|
 | CON-L-001 | Regulasi Data Pribadi | Pengumpulan dan pemrosesan data pribadi harus mematuhi Undang-Undang Perlindungan Data Pribadi (UU PDP) No. 27 Tahun 2022 Republik Indonesia |
 | CON-L-002 | Persetujuan Cookie | Website harus meminta persetujuan pengguna sebelum mengaktifkan cookie analitik non-esensial sesuai standar privasi internasional |
-| CON-L-003 | Hak Kekayaan Intelektual | Seluruh aset visual (logo, gambar, ikon) yang digunakan harus memiliki lisensi yang sesuai atau merupakan karya orisinal milik PT Adto Cipta Usaha Mandiri |
+| CON-L-003 | Hak Kekayaan Intelektual | Seluruh aset visual (logo, gambar, ikon) yang digunakan harus memiliki lisensi yang sesuai atau merupakan karya orisinal milik PT ADTO Cipta Usaha Mandiri |
 | CON-L-004 | Konten Industri | Klaim teknis dan spesifikasi produk yang dipublikasikan harus dapat diverifikasi dan tidak boleh menyesatkan calon klien |
 
 ### 9.3 Batasan Bisnis
@@ -1830,6 +1830,6 @@ Proyek dinyatakan selesai dan siap untuk sign-off apabila seluruh kriteria berik
 
 ---
 
-*Akhir Dokumen SRS — PT Adto Cipta Usaha Mandiri Enterprise Website Platform*  
+*Akhir Dokumen SRS — PT ADTO Cipta Usaha Mandiri Enterprise Website Platform*  
 *Versi: 1.0.0 | Tanggal: 2026-07-01*  
 *Dokumen ini adalah baseline requirements. Perubahan apapun harus melalui proses formal change request.*

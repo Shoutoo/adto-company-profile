@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 const BASE_URL = 'https://www.adtociptausahamandiri.co.id';
-const COMPANY_NAME = 'PT Adto Cipta Usaha Mandiri';
+const COMPANY_NAME = 'PT ADTO Cipta Usaha Mandiri';
 
 /**
  * RSS 2.0 feed for news and blog content.
@@ -11,7 +11,7 @@ export function GET(): NextResponse {
   // In production, fetch from API
   const articles = [
     {
-      title: 'PT Adto Cipta Usaha Mandiri Completes Major Refinery Project',
+      title: 'PT ADTO Cipta Usaha Mandiri Completes Major Refinery Project',
       link: `${BASE_URL}/news/refinery-project-completion`,
       description:
         'Successfully completed a major refinery expansion project for Pertamina in Balikpapan.',

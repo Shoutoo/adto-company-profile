@@ -5,8 +5,8 @@ import { SectionWrapper } from '@/components/molecules/SectionWrapper';
 import { generateMetadata } from '@/lib/utils/seo';
 
 export const metadata: Metadata = generateMetadata({
-  title: 'Privacy Policy | PT Adto Cipta Usaha Mandiri',
-  description: 'Privacy Policy and data handling practices of PT Adto Cipta Usaha Mandiri.',
+  title: 'Privacy Policy | PT ADTO Cipta Usaha Mandiri',
+  description: 'Privacy Policy and data handling practices of PT ADTO Cipta Usaha Mandiri.',
 });
 
 export default function PrivacyPolicyPage() {
@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
           <div className="prose prose-slate dark:prose-invert mx-auto max-w-3xl">
             <h2>1. Introduction</h2>
             <p>
-              Welcome to PT Adto Cipta Usaha Mandiri (&quot;we,&quot; &quot;our,&quot; or
+              Welcome to PT ADTO Cipta Usaha Mandiri (&quot;we,&quot; &quot;our,&quot; or
               &quot;us&quot;). We respect your privacy and are committed to protecting your personal
               data. This privacy policy will inform you as to how we look after your personal data
               when you visit our website and tell you about your privacy rights and how the law
@@ -128,7 +128,7 @@ export default function PrivacyPolicyPage() {
               contact us at:
             </p>
             <p>
-              PT Adto Cipta Usaha Mandiri
+              PT ADTO Cipta Usaha Mandiri
               <br />
               Email: info@adto.co.id
               <br />

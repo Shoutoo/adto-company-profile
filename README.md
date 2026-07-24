@@ -1,7 +1,7 @@
 
 <div align="center">
 
-# PT Adto Cipta Usaha Mandiri
+# PT ADTO Cipta Usaha Mandiri
 
 ### Enterprise Company Profile Website
 
@@ -15,7 +15,7 @@
 
 ## Overview
 
-Production-ready enterprise company profile website for **PT Adto Cipta Usaha Mandiri**, built with a modern full-stack architecture featuring a decoupled frontend and backend with containerized deployment.
+Production-ready enterprise company profile website for **PT ADTO Cipta Usaha Mandiri**, built with a modern full-stack architecture featuring a decoupled frontend and backend with containerized deployment.
 
 ## Tech Stack
 
@@ -199,4 +199,4 @@ php artisan serve
 ## License
 
 This project is proprietary software. All rights reserved.
-**© 2026 PT Adto Cipta Usaha Mandiri**
+**© 2026 PT ADTO Cipta Usaha Mandiri**

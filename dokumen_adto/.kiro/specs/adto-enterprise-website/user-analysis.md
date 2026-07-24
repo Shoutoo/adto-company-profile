@@ -1,6 +1,6 @@
 # Enterprise User Analysis & Experience Mapping
 <!--
-  PT Adto Cipta Usaha Mandiri — Enterprise Website Platform
+  PT ADTO Cipta Usaha Mandiri — Enterprise Website Platform
   Dokumen: UA-ADTO-ENT-001 | Versi: 1.0.0 | Tanggal: 2026-07-13
   Status: BASELINE
 -->
@@ -551,7 +551,7 @@
 | **Nama** | Budi Santoso |
 | **Usia** | 27 tahun |
 | **Jabatan** | Content Editor & Digital Marketing Staff |
-| **Perusahaan** | PT Adto Cipta Usaha Mandiri (Internal) |
+| **Perusahaan** | PT ADTO Cipta Usaha Mandiri (Internal) |
 | **Background** | Lulusan Komunikasi S1. 2 tahun pengalaman di content marketing. Familiar dengan WordPress dan Canva. Tidak memiliki background teknis programming. |
 | **Goals** | Mempublikasikan artikel dan berita secara mandiri; mengupdate informasi produk; mengelola galeri foto |
 | **Challenges** | CMS yang terlalu teknis; tidak bisa preview tampilan akhir; upload gambar yang lambat; tidak yakin konten sudah SEO-optimized |
@@ -570,7 +570,7 @@
 | **Nama** | Rina Marlina |
 | **Usia** | 34 tahun |
 | **Jabatan** | Sales & Business Development Manager |
-| **Perusahaan** | PT Adto Cipta Usaha Mandiri (Internal) |
+| **Perusahaan** | PT ADTO Cipta Usaha Mandiri (Internal) |
 | **Background** | 8 tahun di bidang sales industri migas. Mobile-first user. Mengelola 10–15 lead aktif per bulan. |
 | **Goals** | Mendapatkan notifikasi RFQ real-time; menindaklanjuti lead secepat mungkin; tidak kehilangan prospek |
 | **Challenges** | Lead masuk via email/WA tidak termonitor; tidak ada pipeline visibility; sulit mengukur performa |
@@ -623,7 +623,7 @@
 | **Nama** | Reza Pratama |
 | **Usia** | 30 tahun |
 | **Jabatan** | Digital Operations Administrator |
-| **Perusahaan** | PT Adto Cipta Usaha Mandiri (Internal) |
+| **Perusahaan** | PT ADTO Cipta Usaha Mandiri (Internal) |
 | **Background** | Background IT ringan; 3 tahun pengalaman sebagai web admin. Tidak bisa coding tapi familiar dengan CMS. |
 | **Goals** | Memastikan platform berjalan lancar; mengelola pengguna CMS; memoderasi konten sebelum publish |
 | **Pain Points** | Tidak ada audit log yang dapat dibaca; tidak ada notifikasi saat ada issue; manajemen user yang tidak efisien |
@@ -1003,5 +1003,5 @@ Dokumen ini menjadi fondasi resmi untuk:
 ---
 
 *UA-ADTO-ENT-001 | Versi 1.0.0 | 13 Juli 2026*  
-*PT Adto Cipta Usaha Mandiri — Enterprise Website Platform*  
+*PT ADTO Cipta Usaha Mandiri — Enterprise Website Platform*  
 *"Energi Terpadu, Solusi Mandiri"*
