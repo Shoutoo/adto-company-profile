@@ -55,5 +55,5 @@ export function middleware(request: NextRequest): NextResponse {
 export const config = {
   // Match only internationalized pathnames.
   // CRITICAL: Explicitly exclude /images and /logos to prevent 404s!
-  matcher: ['/', '/(id|en)/:path*', '/((?!_next/static|_next/image|images/|logos/|favicon.ico|icons/|screenshots/|browserconfig.xml|site.webmanifest|robots.txt|logo.svg|admin|api).*)']
+  matcher: ['/', '/(id|en)/:path*', '/((?!_next/static|_next/image|images/|logos/|favicon.ico|icons/|screenshots/|browserconfig.xml|site.webmanifest|robots.txt|logo.svg|logo-white.svg|logo-color.svg|logo-icon.svg|admin|api).*)']
 };
