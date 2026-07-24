@@ -62,12 +62,12 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-5 pr-4">
             <Link className="mb-8 inline-flex items-center" href={ROUTES.HOME}>
-              <div className="relative h-24 w-auto min-w-[80px] brightness-0 invert">
+              <div className="relative mb-6 flex h-16 w-auto items-center">
                 <Image 
-                  src={siteConfig.url.logo} 
+                  src="/logo-white.svg" 
                   alt={`${siteConfig.company.name} Logo`} 
-                  width={200} 
-                  height={96}
+                  width={260} 
+                  height={64}
                   className="h-full w-auto object-contain drop-shadow-md"
                 />
               </div>
