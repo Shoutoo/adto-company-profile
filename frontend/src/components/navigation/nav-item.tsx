@@ -2,8 +2,8 @@
 
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing';
-import { ChevronDown, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 import { useNavigation } from './navigation-provider';
 import { type NavItem as NavItemType } from '@/types/navigation.types';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -16,7 +16,7 @@ interface NavItemProps {
 export function NavItem({ item, isScrolled = false }: NavItemProps) {
   const t = useTranslations('Navbar');
   const pathname = usePathname();
-  const { activeNav, toggleNav, closeNav } = useNavigation();
+  const { activeNav, toggleNav, closeNav, activeSubItem, setActiveSubItem } = useNavigation();
 
   const isCurrentPath = (href: string) => {
     if (href === '/') return pathname === '/';
@@ -40,25 +40,16 @@ export function NavItem({ item, isScrolled = false }: NavItemProps) {
       <Link
         href={item.href}
         className={cn(
-          'inline-flex h-full items-center gap-1.5 px-4 text-[15px] font-semibold transition-all duration-200',
+          'inline-flex h-full items-center gap-1.5 px-4 text-[15px] font-semibold transition-all duration-200 whitespace-nowrap',
           isActive
             ? 'text-[#FF5A00]' // Orange brand
             : isScrolled
-            ? 'text-slate-800 hover:text-[#FF5A00]'
+            ? 'text-[#0A2F5C] hover:text-[#FF5A00]' // Primary Navy
             : 'text-white hover:text-white/80'
         )}
         onClick={handleClick}
       >
         {t(item.label as any)}
-        {item.children && (
-          <ChevronDown 
-            className={cn(
-              "h-4 w-4 transition-transform duration-250",
-              isDropdownOpen ? "rotate-180" : "",
-              isScrolled && !isActive ? "opacity-60" : "opacity-90"
-            )} 
-          />
-        )}
       </Link>
       
       {/* Active Indicator Underline (Orange) */}
@@ -69,7 +60,7 @@ export function NavItem({ item, isScrolled = false }: NavItemProps) {
         )}
       />
 
-      {/* Standard Dropdown Panel */}
+      {/* Two-Panel Enterprise Dropdown */}
       <AnimatePresence>
         {item.children && isDropdownOpen && (
           <motion.div
@@ -77,19 +68,57 @@ export function NavItem({ item, isScrolled = false }: NavItemProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.98 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="absolute left-0 top-full mt-2 w-[280px] rounded-xl bg-white p-4 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-slate-100/80 z-50 flex flex-col gap-2"
+            className="absolute left-0 top-full mt-2 w-[700px] rounded-xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-slate-100/80 z-50 flex overflow-hidden cursor-default"
+            onClick={(e) => e.stopPropagation()}
           >
-            {item.children.map((child) => (
-              <Link
-                key={child.href}
-                href={child.href}
-                onClick={closeNav}
-                className="group flex items-center justify-between rounded-lg px-4 py-3 text-[14px] font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-[#FF5A00]"
-              >
-                <span>{t(child.label as any)}</span>
-                <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0 text-[#FF5A00]" />
-              </Link>
-            ))}
+            {/* Left Panel: Submenus */}
+            <div className="w-[280px] bg-white p-4 border-r border-slate-100 flex flex-col gap-1 shrink-0">
+              {(item.children || []).map((child) => {
+                const isSubActive = activeSubItem === child.label || (!activeSubItem && (item.children || [])[0]?.label === child.label);
+                return (
+                  <button
+                    key={child.href}
+                    onClick={() => setActiveSubItem(child.label)}
+                    className={cn(
+                      "group flex items-center justify-between rounded-lg px-4 py-3 text-[14px] font-medium transition-colors w-full text-left",
+                      isSubActive
+                        ? "bg-slate-50 text-[#FF5A00]"
+                        : "text-slate-700 hover:bg-slate-50 hover:text-[#FF5A00]"
+                    )}
+                  >
+                    <span>{t(child.label as any)}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Right Panel: Preview */}
+            <div className="flex-1 bg-white p-6 flex flex-col relative">
+              {(() => {
+                const activeChild = (item.children || []).find(c => c.label === activeSubItem) || (item.children || [])[0];
+                if (!activeChild) return null;
+                return (
+                  <div className="flex flex-col h-full animate-in fade-in zoom-in-95 duration-200">
+                    {activeChild.image && (
+                      <div className="w-full h-[140px] rounded-lg overflow-hidden mb-5 bg-slate-100">
+                        <img src={activeChild.image} alt={t(activeChild.label as any)} className="w-full h-full object-cover" />
+                      </div>
+                    )}
+                    <h4 className="text-lg font-bold text-[#0A2F5C] mb-2">{t(activeChild.label as any)}</h4>
+                    {activeChild.descriptionKey && (
+                      <p className="text-sm text-slate-500 mb-6 leading-relaxed line-clamp-2">{t(activeChild.descriptionKey as any)}</p>
+                    )}
+                    <div className="mt-auto">
+                      <Button asChild variant="default" className="bg-[#0A2F5C] hover:bg-[#FF5A00] text-white rounded-full transition-colors px-6 h-10 w-max text-sm font-medium">
+                        <Link href={activeChild.href} onClick={closeNav}>
+                          Pelajari Selengkapnya
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+                );
+              })()}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

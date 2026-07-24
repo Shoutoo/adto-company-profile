@@ -29,9 +29,9 @@ function NavbarContent() {
           {/* Logo */}
           <Link href="/" className="relative z-10 flex items-center gap-2">
             {isScrolled ? (
-              <img src="/logo-color.svg" alt="ADTO Logo" className="h-10 w-auto" />
+              <img src="/logo-color.svg" alt="ADTO Logo" className="h-[52px] w-auto transition-all duration-300" />
             ) : (
-              <img src="/logo-white.svg" alt="ADTO Logo" className="h-10 w-auto" />
+              <img src="/logo-white.svg" alt="ADTO Logo" className="h-[52px] w-auto transition-all duration-300" />
             )}
           </Link>
 
