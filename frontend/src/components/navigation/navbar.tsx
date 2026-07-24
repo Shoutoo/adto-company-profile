@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+
 import { Link } from '@/i18n/routing';
 import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -14,60 +14,53 @@ import { LanguageSwitcher } from './language-switcher';
 import { NavbarCTA } from './navbar-cta';
 
 function NavbarContent() {
-  const [scrolled, setScrolled] = useState(false);
-  const { setMobileMenuOpen } = useNavigation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 20;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [scrolled]);
+  const { setMobileMenuOpen, isScrolled } = useNavigation();
 
   return (
     <>
       <header
         className={cn(
-          'fixed left-0 right-0 top-0 z-50 transition-all duration-300 ease-out',
-          'h-16 md:h-20',
-          scrolled
-            ? 'bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.05)] border-b border-transparent'
-            : 'bg-transparent border-b border-transparent'
+          'fixed left-0 right-0 top-0 z-[100] transition-all duration-300 ease-in-out',
+          isScrolled
+            ? 'h-[84px] bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.05)] border-b border-slate-100'
+            : 'h-[100px] bg-transparent border-b border-transparent'
         )}
       >
-        <div className="container-page flex h-full items-center justify-between">
+        <div className="container-page flex lg:grid h-full lg:grid-cols-[320px_1fr] items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="relative z-10 flex items-center gap-2">
-            <span className={cn("text-xl font-bold tracking-tight transition-colors duration-300", scrolled ? 'text-brand-600' : 'text-brand-600')}>
-              ADTO.
-            </span>
+            {isScrolled ? (
+              <img src="/logo-color.svg" alt="ADTO Logo" className="h-8 w-auto" />
+            ) : (
+              <img src="/logo-white.svg" alt="ADTO Logo" className="h-8 w-auto" />
+            )}
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden h-full items-center gap-1 lg:flex">
-            {PUBLIC_NAV_ITEMS.map((item) => (
-              <NavItem key={item.href} item={item} />
-            ))}
-          </nav>
-
-          {/* Right Actions */}
-          <div className="relative z-10 flex items-center gap-4">
-            <div className="hidden items-center gap-4 md:flex">
-              <LanguageSwitcher />
+          {/* Navigation Cluster (Right aligned) */}
+          <div className="hidden lg:flex flex-1 items-center justify-end gap-6 h-full">
+            <nav className="flex h-full items-center gap-1">
+              {PUBLIC_NAV_ITEMS.map((item) => (
+                <NavItem key={item.href} item={item} isScrolled={isScrolled} />
+              ))}
+            </nav>
+            <div className="flex items-center gap-4">
+              <LanguageSwitcher isScrolled={isScrolled} />
+              <NavbarCTA isScrolled={isScrolled} />
             </div>
-            <NavbarCTA />
-            
-            {/* Mobile Menu Toggle */}
+          </div>
+          
+          {/* Mobile Actions */}
+          <div className="flex items-center gap-4 lg:hidden">
+            <LanguageSwitcher isScrolled={isScrolled} />
             <button
-              className="rounded-full bg-slate-100 p-2.5 text-slate-600 transition-colors hover:bg-slate-200 lg:hidden"
+              className={cn(
+                "rounded-full p-2.5 transition-colors",
+                isScrolled ? "bg-slate-100 hover:bg-slate-200" : "bg-white/10 hover:bg-white/20 backdrop-blur-sm"
+              )}
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open menu"
             >
-              <Menu className="h-5 w-5" />
+              <Menu className={cn("h-6 w-6", isScrolled ? "text-slate-600" : "text-white")} />
             </button>
           </div>
         </div>
@@ -77,9 +70,6 @@ function NavbarContent() {
           <LandingPanel />
         </div>
       </header>
-
-      {/* Spacer to prevent layout shift */}
-      <div className="h-16 md:h-20" />
 
       {/* Mobile Navigation */}
       <MobileNavigation />

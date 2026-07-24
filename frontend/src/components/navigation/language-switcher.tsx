@@ -10,12 +10,18 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
+import { cn } from '@/lib/utils';
+
 const LOCALES = [
   { code: 'id', name: 'ID', fullName: 'Indonesia', flag: '🇮🇩' },
   { code: 'en', name: 'EN', fullName: 'English', flag: '🇺🇸' }
 ];
 
-export function LanguageSwitcher() {
+interface LanguageSwitcherProps {
+  isScrolled?: boolean;
+}
+
+export function LanguageSwitcher({ isScrolled = false }: LanguageSwitcherProps) {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -29,13 +35,20 @@ export function LanguageSwitcher() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="group flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[13px] font-medium shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all hover:bg-slate-50 hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 data-[state=open]:bg-slate-50">
-        <Globe className="h-3.5 w-3.5 text-slate-500 transition-colors group-hover:text-brand-600" />
-        <span className="flex items-center gap-1.5 text-slate-700">
+      <DropdownMenuTrigger 
+        className={cn(
+          "group flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[13px] font-medium transition-all focus:outline-none focus:ring-2 focus:ring-brand-500/20",
+          isScrolled 
+            ? "border-slate-200 bg-white text-slate-700 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:bg-slate-50 hover:shadow-sm data-[state=open]:bg-slate-50" 
+            : "border-white/40 bg-white/10 text-white backdrop-blur-md hover:bg-white/20 data-[state=open]:bg-white/20"
+        )}
+      >
+        <Globe className={cn("h-3.5 w-3.5 transition-colors group-hover:text-brand-600", isScrolled ? "text-slate-500" : "text-white/80")} />
+        <span className="flex items-center gap-1.5">
           <span className="text-sm leading-none">{currentLocaleObj.flag}</span>
           <span className="uppercase">{currentLocaleObj.name}</span>
         </span>
-        <ChevronDown className="h-3.5 w-3.5 text-slate-400 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+        <ChevronDown className={cn("h-3.5 w-3.5 transition-transform duration-200 group-data-[state=open]:rotate-180", isScrolled ? "text-slate-400" : "text-white/80")} />
       </DropdownMenuTrigger>
       
       <DropdownMenuContent align="end" className="w-40 rounded-xl p-1 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] border-slate-200">

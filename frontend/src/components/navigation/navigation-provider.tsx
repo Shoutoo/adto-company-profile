@@ -10,6 +10,7 @@ interface NavigationContextType {
   closeNav: () => void;
   isMobileMenuOpen: boolean;
   setMobileMenuOpen: (open: boolean) => void;
+  isScrolled: boolean;
 }
 
 const NavigationContext = createContext<NavigationContextType | undefined>(undefined);
@@ -18,6 +19,7 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
   const [activeNav, setActiveNavState] = useState<string | null>(null);
   const [activeSubItem, setActiveSubItemState] = useState<string | null>(null);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const setActiveNav = (label: string | null) => {
@@ -54,6 +56,17 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
+  // Handle Scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 60);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Check initial scroll
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // Prevent scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -76,6 +89,7 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
         closeNav,
         isMobileMenuOpen,
         setMobileMenuOpen,
+        isScrolled,
       }}
     >
       {children}
