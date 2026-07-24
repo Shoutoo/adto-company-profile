@@ -53,6 +53,13 @@ const config: Config = {
           'dark-secondary': '#1F2937',
           'dark-tertiary': '#374151',
         },
+        navy: {
+          DEFAULT: '#0A2F5C',
+          light: '#103F78',
+        },
+        orange: {
+          DEFAULT: '#FF5A00',
+        },
       },
 
       /* ── Typography ────────────────────── */
